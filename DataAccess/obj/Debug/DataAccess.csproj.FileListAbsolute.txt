@@ -1,0 +1,6 @@
+M:\ModuloFinanceiro\FinancialModule\DataAccess\bin\Debug\DataAccess.dll
+M:\ModuloFinanceiro\FinancialModule\DataAccess\bin\Debug\DataAccess.pdb
+M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.dll
+M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.pdb
