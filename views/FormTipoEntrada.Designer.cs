@@ -40,27 +40,28 @@
             this.lblError = new System.Windows.Forms.Label();
             this.lblSuc = new System.Windows.Forms.Label();
             this.pTipo = new System.Windows.Forms.Panel();
+            this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtCadastro = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.pProduct = new System.Windows.Forms.Panel();
             this.pCadastros = new System.Windows.Forms.Panel();
             this.dgvCadastros = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.chkEspecie = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pTipo.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.pProduct.SuspendLayout();
             this.pCadastros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,33 +110,35 @@
             // 
             // lblError
             // 
-            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Image = global::views.Properties.Resources.report_min;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(187, 621);
+            this.lblError.Location = new System.Drawing.Point(25, 604);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(234, 20);
-            this.lblError.TabIndex = 170;
+            this.lblError.TabIndex = 174;
             this.lblError.Text = "         erro ao fazer o login";
             this.lblError.Visible = false;
             // 
             // lblSuc
             // 
-            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSuc.AutoSize = true;
             this.lblSuc.BackColor = System.Drawing.Color.Transparent;
             this.lblSuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblSuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(175)))), ((int)(((byte)(115)))));
+            this.lblSuc.Image = global::views.Properties.Resources.sucesso;
             this.lblSuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSuc.Location = new System.Drawing.Point(143, 621);
+            this.lblSuc.Location = new System.Drawing.Point(25, 604);
             this.lblSuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSuc.Name = "lblSuc";
             this.lblSuc.Size = new System.Drawing.Size(278, 20);
-            this.lblSuc.TabIndex = 171;
+            this.lblSuc.TabIndex = 175;
             this.lblSuc.Text = "         erro ao cadastrar produto";
             this.lblSuc.Visible = false;
             // 
@@ -143,16 +146,53 @@
             // 
             this.pTipo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.pTipo.Controls.Add(this.chkEspecie);
             this.pTipo.Controls.Add(this.btnSalvar);
             this.pTipo.Controls.Add(this.label3);
             this.pTipo.Controls.Add(this.panel4);
             this.pTipo.Controls.Add(this.txtCadastro);
             this.pTipo.Controls.Add(this.panel3);
             this.pTipo.Controls.Add(this.label12);
-            this.pTipo.Location = new System.Drawing.Point(143, 366);
+            this.pTipo.Location = new System.Drawing.Point(21, 366);
             this.pTipo.Name = "pTipo";
-            this.pTipo.Size = new System.Drawing.Size(315, 235);
+            this.pTipo.Size = new System.Drawing.Size(437, 235);
             this.pTipo.TabIndex = 173;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvar.BorderRadius = 0;
+            this.btnSalvar.ButtonText = "SALVAR";
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSalvar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Iconimage = global::views.Properties.Resources.save;
+            this.btnSalvar.Iconimage_right = null;
+            this.btnSalvar.Iconimage_right_Selected = null;
+            this.btnSalvar.Iconimage_Selected = null;
+            this.btnSalvar.IconMarginLeft = 0;
+            this.btnSalvar.IconMarginRight = 0;
+            this.btnSalvar.IconRightVisible = false;
+            this.btnSalvar.IconRightZoom = 0D;
+            this.btnSalvar.IconVisible = true;
+            this.btnSalvar.IconZoom = 30D;
+            this.btnSalvar.IsTab = false;
+            this.btnSalvar.Location = new System.Drawing.Point(14, 183);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalvar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnSalvar.selected = false;
+            this.btnSalvar.Size = new System.Drawing.Size(127, 44);
+            this.btnSalvar.TabIndex = 177;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.Textcolor = System.Drawing.Color.Gray;
+            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label3
             // 
@@ -172,7 +212,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 37);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 10);
+            this.panel4.Size = new System.Drawing.Size(437, 10);
             this.panel4.TabIndex = 175;
             // 
             // txtCadastro
@@ -193,8 +233,18 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(315, 37);
+            this.panel3.Size = new System.Drawing.Size(437, 37);
             this.panel3.TabIndex = 174;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::views.Properties.Resources.arrow_top;
+            this.pictureBox5.Location = new System.Drawing.Point(7, 17);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(28, 27);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
             // 
             // label12
             // 
@@ -292,6 +342,18 @@
             this.dgvCadastros.TabIndex = 159;
             this.dgvCadastros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadastros_CellClick);
             // 
+            // delete
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delete.HeaderText = "";
+            this.delete.Image = global::views.Properties.Resources.cancel;
+            this.delete.MinimumWidth = 6;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.ToolTipText = "Excluir";
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -305,62 +367,6 @@
             this.label4.TabIndex = 157;
             this.label4.Text = "#CADASTRADOS";
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Excluir";
-            this.dataGridViewImageColumn1.Image = global::views.Properties.Resources.cancel;
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ToolTipText = "Excluir";
-            this.dataGridViewImageColumn1.Width = 623;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvar.BorderRadius = 0;
-            this.btnSalvar.ButtonText = "SALVAR";
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSalvar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Iconimage = global::views.Properties.Resources.save;
-            this.btnSalvar.Iconimage_right = null;
-            this.btnSalvar.Iconimage_right_Selected = null;
-            this.btnSalvar.Iconimage_Selected = null;
-            this.btnSalvar.IconMarginLeft = 0;
-            this.btnSalvar.IconMarginRight = 0;
-            this.btnSalvar.IconRightVisible = false;
-            this.btnSalvar.IconRightZoom = 0D;
-            this.btnSalvar.IconVisible = true;
-            this.btnSalvar.IconZoom = 30D;
-            this.btnSalvar.IsTab = false;
-            this.btnSalvar.Location = new System.Drawing.Point(14, 183);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnSalvar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnSalvar.selected = false;
-            this.btnSalvar.Size = new System.Drawing.Size(127, 44);
-            this.btnSalvar.TabIndex = 177;
-            this.btnSalvar.Text = "SALVAR";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalvar.Textcolor = System.Drawing.Color.Gray;
-            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::views.Properties.Resources.arrow_top;
-            this.pictureBox5.Location = new System.Drawing.Point(7, 17);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 27);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -371,17 +377,25 @@
             this.btnClose.TabIndex = 143;
             this.btnClose.TabStop = false;
             // 
-            // delete
+            // dataGridViewImageColumn1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.delete.HeaderText = "";
-            this.delete.Image = global::views.Properties.Resources.cancel;
-            this.delete.MinimumWidth = 6;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.ToolTipText = "Excluir";
+            this.dataGridViewImageColumn1.HeaderText = "Excluir";
+            this.dataGridViewImageColumn1.Image = global::views.Properties.Resources.cancel;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ToolTipText = "Excluir";
+            this.dataGridViewImageColumn1.Width = 623;
+            // 
+            // chkEspecie
+            // 
+            this.chkEspecie.AutoSize = true;
+            this.chkEspecie.Location = new System.Drawing.Point(317, 135);
+            this.chkEspecie.Name = "chkEspecie";
+            this.chkEspecie.Size = new System.Drawing.Size(87, 21);
+            this.chkEspecie.TabIndex = 178;
+            this.chkEspecie.Text = "espécie?";
+            this.chkEspecie.UseVisualStyleBackColor = true;
             // 
             // FormTipoEntrada
             // 
@@ -401,11 +415,11 @@
             this.pTipo.ResumeLayout(false);
             this.pTipo.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.pProduct.ResumeLayout(false);
             this.pCadastros.ResumeLayout(false);
             this.pCadastros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadastros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -418,8 +432,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pProduct;
-        private System.Windows.Forms.Label lblSuc;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Panel pTipo;
         private Bunifu.Framework.UI.BunifuFlatButton btnSalvar;
@@ -434,5 +446,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblSuc;
+        private System.Windows.Forms.CheckBox chkEspecie;
     }
 }

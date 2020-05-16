@@ -12,14 +12,14 @@ using Domain;
 
 namespace views
 {
-    public partial class FormDiarioCaixa : Form
+    public partial class FormPlanoDeContas : Form
     {
         private bool IsNew = true;
-        public FormDiarioCaixa()
+        public FormPlanoDeContas()
         {
             InitializeComponent();
         }
-        private void FormDiarioCaixa_Load(object sender, EventArgs e)
+        private void FormPlanoDeContas_Load(object sender, EventArgs e)
         {
 
         }

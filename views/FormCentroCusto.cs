@@ -37,7 +37,7 @@ namespace views
         }
         public void Lista()
         {
-            dgvCadastros.DataSource = DoCentroCusto.ListCentroCusto();
+            dgvCadastros.DataSource = DoCadastros.CentroCusto_Lista();
             dgvCadastros.Columns["id"].Visible = false;
             dgvCadastros.Columns["descricao"].DisplayIndex = 1;
             dgvCadastros.Columns["descricao"].HeaderText = "Nome";
@@ -45,7 +45,6 @@ namespace views
             dgvCadastros.Columns["delete"].HeaderText = "...";
             dgvCadastros.Columns["delete"].Width = 50;
         }
-       
         private void txtCadastro_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -60,31 +59,33 @@ namespace views
                 string rpta = "";
                 if (string.IsNullOrEmpty(txtCadastro.Text))
                 {
+                    lblError.Visible = true;
+                    lblSuc.Visible = false;
                     msgError("Campo não pode estar vazio!");
                 }
-                else if (DoCentroCusto.Valida(txtCadastro.Text))
-                {
-                    lblError.Visible = true;
-                    msgError("Já existe um Centro de Custo com descrição: " + txtCadastro.Text.Trim().ToUpper());
-                }
                 else
                 {
-                    rpta = DoCentroCusto.CadastroCentroCusto(txtCadastro.Text.Trim().ToUpper());
-                }
-                if (rpta.Equals("OK"))
-                {
-                    lblError.Visible = false;
-                    msgSuccess("Centro de Custo " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
-                }
-                else
-                {
-                    lblSuc.Visible = false;
-                    msgError(rpta);
+                    if (DoCadastros.CentroCusto_Valida(txtCadastro.Text))
+                    {
+                        lblSuc.Visible = false;
+                        lblError.Visible = true;
+                        msgError("Já existe um Centro de Custo com descrição: " + txtCadastro.Text.Trim().ToUpper());
+                    }
+                    else
+                    {
+                        rpta = DoCadastros.CentroCusto_Cadastro(txtCadastro.Text.Trim().ToUpper());
+                    }
+                    if (rpta.Equals("OK"))
+                    {
+                        lblError.Visible = false;
+                        msgSuccess("Centro de Custo " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
+                    }
+                   
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                msgError(ex.Message + ex.StackTrace);
             }
             Lista();
             txtCadastro.Clear();
@@ -98,9 +99,9 @@ namespace views
                 string rpta = "";
                 try
                 {
-                    if (MessageBox.Show("Excluir Tipo de pagamento?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Excluir Centro de Custo?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        rpta = DoCentroCusto.DeleteCentroCusto(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
+                        rpta = DoCadastros.CentroCusto_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
                     }
                     else
                     {
@@ -108,6 +109,7 @@ namespace views
                     }
                     if (rpta.Equals("OK"))
                     {
+                        lblError.Visible = false;
                         msgSuccess("Cadastro excluido com sucesso!");
                     }
                     else

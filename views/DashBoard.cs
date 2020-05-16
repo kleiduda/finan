@@ -77,7 +77,13 @@ namespace views
 
         private void btnDiarioCaixa_Click(object sender, EventArgs e)
         {
+            panel7.Visible = false;
             AbrirFormulario<FormDiarioCaixa>();
+        }
+
+        private void btnContatos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormEmpresa>();
         }
     }
 }

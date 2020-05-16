@@ -54,6 +54,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.chkEspecie = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.pTipo.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -109,33 +110,35 @@
             // 
             // lblError
             // 
-            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.Color.Transparent;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Image = global::views.Properties.Resources.report_min;
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(187, 621);
+            this.lblError.Location = new System.Drawing.Point(25, 604);
             this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(234, 20);
-            this.lblError.TabIndex = 170;
+            this.lblError.TabIndex = 174;
             this.lblError.Text = "         erro ao fazer o login";
             this.lblError.Visible = false;
             // 
             // lblSuc
             // 
-            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblSuc.AutoSize = true;
             this.lblSuc.BackColor = System.Drawing.Color.Transparent;
             this.lblSuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lblSuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(175)))), ((int)(((byte)(115)))));
+            this.lblSuc.Image = global::views.Properties.Resources.sucesso;
             this.lblSuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSuc.Location = new System.Drawing.Point(143, 621);
+            this.lblSuc.Location = new System.Drawing.Point(25, 604);
             this.lblSuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSuc.Name = "lblSuc";
             this.lblSuc.Size = new System.Drawing.Size(278, 20);
-            this.lblSuc.TabIndex = 171;
+            this.lblSuc.TabIndex = 175;
             this.lblSuc.Text = "         erro ao cadastrar produto";
             this.lblSuc.Visible = false;
             // 
@@ -143,15 +146,16 @@
             // 
             this.pTipo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.pTipo.Controls.Add(this.chkEspecie);
             this.pTipo.Controls.Add(this.btnSalvar);
             this.pTipo.Controls.Add(this.label3);
             this.pTipo.Controls.Add(this.panel4);
             this.pTipo.Controls.Add(this.txtCadastro);
             this.pTipo.Controls.Add(this.panel3);
             this.pTipo.Controls.Add(this.label12);
-            this.pTipo.Location = new System.Drawing.Point(111, 366);
+            this.pTipo.Location = new System.Drawing.Point(21, 366);
             this.pTipo.Name = "pTipo";
-            this.pTipo.Size = new System.Drawing.Size(315, 235);
+            this.pTipo.Size = new System.Drawing.Size(437, 235);
             this.pTipo.TabIndex = 173;
             // 
             // btnSalvar
@@ -208,7 +212,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 37);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(315, 10);
+            this.panel4.Size = new System.Drawing.Size(437, 10);
             this.panel4.TabIndex = 175;
             // 
             // txtCadastro
@@ -229,7 +233,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(315, 37);
+            this.panel3.Size = new System.Drawing.Size(437, 37);
             this.panel3.TabIndex = 174;
             // 
             // pictureBox5
@@ -271,7 +275,7 @@
             this.pCadastros.BackColor = System.Drawing.Color.Gainsboro;
             this.pCadastros.Controls.Add(this.dgvCadastros);
             this.pCadastros.Controls.Add(this.label4);
-            this.pCadastros.Location = new System.Drawing.Point(267, 94);
+            this.pCadastros.Location = new System.Drawing.Point(299, 94);
             this.pCadastros.Name = "pCadastros";
             this.pCadastros.Size = new System.Drawing.Size(672, 459);
             this.pCadastros.TabIndex = 179;
@@ -383,6 +387,16 @@
             this.dataGridViewImageColumn1.ToolTipText = "Excluir";
             this.dataGridViewImageColumn1.Width = 623;
             // 
+            // chkEspecie
+            // 
+            this.chkEspecie.AutoSize = true;
+            this.chkEspecie.Location = new System.Drawing.Point(318, 134);
+            this.chkEspecie.Name = "chkEspecie";
+            this.chkEspecie.Size = new System.Drawing.Size(87, 21);
+            this.chkEspecie.TabIndex = 179;
+            this.chkEspecie.Text = "espécie?";
+            this.chkEspecie.UseVisualStyleBackColor = true;
+            // 
             // FormTipoSaida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,8 +432,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pProduct;
-        private System.Windows.Forms.Label lblSuc;
-        private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Panel pTipo;
         private Bunifu.Framework.UI.BunifuFlatButton btnSalvar;
@@ -434,5 +446,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblSuc;
+        private System.Windows.Forms.CheckBox chkEspecie;
     }
 }

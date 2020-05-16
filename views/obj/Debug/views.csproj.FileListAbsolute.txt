@@ -22,3 +22,5 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCentroCusto.resour
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCategorias.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormSaidas.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormDiarioCaixa.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEmpresa.resources
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\MonthCalendar.dll

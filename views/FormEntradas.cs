@@ -39,13 +39,13 @@ namespace views
         }
         private void ListTipoEntrada()
         {
-            cbTipoEntrada.DataSource = DoTipoEntrada.ListaTipoEntrada();
+            cbTipoEntrada.DataSource = DoCadastros.TipoEntrada_Lista();
             cbTipoEntrada.ValueMember = "id";
             cbTipoEntrada.DisplayMember = "descricao";
         }
         private void Listpagamento()
         {
-            cbPagamento.DataSource = DoPagamento.ListaPagamento();
+            cbPagamento.DataSource = DoCadastros.Pagamento_Lista();
             cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "descricao";
         }

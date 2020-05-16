@@ -42,11 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
-    <Compile Include="DataCategoria.cs" />
-    <Compile Include="DataCentroCusto.cs" />
+    <Compile Include="DataCadastros.cs" />
     <Compile Include="DataEntrada.cs" />
-    <Compile Include="DataTipoEntrada.cs" />
-    <Compile Include="DataPagamento.cs" />
+    <Compile Include="DataDiarioDeCaixa.cs" />
     <Compile Include="DataSaida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

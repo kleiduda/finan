@@ -35,7 +35,7 @@ namespace views
         }
         public void Lista()
         {
-            dgvCadastros.DataSource = DoPagamento.ListaPagamento();
+            dgvCadastros.DataSource = DoCadastros.Pagamento_Lista();
             dgvCadastros.Columns["id"].Visible = false;
             dgvCadastros.Columns["descricao"].DisplayIndex = 0;
             dgvCadastros.Columns["descricao"].HeaderText = "Nome";
@@ -57,30 +57,33 @@ namespace views
                 string rpta = "";
                 if (string.IsNullOrEmpty(txtCadastro.Text))
                 {
+                    lblError.Visible = true;
+                    lblSuc.Visible = false;
                     msgError("Campo não pode estar vazio!");
                 }
-                else if (DoPagamento.ValidaTipo(txtCadastro.Text.Trim().ToUpper()))
-                {
-                    msgError("Já existe um tipo de SAIDA com descrição: " + txtCadastro.Text.Trim().ToUpper());
-                }
                 else
                 {
-                    rpta = DoPagamento.CadastroPagamento(txtCadastro.Text.Trim().ToUpper());
-                }
-                if (rpta.Equals("OK"))
-                {
-                    lblError.Visible = false;
-                    msgSuccess("Tipo " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
-                }
-                else
-                {
-                    lblSuc.Visible = false;
-                    msgError("Já existe um Pagamento com descrição: " + txtCadastro.Text.Trim().ToUpper());
+                    if (DoCadastros.Pagamento_Valida(txtCadastro.Text))
+                    {
+                        lblSuc.Visible = false;
+                        lblError.Visible = true;
+                        msgError("Já existe uma forma de pagamento com descrição: " + txtCadastro.Text.Trim().ToUpper());
+                    }
+                    else
+                    {
+                        rpta = DoCadastros.Pagamento_Cadastro(txtCadastro.Text.Trim().ToUpper());
+                    }
+                    if (rpta.Equals("OK"))
+                    {
+                        lblError.Visible = false;
+                        msgSuccess("Forma de Pagamento " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
+                    }
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                msgError(ex.Message + ex.StackTrace);
             }
             Lista();
             txtCadastro.Clear();
@@ -95,7 +98,7 @@ namespace views
                 {
                     if (MessageBox.Show("Excluir Tipo de pagamento?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        rpta = DoPagamento.DeletePagamento(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
+                        rpta = DoCadastros.Pagamento_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
                     }
                     else
                     {

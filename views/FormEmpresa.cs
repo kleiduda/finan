@@ -12,19 +12,16 @@ using Domain;
 
 namespace views
 {
-    public partial class FormCategorias : Form
+    public partial class FormEmpresa : Form
     {
-        private bool IsNew = true;
-        public FormCategorias()
+        public FormEmpresa()
         {
             InitializeComponent();
         }
 
-        private void FormCategorias_Load(object sender, EventArgs e)
+        private void FormEmpresa_Load(object sender, EventArgs e)
         {
             Lista();
-            ListCentroCusto();
-            ListSubCategoria();
         }
         private void msgError(string msg)
         {
@@ -38,32 +35,16 @@ namespace views
         }
         public void Lista()
         {
-            dgvCadastros.DataSource = DoCadastros.Categori_Lista();
+            dgvCadastros.DataSource = DoCadastros.EmpresaLista();
             dgvCadastros.Columns["id"].Visible = false;
-            dgvCadastros.Columns["descricao"].DisplayIndex = 1;
-            dgvCadastros.Columns["descricao"].HeaderText = "Nome";
-            dgvCadastros.Columns["Expr1"].DisplayIndex = 2;
-            dgvCadastros.Columns["Expr1"].HeaderText = "Centro de Custo";
-            dgvCadastros.Columns["Expr2"].DisplayIndex = 3;
-            dgvCadastros.Columns["Expr2"].HeaderText = "Sub Categoria";
-
-            dgvCadastros.Columns["delete"].DisplayIndex = 4;
+            dgvCadastros.Columns["nome_fantasia"].DisplayIndex = 0;
+            dgvCadastros.Columns["nome_fantasia"].HeaderText = "Empresa";
+            dgvCadastros.Columns["cnpj"].DisplayIndex = 1;
+            dgvCadastros.Columns["cnpj"].HeaderText = "Cnpj";
+            dgvCadastros.Columns["delete"].DisplayIndex = 2;
             dgvCadastros.Columns["delete"].HeaderText = "...";
             dgvCadastros.Columns["delete"].Width = 50;
         }
-        public void ListCentroCusto()
-        {
-            cbCentroCusto.DataSource = DoCadastros.CentroCusto_Lista();
-            cbCentroCusto.ValueMember = "id";
-            cbCentroCusto.DisplayMember = "descricao";
-        }
-        public void ListSubCategoria()
-        {
-            cbSubCategoria.DataSource = DoCadastros.Categoria_ListaSubCategoria();
-            cbSubCategoria.ValueMember = "id";
-            cbSubCategoria.DisplayMember = "descricao";
-        }
-
         private void txtCadastro_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -76,7 +57,7 @@ namespace views
             try
             {
                 string rpta = "";
-                if (string.IsNullOrEmpty(txtCategoria.Text))
+                if (string.IsNullOrEmpty(txtCnpj.Text))
                 {
                     lblError.Visible = true;
                     lblSuc.Visible = false;
@@ -84,20 +65,20 @@ namespace views
                 }
                 else
                 {
-                    if (DoCadastros.Categoria_Valida(txtCategoria.Text))
+                    if (DoCadastros.EmpresaValida(txtCnpj.Text))
                     {
                         lblSuc.Visible = false;
                         lblError.Visible = true;
-                        msgError("Já existe uma Categoria com descrição: " + txtCategoria.Text.Trim().ToUpper());
+                        msgError("Já existe uma Empresa com CNPJ: " + txtCnpj.Text.Trim().ToUpper());
                     }
                     else
                     {
-                        rpta = DoCadastros.Categoria_Cadastro(txtCategoria.Text.Trim().ToUpper(), Convert.ToInt32(cbCentroCusto.SelectedValue), cbSubCategoria.Text);
+                        rpta = DoCadastros.EmpresaCadastro( txtNomeFantasia.Text.Trim().ToUpper(),txtCnpj.Text.Trim().ToUpper());
                     }
                     if (rpta.Equals("OK"))
                     {
                         lblError.Visible = false;
-                        msgSuccess("Categoria " + txtCategoria.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
+                        msgSuccess("Empresa " + txtNomeFantasia.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
                     }
 
                 }
@@ -107,10 +88,10 @@ namespace views
                 msgError(ex.Message + ex.StackTrace);
             }
             Lista();
-            txtCategoria.Clear();
-            txtCategoria.Focus();
+            txtNomeFantasia.Clear();
+            txtCnpj.Clear();
+            txtNomeFantasia.Focus();
         }
-
         private void dgvCadastros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
@@ -118,9 +99,9 @@ namespace views
                 string rpta = "";
                 try
                 {
-                    if (MessageBox.Show("Excluir Categoria?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Excluir Empresa?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        rpta = DoCadastros.Categoria_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
+                        rpta = DoCadastros.Empresa_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
                     }
                     else
                     {
@@ -141,16 +122,6 @@ namespace views
                 }
                 Lista();
             }
-        }
-
-        private void btnNovaSubCategoria_Click(object sender, EventArgs e)
-        {
-            //pSubCategoria.Visible = true;
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

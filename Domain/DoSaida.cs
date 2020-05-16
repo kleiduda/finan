@@ -11,7 +11,7 @@ namespace Domain
 {
     public class DoSaida
     {
-        public static string CadastroSaida(DateTime data, decimal valor, string observacao, int idSaida, int idPagamento)
+        public static string Saida_Cadastro(DateTime data, decimal valor, string observacao, int idSaida, int idPagamento)
         {
             DataSaida obj = new DataSaida();
             obj.Data = data;
@@ -19,11 +19,11 @@ namespace Domain
             obj.Observacao = observacao;
             obj.IdSaida = idSaida;
             obj.IdPagamento = idPagamento;
-            return obj.CadastroSaida(obj);
+            return obj.Saida_Cadastro(obj);
         }
-        public static DataTable ListSaida()
+        public static DataTable Saida_Lista()
         {
-            return new DataSaida().ListSaida();
+            return new DataSaida().Saida_Lista();
         }
     }
 }

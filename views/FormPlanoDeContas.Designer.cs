@@ -1,6 +1,6 @@
 ﻿namespace views
 {
-    partial class FormDiarioCaixa
+    partial class FormPlanoDeContas
     {
         /// <summary>
         /// Required designer variable.
@@ -31,30 +31,29 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lblMes = new System.Windows.Forms.Label();
-            this.pContainer = new System.Windows.Forms.Panel();
-            this.calendario = new Pabo.Calendar.MonthCalendar();
-            this.lblResumoVendasT = new System.Windows.Forms.Label();
-            this.bunifuSeparator7 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.painelEntradas = new System.Windows.Forms.Panel();
-            this.painelSaidas = new System.Windows.Forms.Panel();
-            this.pTotal = new System.Windows.Forms.Panel();
             this.panelCalendario = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.calendario = new Pabo.Calendar.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.painelDinheiro = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lblVendaDinheiro = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pContainer = new System.Windows.Forms.Panel();
+            this.pTotal = new System.Windows.Forms.Panel();
+            this.painelSaidas = new System.Windows.Forms.Panel();
+            this.painelEntradas = new System.Windows.Forms.Panel();
+            this.lblResumoVendasT = new System.Windows.Forms.Label();
+            this.bunifuSeparator7 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.pContainer.SuspendLayout();
             this.panelCalendario.SuspendLayout();
-            this.painelDinheiro.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.painelDinheiro.SuspendLayout();
+            this.pContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -82,7 +81,6 @@
             this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel9.Controls.Add(this.panelCalendario);
-            this.panel9.Controls.Add(this.lblMes);
             this.panel9.Controls.Add(this.pContainer);
             this.panel9.Controls.Add(this.lblResumoVendasT);
             this.panel9.Controls.Add(this.bunifuSeparator7);
@@ -91,28 +89,52 @@
             this.panel9.Size = new System.Drawing.Size(1394, 764);
             this.panel9.TabIndex = 169;
             // 
-            // lblMes
+            // panelCalendario
             // 
-            this.lblMes.AutoSize = true;
-            this.lblMes.BackColor = System.Drawing.Color.Transparent;
-            this.lblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(107)))), ((int)(((byte)(192)))));
-            this.lblMes.Location = new System.Drawing.Point(41, 73);
-            this.lblMes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMes.Name = "lblMes";
-            this.lblMes.Size = new System.Drawing.Size(202, 29);
-            this.lblMes.TabIndex = 175;
-            this.lblMes.Text = "JANEIRO - 2020";
+            this.panelCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panelCalendario.Controls.Add(this.panel2);
+            this.panelCalendario.Controls.Add(this.calendario);
+            this.panelCalendario.Controls.Add(this.label2);
+            this.panelCalendario.Controls.Add(this.painelDinheiro);
+            this.panelCalendario.Controls.Add(this.bunifuSeparator1);
+            this.panelCalendario.Controls.Add(this.label3);
+            this.panelCalendario.Location = new System.Drawing.Point(1025, 17);
+            this.panelCalendario.Name = "panelCalendario";
+            this.panelCalendario.Size = new System.Drawing.Size(350, 715);
+            this.panelCalendario.TabIndex = 183;
             // 
-            // pContainer
+            // panel2
             // 
-            this.pContainer.Controls.Add(this.pTotal);
-            this.pContainer.Controls.Add(this.painelSaidas);
-            this.pContainer.Controls.Add(this.painelEntradas);
-            this.pContainer.Location = new System.Drawing.Point(18, 121);
-            this.pContainer.Name = "pContainer";
-            this.pContainer.Size = new System.Drawing.Size(1001, 612);
-            this.pContainer.TabIndex = 174;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(9, 529);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(321, 51);
+            this.panel2.TabIndex = 156;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(9, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 17);
+            this.label1.TabIndex = 155;
+            this.label1.Text = "Total Saída:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(147, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 18);
+            this.label4.TabIndex = 154;
+            this.label4.Text = "0.00";
             // 
             // calendario
             // 
@@ -153,69 +175,6 @@
             this.calendario.Weeknumbers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.calendario.MonthChanged += new Pabo.Calendar.MonthChangedEventHandler(this.calendario_MonthChanged);
             this.calendario.DayClick += new Pabo.Calendar.DayClickEventHandler(this.calendario_DayClick);
-            // 
-            // lblResumoVendasT
-            // 
-            this.lblResumoVendasT.AutoSize = true;
-            this.lblResumoVendasT.BackColor = System.Drawing.Color.Transparent;
-            this.lblResumoVendasT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResumoVendasT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.lblResumoVendasT.Location = new System.Drawing.Point(9, 14);
-            this.lblResumoVendasT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblResumoVendasT.Name = "lblResumoVendasT";
-            this.lblResumoVendasT.Size = new System.Drawing.Size(198, 26);
-            this.lblResumoVendasT.TabIndex = 162;
-            this.lblResumoVendasT.Text = "DIARIO DE CAIXA";
-            // 
-            // bunifuSeparator7
-            // 
-            this.bunifuSeparator7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuSeparator7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.bunifuSeparator7.LineThickness = 3;
-            this.bunifuSeparator7.Location = new System.Drawing.Point(0, 0);
-            this.bunifuSeparator7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuSeparator7.Name = "bunifuSeparator7";
-            this.bunifuSeparator7.Size = new System.Drawing.Size(1394, 10);
-            this.bunifuSeparator7.TabIndex = 164;
-            this.bunifuSeparator7.Transparency = 255;
-            this.bunifuSeparator7.Vertical = false;
-            // 
-            // painelEntradas
-            // 
-            this.painelEntradas.Location = new System.Drawing.Point(17, 3);
-            this.painelEntradas.Name = "painelEntradas";
-            this.painelEntradas.Size = new System.Drawing.Size(328, 536);
-            this.painelEntradas.TabIndex = 175;
-            // 
-            // painelSaidas
-            // 
-            this.painelSaidas.Location = new System.Drawing.Point(351, 3);
-            this.painelSaidas.Name = "painelSaidas";
-            this.painelSaidas.Size = new System.Drawing.Size(328, 536);
-            this.painelSaidas.TabIndex = 181;
-            // 
-            // pTotal
-            // 
-            this.pTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pTotal.Location = new System.Drawing.Point(17, 545);
-            this.pTotal.Name = "pTotal";
-            this.pTotal.Size = new System.Drawing.Size(662, 65);
-            this.pTotal.TabIndex = 182;
-            // 
-            // panelCalendario
-            // 
-            this.panelCalendario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.panelCalendario.Controls.Add(this.panel2);
-            this.panelCalendario.Controls.Add(this.calendario);
-            this.panelCalendario.Controls.Add(this.label2);
-            this.panelCalendario.Controls.Add(this.painelDinheiro);
-            this.panelCalendario.Controls.Add(this.bunifuSeparator1);
-            this.panelCalendario.Controls.Add(this.label3);
-            this.panelCalendario.Location = new System.Drawing.Point(1025, 17);
-            this.panelCalendario.Name = "panelCalendario";
-            this.panelCalendario.Size = new System.Drawing.Size(350, 715);
-            this.panelCalendario.TabIndex = 183;
             // 
             // label2
             // 
@@ -289,40 +248,66 @@
             this.label3.TabIndex = 145;
             this.label3.Text = "Vendas do Dia";
             // 
-            // panel2
+            // pContainer
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(9, 529);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(321, 51);
-            this.panel2.TabIndex = 156;
+            this.pContainer.Controls.Add(this.pTotal);
+            this.pContainer.Controls.Add(this.painelSaidas);
+            this.pContainer.Controls.Add(this.painelEntradas);
+            this.pContainer.Location = new System.Drawing.Point(18, 121);
+            this.pContainer.Name = "pContainer";
+            this.pContainer.Size = new System.Drawing.Size(1001, 612);
+            this.pContainer.TabIndex = 174;
             // 
-            // label1
+            // pTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(9, 17);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 17);
-            this.label1.TabIndex = 155;
-            this.label1.Text = "Total Saída:";
+            this.pTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pTotal.Location = new System.Drawing.Point(17, 545);
+            this.pTotal.Name = "pTotal";
+            this.pTotal.Size = new System.Drawing.Size(662, 65);
+            this.pTotal.TabIndex = 182;
             // 
-            // label4
+            // painelSaidas
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(147, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 18);
-            this.label4.TabIndex = 154;
-            this.label4.Text = "0.00";
+            this.painelSaidas.Location = new System.Drawing.Point(351, 3);
+            this.painelSaidas.Name = "painelSaidas";
+            this.painelSaidas.Size = new System.Drawing.Size(328, 536);
+            this.painelSaidas.TabIndex = 181;
             // 
-            // FormDiarioCaixa
+            // painelEntradas
+            // 
+            this.painelEntradas.Location = new System.Drawing.Point(17, 3);
+            this.painelEntradas.Name = "painelEntradas";
+            this.painelEntradas.Size = new System.Drawing.Size(328, 536);
+            this.painelEntradas.TabIndex = 175;
+            // 
+            // lblResumoVendasT
+            // 
+            this.lblResumoVendasT.AutoSize = true;
+            this.lblResumoVendasT.BackColor = System.Drawing.Color.Transparent;
+            this.lblResumoVendasT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResumoVendasT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.lblResumoVendasT.Location = new System.Drawing.Point(9, 14);
+            this.lblResumoVendasT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblResumoVendasT.Name = "lblResumoVendasT";
+            this.lblResumoVendasT.Size = new System.Drawing.Size(221, 26);
+            this.lblResumoVendasT.TabIndex = 162;
+            this.lblResumoVendasT.Text = "PLANO DE CONTAS";
+            // 
+            // bunifuSeparator7
+            // 
+            this.bunifuSeparator7.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuSeparator7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.bunifuSeparator7.LineThickness = 3;
+            this.bunifuSeparator7.Location = new System.Drawing.Point(0, 0);
+            this.bunifuSeparator7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuSeparator7.Name = "bunifuSeparator7";
+            this.bunifuSeparator7.Size = new System.Drawing.Size(1394, 10);
+            this.bunifuSeparator7.TabIndex = 164;
+            this.bunifuSeparator7.Transparency = 255;
+            this.bunifuSeparator7.Vertical = false;
+            // 
+            // FormPlanoDeContas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,20 +315,20 @@
             this.ClientSize = new System.Drawing.Size(1418, 788);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDiarioCaixa";
+            this.Name = "FormPlanoDeContas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTipoEntrada";
-            this.Load += new System.EventHandler(this.FormDiarioCaixa_Load);
+            this.Load += new System.EventHandler(this.FormPlanoDeContas_Load);
             this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.pContainer.ResumeLayout(false);
             this.panelCalendario.ResumeLayout(false);
             this.panelCalendario.PerformLayout();
-            this.painelDinheiro.ResumeLayout(false);
-            this.painelDinheiro.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.painelDinheiro.ResumeLayout(false);
+            this.painelDinheiro.PerformLayout();
+            this.pContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -354,7 +339,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblResumoVendasT;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator7;
-        private System.Windows.Forms.Label lblMes;
         private System.Windows.Forms.Panel pContainer;
         private Pabo.Calendar.MonthCalendar calendario;
         private System.Windows.Forms.Panel painelEntradas;

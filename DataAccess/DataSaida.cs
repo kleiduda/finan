@@ -29,7 +29,7 @@ namespace DataAccess
         }
         private SqlCommand command = new SqlCommand();
         SqlDataReader dr;
-        public string CadastroSaida(DataSaida Saida)
+        public string Saida_Cadastro(DataSaida Saida)
         {
             using (var connection = GetConnection())
             {
@@ -54,7 +54,7 @@ namespace DataAccess
                 return rpta;
             }
         }
-        public DataTable ListSaida()
+        public DataTable Saida_Lista()
         {
             using (var connection = GetConnection())
             {
@@ -63,8 +63,7 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "select s.id,s.data_saida,s.valor,s.observacao,ts.descricao,fp.descricao as pagamento from tb_saida s " +
-                        "INNER JOIN tb_tipo_saida ts ON s.id_tipo_saida = ts.id INNER JOIN tb_forma_pagamento fp ON s.id_forma_pagamento = fp.id";
+                    command.CommandText = "SELECT * FROM View_Saidas";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);

@@ -41,12 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoCategoria.cs" />
-    <Compile Include="DoCentroCusto.cs" />
+    <Compile Include="DoCadastros.cs" />
+    <Compile Include="DoDiarioDeCaixa.cs" />
     <Compile Include="DoSaida.cs" />
     <Compile Include="DoEntrada.cs" />
-    <Compile Include="DoTipoEntrada.cs" />
-    <Compile Include="DoPagamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

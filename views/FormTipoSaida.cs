@@ -21,7 +21,7 @@ namespace views
 
         private void FormTipoSaida_Load(object sender, EventArgs e)
         {
-            ListaTipoSaida();
+            Lista();
         }
         private void msgError(string msg)
         {
@@ -33,9 +33,9 @@ namespace views
             lblSuc.Text = "      " + msg;
             lblSuc.Visible = true;
         }
-        public void ListaTipoSaida()
+        public void Lista()
         {
-            dgvCadastros.DataSource = DoTipoEntrada.ListaTipoSaida();
+            dgvCadastros.DataSource = DoCadastros.TipoSaida_Lista();
             dgvCadastros.Columns["id"].Visible = false;
             dgvCadastros.Columns["descricao"].DisplayIndex = 0;
             dgvCadastros.Columns["descricao"].HeaderText = "Nome";
@@ -55,35 +55,44 @@ namespace views
             try
             {
                 string rpta = "";
+                int Especie = 0;
                 if (string.IsNullOrEmpty(txtCadastro.Text))
                 {
+                    lblError.Visible = true;
+                    lblSuc.Visible = false;
                     msgError("Campo não pode estar vazio!");
                 }
-                else if (DoTipoEntrada.ValidaTipoSaida(txtCadastro.Text.Trim().ToUpper()))
-                {
-                    msgError("Já existe um tipo de SAIDA com descrição: " + txtCadastro.Text.Trim().ToUpper());
-                }
                 else
                 {
-                    rpta = DoTipoEntrada.CadastroTipoSaida(txtCadastro.Text.Trim().ToUpper());
-                }
-                if (rpta.Equals("OK"))
-                {
-                    lblError.Visible = false;
-                    msgSuccess("Tipo " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
-                }
-                else
-                {
-                    lblSuc.Visible = false;
-                    msgError("Já existe um tipo de SAIDA com descrição: " + txtCadastro.Text.Trim().ToUpper());
+                    if (DoCadastros.TipoSaida_Valida(txtCadastro.Text))
+                    {
+                        lblSuc.Visible = false;
+                        lblError.Visible = true;
+                        msgError("Já existe um tipo de Saida com descrição: " + txtCadastro.Text.Trim().ToUpper());
+                    }
+                    else
+                    {
+                        if (chkEspecie.Checked == true)
+                        {
+                            Especie = 1;
+                        }
+                        rpta = DoCadastros.TipoSaida_Cadastro(txtCadastro.Text.Trim().ToUpper(), Especie);
+                    }
+                    if (rpta.Equals("OK"))
+                    {
+                        lblError.Visible = false;
+                        msgSuccess("Centro de Custo " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
+                    }
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                msgError(ex.Message + ex.StackTrace);
             }
-            ListaTipoSaida();
+            Lista();
             txtCadastro.Clear();
+            chkEspecie.Checked = false;
             txtCadastro.Focus();
         }
         private void dgvCadastros_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -95,7 +104,7 @@ namespace views
                 {
                     if (MessageBox.Show("Excluir Tipo de pagamento?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        rpta = DoTipoEntrada.DeleteTipoSaida(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
+                        rpta = DoCadastros.TipoSaida_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
                     }
                     else
                     {
@@ -103,6 +112,7 @@ namespace views
                     }
                     if (rpta.Equals("OK"))
                     {
+                        lblError.Visible = false;
                         msgSuccess("Cadastro excluido com sucesso!");
                     }
                     else
@@ -114,7 +124,7 @@ namespace views
                 {
                     rpta = ex.Message + ex.StackTrace;
                 }
-                ListaTipoSaida();
+                Lista();
             }
         }
     }

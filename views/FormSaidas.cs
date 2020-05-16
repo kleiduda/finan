@@ -39,13 +39,13 @@ namespace views
         }
         private void ListTipoSaida()
         {
-            cbTipoSaida.DataSource = DoTipoEntrada.ListaTipoSaida();
+            cbTipoSaida.DataSource = DoCadastros.TipoSaida_Lista();
             cbTipoSaida.ValueMember = "id";
             cbTipoSaida.DisplayMember = "descricao";
         }
         private void Listpagamento()
         {
-            cbPagamento.DataSource = DoPagamento.ListaPagamento();
+            cbPagamento.DataSource = DoCadastros.Pagamento_Lista();
             cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "descricao";
         }
@@ -106,13 +106,13 @@ namespace views
         }
         public void ListSaidas()
         {
-            dgvEntradas.DataSource = DoSaida.ListSaida();
-            dgvEntradas.Columns["id"].Visible = false;
+            dgvEntradas.DataSource = DoSaida.Saida_Lista();
+           // dgvEntradas.Columns["id"].Visible = false;
             dgvEntradas.Columns["data_saida"].HeaderText = "Data";
             dgvEntradas.Columns["valor"].HeaderText = "Valor";
             dgvEntradas.Columns["observacao"].HeaderText = "Obs";
             dgvEntradas.Columns["descricao"].HeaderText = "Tipo Saída";
-            dgvEntradas.Columns["pagamento"].HeaderText = "Tipo Pagamento";
+            //dgvEntradas.Columns["pagamento"].HeaderText = "Tipo Pagamento";
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -156,7 +156,7 @@ namespace views
                 }
                 else
                 {
-                    rpta = DoSaida.CadastroSaida(
+                    rpta = DoSaida.Saida_Cadastro(
                         dateEntrada.Value, 
                         decimal.Parse(txtValor.Text),
                         txtObservacao.Text,
