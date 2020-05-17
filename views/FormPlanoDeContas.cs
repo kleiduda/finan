@@ -26,7 +26,7 @@ namespace views
         public void ResultadoMes()
         {
             DataTable dt = new DataTable();
-            dt = DoDiarioDeCaixa.DiarioDeCaixa_Resultado();
+            dt = DoDiarioDeCaixa.DiarioDeCaixa_ResultadoEntrada();
             //
         }
         
@@ -55,7 +55,7 @@ namespace views
             DateTime datetime;
             datetime = DateTime.Parse(e.Date);
             DataTable dtResultado = new DataTable();
-            dtResultado = DoDiarioDeCaixa.DiarioDeCaixa_Resultado();
+            dtResultado = DoDiarioDeCaixa.DiarioDeCaixa_ResultadoEntrada();
             decimal valorTotal = 0;
             if (dtResultado != null)
             {

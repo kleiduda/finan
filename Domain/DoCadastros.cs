@@ -194,6 +194,39 @@ namespace Domain
             return obj.TipoSaida_Delete(obj);
         }
         #endregion TIPO ENTRADA
+        //
+        #region SALDO INICIAL
+        public static string SaldoInicial_Cadastro(decimal valor, DateTime data)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.Valor = valor;
+            obj.Data = data;
+            return obj.SaldoInicial_Cadastro(obj);
+        }
+        public static DataTable SaldoInicial_Lista()
+        {
+            return new DataCadastros().SaldoInicial_Lista();
+        }
+        public static string SaldoInicial_Delete(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdSaldoInicial = id;
+            return obj.SaldoInicial_Delete(obj);
+        }
+        public static bool SaldoInicial_Valida(DateTime data)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.Data = data;
+            return obj.SaldoInicial_Valida(obj);
+        }
+        public static string SaldoInicial_Update(decimal valor, DateTime data)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.Valor = valor;
+            obj.Data = data;
+            return obj.SaldoInicial_Update(obj);
+        }
+        #endregion
     }
 
 

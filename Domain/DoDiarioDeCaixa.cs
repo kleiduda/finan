@@ -9,13 +9,17 @@ namespace Domain
 {
     public class DoDiarioDeCaixa
     {
-        public static DataTable DiarioDeCaixa_Resultado()
+        public static DataTable DiarioDeCaixa_ResultadoEntrada()
         {
-            return new DataDiarioDeCaixa().DiarioDeCaixaResultado();
+            return new DataDiarioDeCaixa().DiarioDeCaixaResultadoEntrada();
         }
         public static DataTable DiarioDeCaixaResultadoSaida()
         {
             return new DataDiarioDeCaixa().DiarioDeCaixaResultadoSaida();
+        }
+        public static DataTable DiarioCaixa_SaldoInicial()
+        {
+            return new DataDiarioDeCaixa().DiarioCaixa_SaldoInicial();
         }
     }
 }

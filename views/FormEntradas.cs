@@ -120,6 +120,8 @@ namespace views
             cbTipoEntrada.Focus();
             LimparCampos();
             EnabledEdit();
+            btnNovoCadastro.Enabled = false;
+            btnNovo.Enabled = false;
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -133,6 +135,8 @@ namespace views
             cbTipoEntrada.Focus();
             LimparCampos();
             EnabledEdit();
+            btnNovo.Enabled = false;
+            btnNovoCadastro.Enabled = false;
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -181,8 +185,33 @@ namespace views
             DesabilitarEdição();
         }
 
-       
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            DesabilitarEdição();
+            btnNovo.Enabled = true;
+            btnNovoCadastro.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEditar.Enabled = true;
+            btnSalvar.Enabled = false;
+            lblSuc.Visible = false;
+            lblError.Visible = false;
+            this.IsNew = true;
+        }
 
-        
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EnabledEdit();
+            btnSalvar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnNovo.Enabled = false;
+            btnNovoCadastro.Enabled = false;
+        }
+
+        private void dgvEntradas_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

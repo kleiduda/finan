@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEntradas));
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -39,47 +39,47 @@
             this.tabLista = new System.Windows.Forms.TabPage();
             this.dgvEntradas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNovo = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabCadastro = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnNovoCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pProduct = new System.Windows.Forms.Panel();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.cbPagamento = new System.Windows.Forms.ComboBox();
+            this.lblError = new System.Windows.Forms.Label();
+            this.lblSuc = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateEntrada = new Bunifu.Framework.UI.BunifuDatepicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.cbTipoEntrada = new System.Windows.Forms.ComboBox();
-            this.lblSuc = new System.Windows.Forms.Label();
-            this.lblError = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateEntrada = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbPagamento = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.btnNovo = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCancelar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnNovoCadastro = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnEditar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.tabControl1.SuspendLayout();
             this.tabLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCadastro.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.pProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // label9
@@ -138,30 +138,30 @@
             this.dgvEntradas.AllowUserToAddRows = false;
             this.dgvEntradas.AllowUserToDeleteRows = false;
             this.dgvEntradas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvEntradas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvEntradas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEntradas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEntradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEntradas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvEntradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEntradas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEntradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEntradas.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEntradas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEntradas.DoubleBuffered = true;
             this.dgvEntradas.EnableHeadersVisualStyles = false;
             this.dgvEntradas.GridColor = System.Drawing.Color.WhiteSmoke;
@@ -173,14 +173,14 @@
             this.dgvEntradas.Name = "dgvEntradas";
             this.dgvEntradas.ReadOnly = true;
             this.dgvEntradas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(186)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEntradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(186)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEntradas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEntradas.RowHeadersVisible = false;
             this.dgvEntradas.RowHeadersWidth = 62;
             this.dgvEntradas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -193,6 +193,7 @@
             this.dgvEntradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEntradas.Size = new System.Drawing.Size(1022, 565);
             this.dgvEntradas.TabIndex = 167;
+            this.dgvEntradas.Click += new System.EventHandler(this.dgvEntradas_Click);
             // 
             // panel2
             // 
@@ -205,6 +206,43 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(192, 104);
             this.panel2.TabIndex = 155;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovo.BorderRadius = 0;
+            this.btnNovo.ButtonText = "Novo Lançamento";
+            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovo.DisabledColor = System.Drawing.Color.Gray;
+            this.btnNovo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNovo.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNovo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNovo.Iconimage")));
+            this.btnNovo.Iconimage_right = null;
+            this.btnNovo.Iconimage_right_Selected = null;
+            this.btnNovo.Iconimage_Selected = null;
+            this.btnNovo.IconMarginLeft = 0;
+            this.btnNovo.IconMarginRight = 0;
+            this.btnNovo.IconRightVisible = false;
+            this.btnNovo.IconRightZoom = 0D;
+            this.btnNovo.IconVisible = false;
+            this.btnNovo.IconZoom = 30D;
+            this.btnNovo.IsTab = false;
+            this.btnNovo.Location = new System.Drawing.Point(0, 47);
+            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovo.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnNovo.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnNovo.selected = false;
+            this.btnNovo.Size = new System.Drawing.Size(192, 44);
+            this.btnNovo.TabIndex = 180;
+            this.btnNovo.Text = "Novo Lançamento";
+            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Textcolor = System.Drawing.Color.Gray;
+            this.btnNovo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // panel4
             // 
@@ -223,6 +261,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(192, 37);
             this.panel3.TabIndex = 174;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::views.Properties.Resources.arrow_top;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 17);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // tabCadastro
             // 
@@ -251,6 +299,117 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(192, 317);
             this.panel1.TabIndex = 156;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.BorderRadius = 0;
+            this.btnCancelar.ButtonText = "Cancelar";
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.DisabledColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancelar.Iconimage = global::views.Properties.Resources.cancel1;
+            this.btnCancelar.Iconimage_right = null;
+            this.btnCancelar.Iconimage_right_Selected = null;
+            this.btnCancelar.Iconimage_Selected = null;
+            this.btnCancelar.IconMarginLeft = 0;
+            this.btnCancelar.IconMarginRight = 0;
+            this.btnCancelar.IconRightVisible = false;
+            this.btnCancelar.IconRightZoom = 0D;
+            this.btnCancelar.IconVisible = false;
+            this.btnCancelar.IconZoom = 30D;
+            this.btnCancelar.IsTab = false;
+            this.btnCancelar.Location = new System.Drawing.Point(0, 149);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnCancelar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnCancelar.selected = false;
+            this.btnCancelar.Size = new System.Drawing.Size(192, 44);
+            this.btnCancelar.TabIndex = 178;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Textcolor = System.Drawing.Color.Gray;
+            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnNovoCadastro
+            // 
+            this.btnNovoCadastro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovoCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovoCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNovoCadastro.BorderRadius = 0;
+            this.btnNovoCadastro.ButtonText = "Novo Lançamento";
+            this.btnNovoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoCadastro.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnNovoCadastro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNovoCadastro.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnNovoCadastro.Iconimage = global::views.Properties.Resources.add__lista;
+            this.btnNovoCadastro.Iconimage_right = null;
+            this.btnNovoCadastro.Iconimage_right_Selected = null;
+            this.btnNovoCadastro.Iconimage_Selected = null;
+            this.btnNovoCadastro.IconMarginLeft = 0;
+            this.btnNovoCadastro.IconMarginRight = 0;
+            this.btnNovoCadastro.IconRightVisible = false;
+            this.btnNovoCadastro.IconRightZoom = 0D;
+            this.btnNovoCadastro.IconVisible = false;
+            this.btnNovoCadastro.IconZoom = 30D;
+            this.btnNovoCadastro.IsTab = false;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(0, 47);
+            this.btnNovoCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnNovoCadastro.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnNovoCadastro.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnNovoCadastro.selected = false;
+            this.btnNovoCadastro.Size = new System.Drawing.Size(192, 44);
+            this.btnNovoCadastro.TabIndex = 180;
+            this.btnNovoCadastro.Text = "Novo Lançamento";
+            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoCadastro.Textcolor = System.Drawing.Color.Gray;
+            this.btnNovoCadastro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.BorderRadius = 0;
+            this.btnEditar.ButtonText = "Editar";
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnEditar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnEditar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnEditar.Iconimage = global::views.Properties.Resources.edit;
+            this.btnEditar.Iconimage_right = null;
+            this.btnEditar.Iconimage_right_Selected = null;
+            this.btnEditar.Iconimage_Selected = null;
+            this.btnEditar.IconMarginLeft = 0;
+            this.btnEditar.IconMarginRight = 0;
+            this.btnEditar.IconRightVisible = false;
+            this.btnEditar.IconRightZoom = 0D;
+            this.btnEditar.IconVisible = false;
+            this.btnEditar.IconZoom = 30D;
+            this.btnEditar.IsTab = false;
+            this.btnEditar.Location = new System.Drawing.Point(0, 193);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnEditar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnEditar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnEditar.selected = false;
+            this.btnEditar.Size = new System.Drawing.Size(192, 44);
+            this.btnEditar.TabIndex = 179;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Textcolor = System.Drawing.Color.Gray;
+            this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // bunifuSeparator2
             // 
@@ -284,6 +443,53 @@
             this.panel6.Size = new System.Drawing.Size(192, 37);
             this.panel6.TabIndex = 174;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::views.Properties.Resources.arrow_top;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 17);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSalvar.BorderRadius = 0;
+            this.btnSalvar.ButtonText = "SALVAR";
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalvar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSalvar.Iconimage = global::views.Properties.Resources.save;
+            this.btnSalvar.Iconimage_right = null;
+            this.btnSalvar.Iconimage_right_Selected = null;
+            this.btnSalvar.Iconimage_Selected = null;
+            this.btnSalvar.IconMarginLeft = 0;
+            this.btnSalvar.IconMarginRight = 0;
+            this.btnSalvar.IconRightVisible = false;
+            this.btnSalvar.IconRightZoom = 0D;
+            this.btnSalvar.IconVisible = false;
+            this.btnSalvar.IconZoom = 30D;
+            this.btnSalvar.IsTab = false;
+            this.btnSalvar.Location = new System.Drawing.Point(0, 273);
+            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.btnSalvar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnSalvar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnSalvar.selected = false;
+            this.btnSalvar.Size = new System.Drawing.Size(192, 44);
+            this.btnSalvar.TabIndex = 176;
+            this.btnSalvar.Text = "SALVAR";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Textcolor = System.Drawing.Color.Gray;
+            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
             // pProduct
             // 
             this.pProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -307,6 +513,115 @@
             this.pProduct.Name = "pProduct";
             this.pProduct.Size = new System.Drawing.Size(867, 484);
             this.pProduct.TabIndex = 3;
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.bunifuCheckbox1.Checked = false;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCheckbox1.Location = new System.Drawing.Point(135, 407);
+            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
+            this.bunifuCheckbox1.TabIndex = 165;
+            // 
+            // cbPagamento
+            // 
+            this.cbPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbPagamento.BackColor = System.Drawing.SystemColors.Control;
+            this.cbPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPagamento.FormattingEnabled = true;
+            this.cbPagamento.Location = new System.Drawing.Point(46, 268);
+            this.cbPagamento.Name = "cbPagamento";
+            this.cbPagamento.Size = new System.Drawing.Size(217, 33);
+            this.cbPagamento.TabIndex = 164;
+            // 
+            // lblError
+            // 
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Location = new System.Drawing.Point(52, 444);
+            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(234, 20);
+            this.lblError.TabIndex = 144;
+            this.lblError.Text = "         erro ao fazer o login";
+            this.lblError.Visible = false;
+            // 
+            // lblSuc
+            // 
+            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSuc.AutoSize = true;
+            this.lblSuc.BackColor = System.Drawing.Color.Transparent;
+            this.lblSuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lblSuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(175)))), ((int)(((byte)(115)))));
+            this.lblSuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSuc.Location = new System.Drawing.Point(51, 444);
+            this.lblSuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSuc.Name = "lblSuc";
+            this.lblSuc.Size = new System.Drawing.Size(278, 20);
+            this.lblSuc.TabIndex = 145;
+            this.lblSuc.Text = "         erro ao cadastrar produto";
+            this.lblSuc.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(52, 243);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 14);
+            this.label2.TabIndex = 163;
+            this.label2.Text = "Forma Pagamento";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(53, 410);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 14);
+            this.label4.TabIndex = 162;
+            this.label4.Text = "Recorrente?";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(46, 87);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 14);
+            this.label3.TabIndex = 160;
+            this.label3.Text = "Data Entrada";
+            // 
+            // dateEntrada
+            // 
+            this.dateEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateEntrada.BackColor = System.Drawing.Color.Gray;
+            this.dateEntrada.BorderRadius = 0;
+            this.dateEntrada.ForeColor = System.Drawing.Color.White;
+            this.dateEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateEntrada.FormatCustom = null;
+            this.dateEntrada.Location = new System.Drawing.Point(46, 105);
+            this.dateEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateEntrada.Name = "dateEntrada";
+            this.dateEntrada.Size = new System.Drawing.Size(214, 40);
+            this.dateEntrada.TabIndex = 159;
+            this.dateEntrada.Value = new System.DateTime(2020, 5, 11, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -374,38 +689,6 @@
             this.cbTipoEntrada.Size = new System.Drawing.Size(217, 33);
             this.cbTipoEntrada.TabIndex = 151;
             // 
-            // lblSuc
-            // 
-            this.lblSuc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSuc.AutoSize = true;
-            this.lblSuc.BackColor = System.Drawing.Color.Transparent;
-            this.lblSuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblSuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(175)))), ((int)(((byte)(115)))));
-            this.lblSuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblSuc.Location = new System.Drawing.Point(51, 444);
-            this.lblSuc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSuc.Name = "lblSuc";
-            this.lblSuc.Size = new System.Drawing.Size(278, 20);
-            this.lblSuc.TabIndex = 145;
-            this.lblSuc.Text = "         erro ao cadastrar produto";
-            this.lblSuc.Visible = false;
-            // 
-            // lblError
-            // 
-            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblError.Location = new System.Drawing.Point(52, 444);
-            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(234, 20);
-            this.lblError.TabIndex = 144;
-            this.lblError.Text = "         erro ao fazer o login";
-            this.lblError.Visible = false;
-            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -417,286 +700,6 @@
             this.label7.Size = new System.Drawing.Size(92, 14);
             this.label7.TabIndex = 142;
             this.label7.Text = "Tipo de Entrada";
-            // 
-            // dateEntrada
-            // 
-            this.dateEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateEntrada.BackColor = System.Drawing.Color.Gray;
-            this.dateEntrada.BorderRadius = 0;
-            this.dateEntrada.ForeColor = System.Drawing.Color.White;
-            this.dateEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEntrada.FormatCustom = null;
-            this.dateEntrada.Location = new System.Drawing.Point(46, 105);
-            this.dateEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateEntrada.Name = "dateEntrada";
-            this.dateEntrada.Size = new System.Drawing.Size(214, 40);
-            this.dateEntrada.TabIndex = 159;
-            this.dateEntrada.Value = new System.DateTime(2020, 5, 11, 0, 0, 0, 0);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(46, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 14);
-            this.label3.TabIndex = 160;
-            this.label3.Text = "Data Entrada";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(53, 410);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 14);
-            this.label4.TabIndex = 162;
-            this.label4.Text = "Recorrente?";
-            // 
-            // cbPagamento
-            // 
-            this.cbPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbPagamento.BackColor = System.Drawing.SystemColors.Control;
-            this.cbPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPagamento.FormattingEnabled = true;
-            this.cbPagamento.Location = new System.Drawing.Point(46, 268);
-            this.cbPagamento.Name = "cbPagamento";
-            this.cbPagamento.Size = new System.Drawing.Size(217, 33);
-            this.cbPagamento.TabIndex = 164;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(52, 243);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 14);
-            this.label2.TabIndex = 163;
-            this.label2.Text = "Forma Pagamento";
-            // 
-            // bunifuCheckbox1
-            // 
-            this.bunifuCheckbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = false;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(135, 407);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 165;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovo.BorderRadius = 0;
-            this.btnNovo.ButtonText = "Novo Cadastro";
-            this.btnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovo.DisabledColor = System.Drawing.Color.Gray;
-            this.btnNovo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNovo.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNovo.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnNovo.Iconimage")));
-            this.btnNovo.Iconimage_right = null;
-            this.btnNovo.Iconimage_right_Selected = null;
-            this.btnNovo.Iconimage_Selected = null;
-            this.btnNovo.IconMarginLeft = 0;
-            this.btnNovo.IconMarginRight = 0;
-            this.btnNovo.IconRightVisible = false;
-            this.btnNovo.IconRightZoom = 0D;
-            this.btnNovo.IconVisible = false;
-            this.btnNovo.IconZoom = 30D;
-            this.btnNovo.IsTab = false;
-            this.btnNovo.Location = new System.Drawing.Point(0, 47);
-            this.btnNovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovo.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnNovo.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnNovo.selected = false;
-            this.btnNovo.Size = new System.Drawing.Size(192, 44);
-            this.btnNovo.TabIndex = 180;
-            this.btnNovo.Text = "Novo Cadastro";
-            this.btnNovo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Textcolor = System.Drawing.Color.Gray;
-            this.btnNovo.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::views.Properties.Resources.arrow_top;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancelar.BorderRadius = 0;
-            this.btnCancelar.ButtonText = "Cancelar";
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.DisabledColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCancelar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCancelar.Iconimage = global::views.Properties.Resources.cancel1;
-            this.btnCancelar.Iconimage_right = null;
-            this.btnCancelar.Iconimage_right_Selected = null;
-            this.btnCancelar.Iconimage_Selected = null;
-            this.btnCancelar.IconMarginLeft = 0;
-            this.btnCancelar.IconMarginRight = 0;
-            this.btnCancelar.IconRightVisible = false;
-            this.btnCancelar.IconRightZoom = 0D;
-            this.btnCancelar.IconVisible = false;
-            this.btnCancelar.IconZoom = 30D;
-            this.btnCancelar.IsTab = false;
-            this.btnCancelar.Location = new System.Drawing.Point(0, 149);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnCancelar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnCancelar.selected = false;
-            this.btnCancelar.Size = new System.Drawing.Size(192, 44);
-            this.btnCancelar.TabIndex = 178;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Textcolor = System.Drawing.Color.Gray;
-            this.btnCancelar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnNovoCadastro
-            // 
-            this.btnNovoCadastro.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovoCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovoCadastro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNovoCadastro.BorderRadius = 0;
-            this.btnNovoCadastro.ButtonText = "Novo Cadastro";
-            this.btnNovoCadastro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNovoCadastro.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnNovoCadastro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNovoCadastro.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnNovoCadastro.Iconimage = global::views.Properties.Resources.add__lista;
-            this.btnNovoCadastro.Iconimage_right = null;
-            this.btnNovoCadastro.Iconimage_right_Selected = null;
-            this.btnNovoCadastro.Iconimage_Selected = null;
-            this.btnNovoCadastro.IconMarginLeft = 0;
-            this.btnNovoCadastro.IconMarginRight = 0;
-            this.btnNovoCadastro.IconRightVisible = false;
-            this.btnNovoCadastro.IconRightZoom = 0D;
-            this.btnNovoCadastro.IconVisible = false;
-            this.btnNovoCadastro.IconZoom = 30D;
-            this.btnNovoCadastro.IsTab = false;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(0, 47);
-            this.btnNovoCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnNovoCadastro.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnNovoCadastro.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnNovoCadastro.selected = false;
-            this.btnNovoCadastro.Size = new System.Drawing.Size(192, 44);
-            this.btnNovoCadastro.TabIndex = 180;
-            this.btnNovoCadastro.Text = "Novo Cadastro";
-            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCadastro.Textcolor = System.Drawing.Color.Gray;
-            this.btnNovoCadastro.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEditar.BorderRadius = 0;
-            this.btnEditar.ButtonText = "Editar";
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnEditar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnEditar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnEditar.Iconimage = global::views.Properties.Resources.edit;
-            this.btnEditar.Iconimage_right = null;
-            this.btnEditar.Iconimage_right_Selected = null;
-            this.btnEditar.Iconimage_Selected = null;
-            this.btnEditar.IconMarginLeft = 0;
-            this.btnEditar.IconMarginRight = 0;
-            this.btnEditar.IconRightVisible = false;
-            this.btnEditar.IconRightZoom = 0D;
-            this.btnEditar.IconVisible = false;
-            this.btnEditar.IconZoom = 30D;
-            this.btnEditar.IsTab = false;
-            this.btnEditar.Location = new System.Drawing.Point(0, 193);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnEditar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnEditar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnEditar.selected = false;
-            this.btnEditar.Size = new System.Drawing.Size(192, 44);
-            this.btnEditar.TabIndex = 179;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Textcolor = System.Drawing.Color.Gray;
-            this.btnEditar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::views.Properties.Resources.arrow_top;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSalvar.BorderRadius = 0;
-            this.btnSalvar.ButtonText = "SALVAR";
-            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSalvar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSalvar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalvar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSalvar.Iconimage = global::views.Properties.Resources.save;
-            this.btnSalvar.Iconimage_right = null;
-            this.btnSalvar.Iconimage_right_Selected = null;
-            this.btnSalvar.Iconimage_Selected = null;
-            this.btnSalvar.IconMarginLeft = 0;
-            this.btnSalvar.IconMarginRight = 0;
-            this.btnSalvar.IconRightVisible = false;
-            this.btnSalvar.IconRightZoom = 0D;
-            this.btnSalvar.IconVisible = false;
-            this.btnSalvar.IconZoom = 30D;
-            this.btnSalvar.IsTab = false;
-            this.btnSalvar.Location = new System.Drawing.Point(0, 273);
-            this.btnSalvar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.btnSalvar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnSalvar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnSalvar.selected = false;
-            this.btnSalvar.Size = new System.Drawing.Size(192, 44);
-            this.btnSalvar.TabIndex = 176;
-            this.btnSalvar.Text = "SALVAR";
-            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Textcolor = System.Drawing.Color.Gray;
-            this.btnSalvar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -726,13 +729,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCadastro.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pProduct.ResumeLayout(false);
             this.pProduct.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

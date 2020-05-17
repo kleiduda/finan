@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace DataAccess
 {
@@ -33,14 +34,17 @@ namespace DataAccess
         public int IdTipoSaida { get; set; }
         public string DescricaoSaida { get; set; }
         public int EspecieSaida { get; set; }
-
+        //saldo inicial
+        public int IdSaldoInicial { get; set; }
+        public DateTime Data { get; set; }
+        public decimal Valor { get; set; }
 
         public DataCadastros()
         {
 
         }
 
-        public DataCadastros(int idEmpresa, string nomeFantasia, string cnpj, int idCentroCusto, string descricaoCentroCusto, int idCategoria, string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida)
+        public DataCadastros(int idEmpresa, string nomeFantasia, string cnpj, int idCentroCusto, string descricaoCentroCusto, int idCategoria, string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, DateTime data, decimal valor)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -59,6 +63,9 @@ namespace DataAccess
             IdTipoSaida = idTipoSaida;
             DescricaoSaida = descricaoSaida;
             EspecieSaida = especieSaida;
+            IdSaldoInicial = idSaldoInicial;
+            Data = data;
+            Valor = valor;
         }
 
         private SqlCommand command = new SqlCommand();
@@ -497,6 +504,7 @@ namespace DataAccess
             }
         }
         #endregion FORMA DE PAGAMENTO
+        //
         #region TIPO ENTRADA e SAIDA
         public string TipoSaida_Cadastro(DataCadastros TSaida)
         {
@@ -722,5 +730,121 @@ namespace DataAccess
             }
         }
         #endregion
+        //
+        #region SALDO INICIAL
+        public string SaldoInicial_Cadastro(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO tb_saldo_inicial (valor, data_entrada) VALUES (@valor, @data_entrada)";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@valor", SALDO.Valor);
+                    command.Parameters.AddWithValue("@data_entrada", SALDO.Data);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao realizar cadastro";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public DataTable SaldoInicial_Lista()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_saldo_inicial";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public string SaldoInicial_Delete(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE tb_saldo_inicial WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", SALDO.IdSaldoInicial);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public bool SaldoInicial_Valida(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select id, valor, CONVERT(varchar(10), data_entrada, 103) as data_entrada " +
+                        "from tb_saldo_inicial WHERE data_entrada = @data_entrada";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@data_entrada", SALDO.Data);
+                    var resultado = command.ExecuteScalar();
+                    if (resultado !=null)
+                    {
+                        return true;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+                return false;
+            }
+        }
+        public string SaldoInicial_Update(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE tb_saldo_inicial SET valor=@valor WHERE data_entrada=@data_entrada";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@valor", SALDO.Valor);
+                    command.Parameters.AddWithValue("@data_entrada", SALDO.Data);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
+
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        #endregion 
     }
 }

@@ -24,3 +24,13 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormSaidas.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormDiarioCaixa.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEmpresa.resources
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\MonthCalendar.dll
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormPlanoDeContas.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormSaldoInicial.resources
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Reactive.dll
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Threading.Tasks.Extensions.dll
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.ValueTuple.dll
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Reactive.xml
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Threading.Tasks.Extensions.xml
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.ValueTuple.xml

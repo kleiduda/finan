@@ -19,7 +19,8 @@ namespace views
 
         private void DashBoard_Load(object sender, EventArgs e)
         {
-
+            pMenuDiarioC.Height = 36;
+            pPlanoContas.Height = 36;
         }
         public void AbrirFormulario<MyForm>() where MyForm : Form, new()
         {
@@ -69,21 +70,59 @@ namespace views
         {
             AbrirFormulario<FormCategorias>();
         }
-
         private void btnSaida_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormSaidas>();
         }
-
         private void btnDiarioCaixa_Click(object sender, EventArgs e)
         {
-            panel7.Visible = false;
-            AbrirFormulario<FormDiarioCaixa>();
+            if (pMenuDiarioC.Height == 36)
+            {
+                pMenuDiarioC.Height = 144;
+            }
+            else
+            {
+                pMenuDiarioC.Height = 36;
+            }
+            
         }
 
         private void btnContatos_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormEmpresa>();
+        }
+
+        private void btnPContas_Click(object sender, EventArgs e)
+        {
+            if (pPlanoContas.Height == 36)
+            {
+                pPlanoContas.Height = 144;
+            }
+            else
+            {
+                pPlanoContas.Height = 36;
+            }
+        }
+
+        private void btnEntradaP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaidaP_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnConsolidadoDC_Click(object sender, EventArgs e)
+        {
+            pLogo.Hide();
+            AbrirFormulario<FormDiarioCaixa>();
+        }
+
+        private void btnSaldoInicial_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<FormSaldoInicial>();
         }
     }
 }
