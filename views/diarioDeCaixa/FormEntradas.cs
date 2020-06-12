@@ -26,7 +26,9 @@ namespace views
             ListTipoEntrada();
             Listpagamento();
             ListEntradas();
+
         }
+
         private void msgError(string msg)
         {
             lblError.Text = "      " + msg;
@@ -87,7 +89,9 @@ namespace views
         {
             txtValor.Clear();
             txtObservacao.Clear();
-            
+            lblSaldoAnterior.Text = "";
+            lblSaldoFinal.Text = "";
+
         }
         public void DesabilitarEdição()
         {
@@ -144,9 +148,49 @@ namespace views
             lblError.Visible = false;
             this.IsNew = true;
         }
+
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
             Moeda(ref txtValor);
+        }
+
+        public void UpdateSaldo()
+        {
+            string rpta = "";
+            try
+            {
+                if (cbTipoEntrada.Text == "Vendas - dinheiro" || cbTipoEntrada.Text == "Vendas - espécie")
+                {
+                    rpta = DoEntrada.Entrada_UpdateSaldoFinal(Convert.ToDecimal(lblSaldoFinal.Text) + Convert.ToDecimal(txtValor.Text), dateEntrada.Value);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message + ex.StackTrace;
+            }
+        }
+        public void SaldoAnterior()
+        {
+            DataTable dt = new DataTable();
+            dt = DoCadastros.SaldoInicial_Lista();
+            DateTime data = new DateTime();
+            data = Convert.ToDateTime(dateEntrada.Value.ToString());
+            var saldoAnterior = dt.AsEnumerable().Where(x => x.Field<string>("data_entrada") == data.AddDays(-1).ToShortDateString()).
+                Select(k =>
+                {
+                    var row = dt.NewRow();
+                    row.ItemArray = new object[]
+                    {
+                        k.Field<decimal>("saldo_final")
+                    };
+                    return row;
+                });
+            if (saldoAnterior.Any())
+            {
+                DataTable dtResult = saldoAnterior.CopyToDataTable();
+                lblSaldoAnterior.Text = dtResult.Rows[0][0].ToString();
+            }
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -160,22 +204,42 @@ namespace views
                 }
                 else
                 {
+                    decimal saldoInicial;
+                    decimal saldoFinal;
+                    if (lblSaldoFinal.Text == "0" && cbTipoEntrada.Text == "Vendas - dinheiro")
+                    {
+                        saldoInicial = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        saldoFinal = Convert.ToDecimal(lblSaldoAnterior.Text) + Convert.ToDecimal(txtValor.Text);
+                        rpta = DoCadastros.SaldoInicial_Cadastro(saldoInicial, saldoFinal, DateTime.Parse(dateEntrada.Value.ToString()));
+                    }
+                    else if (lblSaldoFinal.Text == "0" && cbTipoEntrada.Text != "Vendas - dinheiro")
+                    {
+                        saldoInicial = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        saldoFinal = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        rpta = DoCadastros.SaldoInicial_Cadastro(saldoInicial, saldoFinal, DateTime.Parse(dateEntrada.Value.ToString()));
+                    }
                     rpta = DoEntrada.CadastroEntrada(
-                        dateEntrada.Value, 
+                        dateEntrada.Value,
                         decimal.Parse(txtValor.Text),
                         txtObservacao.Text,
                         Convert.ToInt32(cbTipoEntrada.SelectedValue),
                         Convert.ToInt32(cbPagamento.SelectedValue)
                         );
                 }
-                if (rpta.Equals("OK"))
+                if (rpta.Equals("OK") && lblSaldoFinal.Text != "0")
                 {
                     msgSuccess("Cadastro realizado com sucesso!");
+                    UpdateSaldo();
+                }
+                else if (rpta.Equals("OK") && lblSaldoFinal.Text == "0")
+                {
+                    msgSuccess("Cadastrei um novo saldo final");
                 }
                 else
                 {
                     msgError(rpta);
                 }
+
             }
             catch (Exception ex)
             {
@@ -211,7 +275,38 @@ namespace views
 
         private void dgvEntradas_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void dateEntrada_onValueChanged(object sender, EventArgs e)
+        {
+            DateTime data = Convert.ToDateTime(dateEntrada.Value.ToString());
+            DataTable dt = new DataTable();
+            dt = DoDiarioDeCaixa.DiarioCaixa_SaldoFinal();
+            var saldoFinal = dt.AsEnumerable().Where(x => x.Field<string>("Data") == data.ToShortDateString()).
+                Select(k =>
+                {
+                    var row = dt.NewRow();
+                    row.ItemArray = new object[]
+                    {
+                        k.Field<decimal>("saldo_final")
+                    };
+                    return row;
+                });
+            if (saldoFinal.Any())
+            {
+                DataTable dtResult = saldoFinal.CopyToDataTable();
+                lblSaldoFinal.Text = dtResult.Rows[0][0].ToString();
+            }
+            else
+            {
+                lblSaldoFinal.Text = "0";
+            }
+            if (lblSaldoFinal.Text == "0")
+            {
+                SaldoAnterior();
+            }
+
         }
     }
 }

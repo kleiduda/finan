@@ -54,6 +54,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSalvar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pProduct = new System.Windows.Forms.Panel();
+            this.lblSaldoFinal = new System.Windows.Forms.Label();
             this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.cbPagamento = new System.Windows.Forms.ComboBox();
             this.lblError = new System.Windows.Forms.Label();
@@ -69,6 +70,7 @@
             this.cbTipoEntrada = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblSaldoAnterior = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntradas)).BeginInit();
@@ -494,6 +496,8 @@
             // 
             this.pProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pProduct.Controls.Add(this.lblSaldoAnterior);
+            this.pProduct.Controls.Add(this.lblSaldoFinal);
             this.pProduct.Controls.Add(this.bunifuCheckbox1);
             this.pProduct.Controls.Add(this.cbPagamento);
             this.pProduct.Controls.Add(this.lblError);
@@ -513,6 +517,15 @@
             this.pProduct.Name = "pProduct";
             this.pProduct.Size = new System.Drawing.Size(867, 484);
             this.pProduct.TabIndex = 3;
+            // 
+            // lblSaldoFinal
+            // 
+            this.lblSaldoFinal.AutoSize = true;
+            this.lblSaldoFinal.Location = new System.Drawing.Point(46, 25);
+            this.lblSaldoFinal.Name = "lblSaldoFinal";
+            this.lblSaldoFinal.Size = new System.Drawing.Size(42, 17);
+            this.lblSaldoFinal.TabIndex = 166;
+            this.lblSaldoFinal.Text = "saldo";
             // 
             // bunifuCheckbox1
             // 
@@ -622,6 +635,7 @@
             this.dateEntrada.Size = new System.Drawing.Size(214, 40);
             this.dateEntrada.TabIndex = 159;
             this.dateEntrada.Value = new System.DateTime(2020, 5, 11, 0, 0, 0, 0);
+            this.dateEntrada.onValueChanged += new System.EventHandler(this.dateEntrada_onValueChanged);
             // 
             // label1
             // 
@@ -711,6 +725,15 @@
             this.dataGridViewImageColumn1.ToolTipText = "Excluir";
             this.dataGridViewImageColumn1.Width = 623;
             // 
+            // lblSaldoAnterior
+            // 
+            this.lblSaldoAnterior.AutoSize = true;
+            this.lblSaldoAnterior.Location = new System.Drawing.Point(149, 25);
+            this.lblSaldoAnterior.Name = "lblSaldoAnterior";
+            this.lblSaldoAnterior.Size = new System.Drawing.Size(92, 17);
+            this.lblSaldoAnterior.TabIndex = 167;
+            this.lblSaldoAnterior.Text = "saldoAnterior";
+            // 
             // FormEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -778,5 +801,7 @@
         private System.Windows.Forms.ComboBox cbPagamento;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private System.Windows.Forms.Label lblSaldoFinal;
+        private System.Windows.Forms.Label lblSaldoAnterior;
     }
 }

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Diagnostics;
+using Support;
 
 namespace DataAccess
 {
@@ -37,14 +39,29 @@ namespace DataAccess
         //saldo inicial
         public int IdSaldoInicial { get; set; }
         public DateTime Data { get; set; }
-        public decimal Valor { get; set; }
+        public decimal SaldoInicial { get; set; }
+        public decimal Troco { get; set; }
+        //status
+        public int IDStatus { get; set; }
+        //plano de contas
+        public string DescricaoPlano { get; set; }
+        public decimal ValorPlano { get; set; }
+        public DateTime DataPlano { get; set; }
+        public string Doc { get; set; }
+        public string Parcela { get; set; }
+        public string ObsPlano { get; set; }
+
 
         public DataCadastros()
         {
 
         }
 
-        public DataCadastros(int idEmpresa, string nomeFantasia, string cnpj, int idCentroCusto, string descricaoCentroCusto, int idCategoria, string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, DateTime data, decimal valor)
+        public DataCadastros(int idEmpresa, string nomeFantasia, string cnpj, int idCentroCusto, string descricaoCentroCusto, int idCategoria, 
+            string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, 
+            string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, 
+            DateTime data, decimal saldoInicial, decimal troco, int status, string descricaoPlano, decimal valorPlano, 
+            DateTime dataPlano, string doc, string parcela, string obsPlano)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -65,7 +82,15 @@ namespace DataAccess
             EspecieSaida = especieSaida;
             IdSaldoInicial = idSaldoInicial;
             Data = data;
-            Valor = valor;
+            SaldoInicial = saldoInicial;
+            Troco = troco;
+            IDStatus = status;
+            DescricaoPlano = descricaoPlano;
+            ValorPlano = valorPlano;
+            DataPlano = dataPlano;
+            Doc = doc;
+            Parcela = parcela;
+            ObsPlano = obsPlano;
         }
 
         private SqlCommand command = new SqlCommand();
@@ -741,10 +766,11 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO tb_saldo_inicial (valor, data_entrada) VALUES (@valor, @data_entrada)";
-                    command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@valor", SALDO.Valor);
-                    command.Parameters.AddWithValue("@data_entrada", SALDO.Data);
+                    command.CommandText = "OpeningBalance";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@saldo_inicial", SALDO.SaldoInicial);
+                    command.Parameters.AddWithValue("@saldo_final", SALDO.Troco);
+                    command.Parameters.AddWithValue("@data", SALDO.Data);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao realizar cadastro";
                 }
                 catch (Exception ex)
@@ -763,7 +789,7 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM tb_saldo_inicial";
+                    command.CommandText = "SELECT id, saldo_inicial, saldo_final, Convert(varchar(10), data_entrada, 103) as data_entrada FROM tb_saldo_inicial";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
@@ -833,7 +859,7 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "UPDATE tb_saldo_inicial SET valor=@valor WHERE data_entrada=@data_entrada";
                     command.CommandType = CommandType.Text;
-                    command.Parameters.AddWithValue("@valor", SALDO.Valor);
+                    command.Parameters.AddWithValue("@valor", SALDO.SaldoInicial);
                     command.Parameters.AddWithValue("@data_entrada", SALDO.Data);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
 
@@ -845,6 +871,155 @@ namespace DataAccess
                 return rpta;
             }
         }
-        #endregion 
+        //Troco
+        public string SaldoInicial_Troco(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "CashBalance";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@saldo", SALDO.Troco);
+                    command.Parameters.AddWithValue("@data", SALDO.Data);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar saldo";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+
+        }
+        //saldo inicial quando dia novo
+        public string SaldoInicial_NovoDia(DataCadastros SALDO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "NewOpeningBalance";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@data", SALDO.Data);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Error";
+
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+
+        #endregion
+        //
+        #region PLANO CONTAS
+        public string PlanoContas_Cadastro(DataCadastros PLANO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "PlanoContas";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@descricao", PLANO.DescricaoPlano);
+                    command.Parameters.AddWithValue("@valor", PLANO.ValorPlano);
+                    command.Parameters.AddWithValue("@data", PLANO.DataPlano);
+                    command.Parameters.AddWithValue("@id_status", PLANO.IDStatus);
+                    command.Parameters.AddWithValue("@id_pagamento", PLANO.IdPagamento);
+                    command.Parameters.AddWithValue("@doc", PLANO.Doc);
+                    command.Parameters.AddWithValue("@parcela", PLANO.Parcela);
+                    command.Parameters.AddWithValue("@id_empresa", PLANO.IdEmpresa);
+                    command.Parameters.AddWithValue("@id_sub_categoria", PLANO.IdSubCategoria);
+                    //command.Parameters.AddWithValue("@id_tipo_entrada", PLANO.IdTipoEntrada);
+                    //command.Parameters.AddWithValue("@id_tipo_saida", PLANO.IdTipoSaida);
+                    command.Parameters.AddWithValue("@observacao", PLANO.ObsPlano);
+                    rpta = command.ExecuteNonQuery() == 1 ?  "OK" : "Error";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public DataTable PlanoContas_Lista()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_plano_contas";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable Status_Lista()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_status";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        //plano consolidado
+        public DataTable PlanoContas_Consolidado()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select pc.descricao, SUM(pc.valor) as Valor, Convert(varchar(10), pc.data_pagamento, 103) as Data, Month(pc.data_pagamento)as Mes " +
+                        "from tb_plano_contas pc GROUP BY pc.descricao, pc.valor, pc.data_pagamento ORDER BY pc.data_pagamento asc";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+
+        #endregion PLANO CONTAS
     }
 }

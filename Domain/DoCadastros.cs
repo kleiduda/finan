@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using Support;
 
 namespace Domain
 {
@@ -196,10 +197,11 @@ namespace Domain
         #endregion TIPO ENTRADA
         //
         #region SALDO INICIAL
-        public static string SaldoInicial_Cadastro(decimal valor, DateTime data)
+        public static string SaldoInicial_Cadastro(decimal saldoInicial, decimal saldoFinal, DateTime data)
         {
             DataCadastros obj = new DataCadastros();
-            obj.Valor = valor;
+            obj.SaldoInicial = saldoInicial;
+            obj.Troco = saldoFinal;
             obj.Data = data;
             return obj.SaldoInicial_Cadastro(obj);
         }
@@ -219,14 +221,63 @@ namespace Domain
             obj.Data = data;
             return obj.SaldoInicial_Valida(obj);
         }
-        public static string SaldoInicial_Update(decimal valor, DateTime data)
+        public static string SaldoInicial_Update(decimal saldoInicial, DateTime data)
         {
             DataCadastros obj = new DataCadastros();
-            obj.Valor = valor;
+            obj.SaldoInicial = saldoInicial;
             obj.Data = data;
             return obj.SaldoInicial_Update(obj);
         }
+        //troco
+        public static string SaldoInicial_Troco(decimal troco, DateTime data)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.Troco = troco;
+            obj.Data = data;
+            return obj.SaldoInicial_Troco(obj);
+        }
+        //saldo inicial quando novo dia
+        public static string SaldoInicial_NovoDia(DateTime data)
+        {
+            DataCadastros obj = new DataCadastros();;
+            obj.Data = data;
+            return obj.SaldoInicial_NovoDia(obj);
+        }
         #endregion
+        //
+        #region PLANO CONTAS
+        public static string PlanoContas_Cadastro(string descricao, decimal valor, DateTime data, int status, int pagamento, string doc, string parcela, 
+            int empresa, int subCategoria, string observacao)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DescricaoPlano = descricao;
+            obj.ValorPlano = valor;
+            obj.DataPlano = data;
+            obj.IDStatus = status;
+            obj.IdPagamento = pagamento;
+            obj.Doc = doc;
+            obj.Parcela = parcela;
+            obj.IdEmpresa = empresa;
+            obj.IdSubCategoria = subCategoria;
+            //obj.IdTipoEntrada = tipoEntrada;
+            //obj.IdTipoSaida = tipoSaida;
+            obj.ObsPlano = observacao;
+            return obj.PlanoContas_Cadastro(obj);
+        }
+        public static DataTable PlanoContas_Lista()
+        {
+            return new DataCadastros().PlanoContas_Lista();
+        }
+        public static DataTable Status_Lista()
+        {
+            return new DataCadastros().Status_Lista();
+        }
+        //consolidado
+        public static DataTable PlanoContas_Consolidado()
+        {
+            return new DataCadastros().PlanoContas_Consolidado();
+        }
+        #endregion 
     }
 
 

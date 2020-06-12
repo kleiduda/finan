@@ -13,14 +13,15 @@ using Domain;
 
 namespace views
 {
-    public partial class FormDiarioCaixa : Form
+    public partial class FormPlanoConsolidado : Form
     {
         private bool IsNew = true;
         private decimal totalEntradaDinheiro = 0;
         private decimal totalSaidaDinheiro = 0;
         private decimal troco = 0;
+        private decimal openingBalance = 0;
         private decimal saldo = 0;
-        public FormDiarioCaixa()
+        public FormPlanoConsolidado()
         {
             InitializeComponent();
         }
@@ -79,7 +80,7 @@ namespace views
             datetime = DateTime.Parse(e.Date);
             #region entradas
             DataTable dtResultado = new DataTable();
-            dtResultado = DoDiarioDeCaixa.DiarioDeCaixa_ResultadoEntrada();
+            dtResultado = DoCadastros.PlanoContas_Consolidado();
             decimal valorTotal = 0;
             if (dtResultado != null)
             {
@@ -92,8 +93,8 @@ namespace views
                         row.ItemArray = new object[]
                         {
                             k.Field<string>("descricao"),
-                            k.Field<int>("Dinheiro"),
                             k.Field<decimal>("Valor"),
+                            k.Field<string>("Data"),
                             k.Field<int>("Mes")
                         };
                         return row;
@@ -117,60 +118,11 @@ namespace views
                         descricao.AutoSize = true;
                         descricao.Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular);
                         descricao.ForeColor = Color.Black;
-                        descricao.Text = dtNew.Rows[i][0].ToString() + ": " + dtNew.Rows[i][2].ToString();
+                        //descricao + valor diario
+                        descricao.Text = dtNew.Rows[i][0].ToString() + ": " + dtNew.Rows[i][1].ToString();
                         descricao.Left = 3;
                         descricao.Top = 15;
                         p.Controls.Add(descricao);
-                        //total de entradas
-                        Panel pTotalEntrada = new Panel();
-                        pTotalEntrada.Width = 294;
-                        pTotalEntrada.Height = 65;
-                        pTotalEntrada.Top = 3;
-                        pTotalEntrada.Left = 9;
-                        pTotalEntrada.BackColor = Color.Green;
-                        pTotais.Controls.Add(pTotalEntrada);
-                        Label tEntrada = new Label();
-                        tEntrada.Font = new Font("Microsoft Sans Serif", 7, FontStyle.Bold);
-                        tEntrada.ForeColor = Color.White;
-                        tEntrada.Left = 7;
-                        tEntrada.Top = 10;
-                        tEntrada.Text = "Total Entradas";
-                        tEntrada.AutoSize = true;
-                        pTotalEntrada.Controls.Add(tEntrada);
-                        Label TotalEntrada = new Label();
-                        TotalEntrada.Name = "valorEntrada";
-                        TotalEntrada.Font = new Font("Micrsoft Sans Serif", 14, FontStyle.Regular);
-                        TotalEntrada.ForeColor = Color.White;
-                        TotalEntrada.AutoSize = true;
-                        var totalEntrada = dtResultado.AsEnumerable().Where(x => x.Field<string>("Data") == datetime.ToShortDateString()).Sum(x => x.Field<decimal>("Valor"));
-                        TotalEntrada.Text = totalEntrada.ToString("C");
-                        TotalEntrada.Top = 22;
-                        TotalEntrada.Left = 7;
-                        pTotalEntrada.Controls.Add(TotalEntrada);
-                        //entrada em dinheiro
-                        Label tDinheiro = new Label();
-                        tDinheiro.Font = new Font("Microsoft Sans Serif", 6, FontStyle.Bold);
-                        tDinheiro.ForeColor = Color.White;
-                        tDinheiro.Left = 170;
-                        tDinheiro.Top = 10;
-                        tDinheiro.Text = "Total Dinheiro";
-                        tDinheiro.AutoSize = true;
-                        pTotalEntrada.Controls.Add(tDinheiro);
-                        Label TotalEntradaDinheiro = new Label();
-                        TotalEntradaDinheiro.Name = "dinheiro";
-                        TotalEntradaDinheiro.Font = new Font("Micrsoft Sans Serif", 12, FontStyle.Regular);
-                        TotalEntradaDinheiro.ForeColor = Color.White;
-                        TotalEntradaDinheiro.AutoSize = true;
-                        totalEntradaDinheiro = dtResultado.AsEnumerable().Where(x => x.Field<string>("Data") == datetime.ToShortDateString()).Where(x => x.Field<int>("Dinheiro") == 1).Sum(x => x.Field<decimal>("Valor"));
-                        TotalEntradaDinheiro.Text = totalEntradaDinheiro.ToString("C");
-                        TotalEntradaDinheiro.Top = 22;
-                        TotalEntradaDinheiro.Left = 170;
-                        pTotalEntrada.Controls.Add(TotalEntradaDinheiro);
-                        //
-                        var totalMensalEntrada = dtResultado.AsEnumerable().Where(x => x.Field<int>("Mes") == datetime.Month).Sum(x => x.Field<decimal>("Valor"));
-                        totalMesEntrada.Text = totalMensalEntrada.ToString("C");
-
-
                     }
                 }
             }
@@ -272,129 +224,85 @@ namespace views
                 }
             }
             #endregion saidas
-            //saldo inicial
-            DataTable dtSaldo = new DataTable();
-            dtSaldo = DoDiarioDeCaixa.DiarioCaixa_SaldoInicial();
-            var saldoInicial = dtSaldo.AsEnumerable().Where(x => x.Field<string>("Data") == datetime.ToShortDateString()).
-                Select(k =>
-                {
-                    var row = dtSaldo.NewRow();
-                    row.ItemArray = new object[]
-                    {
-                        k.Field<decimal>("Valor")
-                    };
-                    return row;
-                });
-            if (saldoInicial.Any())
-            {
-                DataTable dtNew = saldoInicial.CopyToDataTable();
-                Panel pSaldoInicial = new Panel();
-                pSaldoInicial.Width = 294;
-                pSaldoInicial.Height = 65;
-                pSaldoInicial.BorderStyle = BorderStyle.FixedSingle;
-                pSaldoInicial.Top = 144;
-                pSaldoInicial.Left = 9;
-                pTotais.Controls.Add(pSaldoInicial);
-                //
-                Label saldoTitulo = new Label();
-                saldoTitulo.Name = "saldoTitulo";
-                saldoTitulo.Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular);
-                saldoTitulo.ForeColor = Color.Black;
-                saldoTitulo.AutoSize = true;
-                saldoTitulo.Text = "Saldo Inicial";
-                saldoTitulo.Top = 10;
-                saldoTitulo.Left = 7;
-                pSaldoInicial.Controls.Add(saldoTitulo);
-                //
-                Label saldoI = new Label();
-                saldoI.Name = "saldoInicial";
-                saldoI.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Regular);
-                saldoI.ForeColor = Color.Black;
-                saldoI.AutoSize = true;
-                saldo = decimal.Parse(dtNew.Rows[0][0].ToString());
-                saldoI.Text = saldo.ToString();
-                saldoI.Top = 22;
-                saldoI.Left = 7;
-                pSaldoInicial.Controls.Add(saldoI);
-                //troco
-                Panel pTroco = new Panel();
-                pTroco.Width = 294;
-                pTroco.Height = 65;
-                pTroco.BorderStyle = BorderStyle.FixedSingle;
-                pTroco.Top = 213;
-                pTroco.Left = 9;
-                pTotais.Controls.Add(pTroco);
-                //
-                Label trocoTitulo = new Label();
-                trocoTitulo.Name = "trocoTitulo";
-                trocoTitulo.Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular);
-                trocoTitulo.ForeColor = Color.Black;
-                trocoTitulo.AutoSize = true;
-                trocoTitulo.Text = "Troco";
-                trocoTitulo.Top = 10;
-                trocoTitulo.Left = 7;
-                pTroco.Controls.Add(trocoTitulo);
-                //
-                Label troco = new Label();
-                troco.Name = "saldoInicial";
-                troco.Font = new Font("Microsoft Sans Serif", 14, FontStyle.Regular);
-                troco.ForeColor = Color.Black;
-                troco.AutoSize = true;
-                decimal valorTroco = (decimal.Parse(saldo.ToString()) + decimal.Parse(totalEntradaDinheiro.ToString())) - decimal.Parse(totalSaidaDinheiro.ToString());
-                troco.Text = valorTroco.ToString();
-                troco.Top = 22;
-                troco.Left = 7;
-                pTroco.Controls.Add(troco);
 
-                //enviando sobra para o dia seguinte
-                string rpta = "";
-                try
-                {
-                    // MessageBox.Show(datetime.AddDays(+1).ToString());
-                    if (valorTroco > 0)
-                    {
-                        if (DoCadastros.SaldoInicial_Valida(Convert.ToDateTime(datetime.AddDays(+1).ToString())))
-                        {
-                           // MessageBox.Show("Verdadeiro");
-                            rpta = DoCadastros.SaldoInicial_Update(decimal.Parse(troco.Text), Convert.ToDateTime(datetime.AddDays(+1).ToShortDateString()));
-                        }
-                        else
-                        {
-                           // MessageBox.Show("Falso");
-                            rpta = DoCadastros.SaldoInicial_Cadastro(decimal.Parse(troco.Text), Convert.ToDateTime(datetime.AddDays(+1).ToShortDateString()));
-                        }
-                        //if (rpta.Equals("OK"))
-                        //{
-                        //    MessageBox.Show("Cadastrado");
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Atualizado");
-                        //}
-                    }
-                }
-                catch (Exception ex)
-                {
-                    rpta = ex.Message + ex.StackTrace;
-                }
-            }
 
 
         }
-        
+
         private void calendario_MonthChanged(object sender, Pabo.Calendar.MonthChangedEventArgs e)
         {
-            //#region saida mensal
-            //DataTable dtMensal = new DataTable();
-            //dtMensal = DoDiarioDeCaixa.DiarioDeCaixaResultadoSaida();
-            //if (dtMensal != null)
-            //{
-            //    var valorMensal = dtMensal.AsEnumerable().Where(x => x.Field<int>("Mes") == e.Month).Sum(x => x.Field<decimal>("Valor"));
-            //    totalMesEntrada.Text = valorMensal.ToString("C");
-            //}
-
-            //#endregion saida mensal
-
+            //removendo os controles entrada
+            foreach (Control item in painelEntradas.Controls.OfType<Panel>())
+            {
+                painelEntradas.Controls.Clear();
+            }
+            foreach (Control item in pTotais.Controls.OfType<Panel>())
+            {
+                pTotais.Controls.Clear();
+            }
+            //
+            //removendo os controles saida
+            foreach (Control item in painelSaidas.Controls.OfType<Panel>())
+            {
+                painelSaidas.Controls.Clear();
+            }
+            foreach (Control item in pTotais.Controls.OfType<Panel>())
+            {
+                pTotais.Controls.Clear();
+            }
+            //
+            //DateTime datetime;
+            //datetime = DateTime.Parse(e.Month.ToString());
+            
+            DataTable dtResultado = new DataTable();
+            dtResultado = DoCadastros.PlanoContas_Consolidado();
+            decimal valorTotal = 0;
+            if (dtResultado != null)
+            {
+                //var jc8x = dt.AsEnumerable().Where(x => x.Field<string>("Data") == datetime.ToShortDateString()).Sum(x => x.Field<decimal>("Valor"));
+                //var dinheiro = dt.AsEnumerable().Where(x => x.Field<int>("id_pagamento") == 1).Where(x => x.Field<string>("data_fechamento") == datetime.ToShortDateString()).Sum(x => x.Field<decimal>("TotalDeVendas"));
+                var dt = dtResultado.AsEnumerable().Where(x => x.Field<int>("Mes") == Convert.ToInt32(e.Month.ToString())).
+                    Select(k =>
+                    {
+                        var row = dtResultado.NewRow();
+                        row.ItemArray = new object[]
+                        {
+                            k.Field<string>("descricao"),
+                            k.Field<decimal>("Valor"),
+                            k.Field<string>("Data"),
+                            k.Field<int>("Mes")
+                        };
+                        return row;
+                    }
+                    );
+                if (dt.Any())
+                {
+                    DataTable dtNew = dt.CopyToDataTable();
+                    for (int i = 0; i < dtNew.Rows.Count; i++)
+                    {
+                        Panel p = new Panel();
+                        p.Name = "painelDinamico";
+                        p.Width = 246;
+                        p.Height = 51;
+                        p.BorderStyle = BorderStyle.FixedSingle;
+                        p.Left = 3;
+                        p.Top = i * 54;
+                        p.BackColor = Color.WhiteSmoke;
+                        painelEntradas.Controls.Add(p);
+                        Label descricao = new Label();
+                        descricao.AutoSize = true;
+                        descricao.Font = new Font("Microsoft Sans Serif", 7, FontStyle.Regular);
+                        descricao.ForeColor = Color.Black;
+                        //descricao + valor diario
+                        descricao.Text = dtNew.Rows[i][0].ToString() + ": " + dtNew.Rows[i][1].ToString();
+                        descricao.Left = 3;
+                        descricao.Top = 15;
+                        p.Controls.Add(descricao);
+                    }
+                }
+            }
         }
     }
 }
+
+

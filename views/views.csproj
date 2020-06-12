@@ -75,17 +75,35 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCategorias.cs">
+    <Compile Include="Cadastros\FormCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCategorias.Designer.cs">
+    <Compile Include="Cadastros\FormCategorias.Designer.cs">
       <DependentUpon>FormCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSaldoInicial.cs">
+    <Compile Include="Cadastros\FormSaldoInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSaldoInicial.Designer.cs">
+    <Compile Include="Cadastros\FormSaldoInicial.Designer.cs">
       <DependentUpon>FormSaldoInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormPlanoConsolidado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormPlanoConsolidado.Designer.cs">
+      <DependentUpon>FormPlanoConsolidado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormListaP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormListaP.Designer.cs">
+      <DependentUpon>FormListaP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormEntradaP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\FormEntradaP.Designer.cs">
+      <DependentUpon>FormEntradaP.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPlanoDeContas.cs">
       <SubType>Form</SubType>
@@ -93,52 +111,52 @@
     <Compile Include="FormPlanoDeContas.Designer.cs">
       <DependentUpon>FormPlanoDeContas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDiarioCaixa.cs">
+    <Compile Include="diarioDeCaixa\FormDiarioCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDiarioCaixa.Designer.cs">
+    <Compile Include="diarioDeCaixa\FormDiarioCaixa.Designer.cs">
       <DependentUpon>FormDiarioCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmpresa.cs">
+    <Compile Include="Cadastros\FormEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmpresa.Designer.cs">
+    <Compile Include="Cadastros\FormEmpresa.Designer.cs">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSaidas.cs">
+    <Compile Include="diarioDeCaixa\FormSaidas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSaidas.Designer.cs">
+    <Compile Include="diarioDeCaixa\FormSaidas.Designer.cs">
       <DependentUpon>FormSaidas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPagamento.cs">
+    <Compile Include="Cadastros\FormPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPagamento.Designer.cs">
+    <Compile Include="Cadastros\FormPagamento.Designer.cs">
       <DependentUpon>FormPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEntradas.cs">
+    <Compile Include="diarioDeCaixa\FormEntradas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEntradas.Designer.cs">
+    <Compile Include="diarioDeCaixa\FormEntradas.Designer.cs">
       <DependentUpon>FormEntradas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCentroCusto.cs">
+    <Compile Include="Cadastros\FormCentroCusto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCentroCusto.Designer.cs">
+    <Compile Include="Cadastros\FormCentroCusto.Designer.cs">
       <DependentUpon>FormCentroCusto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTipoSaida.cs">
+    <Compile Include="Cadastros\FormTipoSaida.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTipoSaida.Designer.cs">
+    <Compile Include="Cadastros\FormTipoSaida.Designer.cs">
       <DependentUpon>FormTipoSaida.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTipoEntrada.cs">
+    <Compile Include="Cadastros\FormTipoEntrada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTipoEntrada.Designer.cs">
+    <Compile Include="Cadastros\FormTipoEntrada.Designer.cs">
       <DependentUpon>FormTipoEntrada.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -146,37 +164,46 @@
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCategorias.resx">
+    <EmbeddedResource Include="Cadastros\FormCategorias.resx">
       <DependentUpon>FormCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSaldoInicial.resx">
+    <EmbeddedResource Include="Cadastros\FormSaldoInicial.resx">
       <DependentUpon>FormSaldoInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\FormPlanoConsolidado.resx">
+      <DependentUpon>FormPlanoConsolidado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\FormListaP.resx">
+      <DependentUpon>FormListaP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\FormEntradaP.resx">
+      <DependentUpon>FormEntradaP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPlanoDeContas.resx">
       <DependentUpon>FormPlanoDeContas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDiarioCaixa.resx">
+    <EmbeddedResource Include="diarioDeCaixa\FormDiarioCaixa.resx">
       <DependentUpon>FormDiarioCaixa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmpresa.resx">
+    <EmbeddedResource Include="Cadastros\FormEmpresa.resx">
       <DependentUpon>FormEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSaidas.resx">
+    <EmbeddedResource Include="diarioDeCaixa\FormSaidas.resx">
       <DependentUpon>FormSaidas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPagamento.resx">
+    <EmbeddedResource Include="Cadastros\FormPagamento.resx">
       <DependentUpon>FormPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEntradas.resx">
+    <EmbeddedResource Include="diarioDeCaixa\FormEntradas.resx">
       <DependentUpon>FormEntradas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCentroCusto.resx">
+    <EmbeddedResource Include="Cadastros\FormCentroCusto.resx">
       <DependentUpon>FormCentroCusto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoSaida.resx">
+    <EmbeddedResource Include="Cadastros\FormTipoSaida.resx">
       <DependentUpon>FormTipoSaida.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTipoEntrada.resx">
+    <EmbeddedResource Include="Cadastros\FormTipoEntrada.resx">
       <DependentUpon>FormTipoEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -207,6 +234,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{11acd494-1d18-4125-a362-32232a776b41}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Support\Support.csproj">
+      <Project>{7a7a1999-718c-4524-bd90-d8fb0cae38dd}</Project>
+      <Name>Support</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

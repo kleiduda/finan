@@ -37,10 +37,11 @@ namespace views
         {
             dgvCadastros.DataSource = DoCadastros.SaldoInicial_Lista();
             dgvCadastros.Columns["id"].Visible = false;
-            dgvCadastros.Columns["valor"].HeaderText = "Valor";
+            dgvCadastros.Columns["saldo_final"].Visible = false;
+            dgvCadastros.Columns["saldo_inicial"].HeaderText = "Valor";
             dgvCadastros.Columns["data_entrada"].HeaderText = "Data";
             //
-            dgvCadastros.Columns["valor"].DisplayIndex = 0;
+            dgvCadastros.Columns["saldo_inicial"].DisplayIndex = 0;
             dgvCadastros.Columns["data_entrada"].DisplayIndex = 1;
         }
         public static void Moeda(ref TextBox txt)
@@ -84,12 +85,16 @@ namespace views
                 }
                 else
                 {
-                    rpta = DoCadastros.SaldoInicial_Cadastro(decimal.Parse(txtValor.Text), Convert.ToDateTime(dtData.Value.ToShortDateString()));
+                    rpta = DoCadastros.SaldoInicial_Cadastro(decimal.Parse(txtValor.Text), decimal.Parse(txtValor.Text), Convert.ToDateTime(dtData.Value.ToShortDateString()));
 
                     if (rpta.Equals("OK"))
                     {
                         lblError.Visible = false;
                         msgSuccess("Saldo Inicial " + txtValor.Text + ", cadastrado com sucesso!");
+                    }
+                    else
+                    {
+                        msgError(rpta);
                     }
 
                 }

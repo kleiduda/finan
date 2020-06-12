@@ -1,6 +1,6 @@
 ﻿namespace views
 {
-    partial class FormDiarioCaixa
+    partial class FormPlanoConsolidado
     {
         /// <summary>
         /// Required designer variable.
@@ -146,7 +146,7 @@
             // 
             // calendario
             // 
-            this.calendario.ActiveMonth.Month = 4;
+            this.calendario.ActiveMonth.Month = 6;
             this.calendario.ActiveMonth.Year = 2020;
             this.calendario.BorderStyle = System.Windows.Forms.ButtonBorderStyle.None;
             this.calendario.Culture = new System.Globalization.CultureInfo("pt-BR");
@@ -372,7 +372,7 @@
             this.bunifuSeparator7.Transparency = 255;
             this.bunifuSeparator7.Vertical = false;
             // 
-            // FormDiarioCaixa
+            // FormPlanoConsolidado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,7 +380,7 @@
             this.ClientSize = new System.Drawing.Size(1418, 788);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDiarioCaixa";
+            this.Name = "FormPlanoConsolidado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTipoEntrada";
             this.Load += new System.EventHandler(this.FormDiarioCaixa_Load);

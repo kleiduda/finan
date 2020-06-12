@@ -34,3 +34,8 @@ M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Reactive.xml
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.Threading.Tasks.Extensions.xml
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\System.ValueTuple.xml
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormListaP.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEntradaP.resources
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Support.dll
+M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Support.pdb
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormPlanoConsolidado.resources

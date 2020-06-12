@@ -1,0 +1,6 @@
+M:\ModuloFinanceiro\FinancialModule\Support\bin\Debug\Support.dll
+M:\ModuloFinanceiro\FinancialModule\Support\bin\Debug\Support.pdb
+M:\ModuloFinanceiro\FinancialModule\Support\obj\Debug\Support.csprojAssemblyReference.cache
+M:\ModuloFinanceiro\FinancialModule\Support\obj\Debug\Support.csproj.CoreCompileInputs.cache
+M:\ModuloFinanceiro\FinancialModule\Support\obj\Debug\Support.dll
+M:\ModuloFinanceiro\FinancialModule\Support\obj\Debug\Support.pdb

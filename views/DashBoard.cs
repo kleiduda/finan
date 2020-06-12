@@ -106,7 +106,8 @@ namespace views
 
         private void btnEntradaP_Click(object sender, EventArgs e)
         {
-
+            pLogo.Hide();
+            AbrirFormulario<FormListaP>();
         }
 
         private void btnSaidaP_Click(object sender, EventArgs e)
@@ -123,6 +124,12 @@ namespace views
         private void btnSaldoInicial_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormSaldoInicial>();
+        }
+
+        private void btnConsolidadoPC_Click(object sender, EventArgs e)
+        {
+            pLogo.Hide();
+            AbrirFormulario<FormPlanoConsolidado>();
         }
     }
 }

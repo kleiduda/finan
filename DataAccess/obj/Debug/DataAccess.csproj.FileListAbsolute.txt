@@ -4,3 +4,6 @@ M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.csprojAssemb
 M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
 M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.dll
 M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.pdb
+M:\ModuloFinanceiro\FinancialModule\DataAccess\bin\Debug\Support.dll
+M:\ModuloFinanceiro\FinancialModule\DataAccess\bin\Debug\Support.pdb
+M:\ModuloFinanceiro\FinancialModule\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete

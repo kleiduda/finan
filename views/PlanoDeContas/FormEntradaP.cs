@@ -9,24 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Domain;
+using Support;
 
 namespace views
 {
-    public partial class FormSaidas : Form
+    public partial class FormEntradaP : Form
     {
         private bool IsNew = true;
-        public FormSaidas()
+        public FormEntradaP()
         {
             InitializeComponent();
         }
-        private void FormSaidas_Load(object sender, EventArgs e)
+        private void FormEntradas_Load(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
             TabIndex();
-            ListTipoSaida();
+            ListSubCategoria();
+            ListEmpresa();
             Listpagamento();
-            ListSaidas();
+            ListStatus();
+
         }
+
         private void msgError(string msg)
         {
             lblError.Text = "      " + msg;
@@ -37,11 +40,19 @@ namespace views
             lblSuc.Text = "      " + msg;
             lblSuc.Visible = true;
         }
-        private void ListTipoSaida()
+        
+        private void ListEmpresa()
         {
-            cbTipoSaida.DataSource = DoCadastros.TipoSaida_Lista();
-            cbTipoSaida.ValueMember = "id";
-            cbTipoSaida.DisplayMember = "descricao";
+            cbEmpresa.DataSource = DoCadastros.EmpresaLista();
+            cbEmpresa.ValueMember = "id";
+            cbEmpresa.DisplayMember = "nome_fantasia";
+        }
+        
+        private void ListSubCategoria()
+        {
+            cbSubCategoria.DataSource = DoCadastros.Categoria_ListaSubCategoria();
+            cbSubCategoria.ValueMember = "id";
+            cbSubCategoria.DisplayMember = "descricao";
         }
         private void Listpagamento()
         {
@@ -49,12 +60,18 @@ namespace views
             cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "descricao";
         }
+        private void ListStatus()
+        {
+            cbStatus.DataSource = DoCadastros.Status_Lista();
+            cbStatus.ValueMember = "id";
+            cbStatus.DisplayMember = "status";
+        }
         public void CarregarDataGrid()
         {
         }
         public void TabIndex()
         {
-            cbTipoSaida.TabIndex = 1;
+            cbStatus.TabIndex = 1;
             cbPagamento.TabIndex = 2;
             dateEntrada.TabIndex = 3;
             txtValor.TabIndex = 4;
@@ -87,52 +104,52 @@ namespace views
         {
             txtValor.Clear();
             txtObservacao.Clear();
-            
+            txtDescricao.Clear();
+            txtParcela.Clear();
+            txtDoc.Clear();
+            dateEntrada.ResetText();
+            cbEmpresa.ResetText();
+            cbPagamento.ResetText();
+            Status.ResetText();
+            cbSubCategoria.ResetText();
+            cbStatus.ResetText();
+
         }
         public void DesabilitarEdição()
         {
             txtValor.Enabled = false;
             txtObservacao.Enabled = false;
-            cbTipoSaida.Enabled = false;
+            txtDescricao.Enabled = false; 
+            txtParcela.Enabled = false; 
+            txtDoc.Enabled = false; 
+            dateEntrada.Enabled = false; 
+            cbEmpresa.Enabled = false; 
             cbPagamento.Enabled = false;
+            Status.Enabled = false;
+            cbSubCategoria.Enabled = false;
+            cbStatus.Enabled = false;
         }
         public void EnabledEdit()
         {
             txtValor.Enabled = true;
             txtObservacao.Enabled = true;
-            cbTipoSaida.Enabled = true;
+            txtDescricao.Enabled = true;
+            txtParcela.Enabled = true;
+            txtDoc.Enabled = true;
+            dateEntrada.Enabled = true;
+            cbEmpresa.Enabled = true;
             cbPagamento.Enabled = true;
-            cbTipoSaida.Focus();
+            Status.Enabled = true;
+            cbSubCategoria.Enabled = true;
+            cbStatus.Enabled = true;
         }
-        public void ListSaidas()
-        {
-            dgvEntradas.DataSource = DoSaida.Saida_Lista();
-           // dgvEntradas.Columns["id"].Visible = false;
-            dgvEntradas.Columns["data_saida"].HeaderText = "Data";
-            dgvEntradas.Columns["valor"].HeaderText = "Valor";
-            dgvEntradas.Columns["observacao"].HeaderText = "Obs";
-            dgvEntradas.Columns["descricao"].HeaderText = "Tipo Saída";
-            //dgvEntradas.Columns["pagamento"].HeaderText = "Tipo Pagamento";
-        }
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedIndex = 2;
-            cbTipoSaida.Focus();
-            LimparCampos();
-            EnabledEdit();
-            btnCancelar.Enabled = true;
-            btnEditar.Enabled = false;
-            btnSalvar.Enabled = true;
-            lblSuc.Visible = false;
-            lblError.Visible = false;
-            this.IsNew = true;
-        }
+        
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
-            cbTipoSaida.Focus();
+            dateEntrada.Focus();
             LimparCampos();
             EnabledEdit();
+            btnNovoCadastro.Enabled = false;
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -140,30 +157,52 @@ namespace views
             lblError.Visible = false;
             this.IsNew = true;
         }
+
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
             Moeda(ref txtValor);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+            DesabilitarEdição();
+            btnNovoCadastro.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEditar.Enabled = true;
+            btnSalvar.Enabled = false;
+            lblSuc.Visible = false;
+            lblError.Visible = false;
+            this.IsNew = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EnabledEdit();
+            btnSalvar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnNovoCadastro.Enabled = false;
+        }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string rpta = "";
             try
             {
-                if (this.txtValor.Text == string.Empty)
-                {
-                    lblSuc.Visible = false;
-                    msgError("Alguns campos obrigatórios não foram preenchidos!");
-                }
-                else
-                {
-                    rpta = DoSaida.Saida_Cadastro(
-                        dateEntrada.Value, 
-                        decimal.Parse(txtValor.Text),
-                        txtObservacao.Text,
-                        Convert.ToInt32(cbTipoSaida.SelectedValue),
-                        Convert.ToInt32(cbPagamento.SelectedValue)
-                        );
-                }
+                rpta = DoCadastros.PlanoContas_Cadastro
+                    (
+                        txtDescricao.Text,
+                        Convert.ToDecimal(txtValor.Text),
+                        dateEntrada.Value,
+                        Convert.ToInt32(cbStatus.SelectedValue),
+                        Convert.ToInt32(cbPagamento.SelectedValue),
+                        txtDoc.Text,
+                        txtParcela.Text,
+                        Convert.ToInt32(cbEmpresa.SelectedValue),
+                        Convert.ToInt32(cbSubCategoria.SelectedValue),
+                        txtObservacao.Text
+                    );
                 if (rpta.Equals("OK"))
                 {
                     msgSuccess("Cadastro realizado com sucesso!");
@@ -175,14 +214,9 @@ namespace views
             }
             catch (Exception ex)
             {
-                rpta = ex.Message + ex.StackTrace;
+
             }
-            ListSaidas();
-            DesabilitarEdição();
         }
 
-       
-
-        
     }
 }

@@ -21,5 +21,14 @@ namespace Domain
         {
             return new DataDiarioDeCaixa().DiarioCaixa_SaldoInicial();
         }
+        public static DataTable DiarioCaixa_SaldoFinal()
+        {
+            return new DataDiarioDeCaixa().DiarioCaixa_SaldoFinal();
+        }
+        public static DataTable DiarioCaixa_SaldoCaixa()
+        {
+            return new DataDiarioDeCaixa().DiarioCaixa_SaldoCaixa();
+        }
+
     }
 }

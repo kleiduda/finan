@@ -30,25 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.pLogo = new System.Windows.Forms.Panel();
+            this.imageLogo = new System.Windows.Forms.PictureBox();
             this.pConteudo = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.fotoUsuario = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pMenuEstratoB = new System.Windows.Forms.Panel();
+            this.btnImportar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pMenuCadastros = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pPlanoContas = new System.Windows.Forms.Panel();
-            this.pMenuDiarioC = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pHeader = new System.Windows.Forms.Panel();
-            this.imageLogo = new System.Windows.Forms.PictureBox();
-            this.fotoUsuario = new System.Windows.Forms.PictureBox();
-            this.btnImportar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSaldoInicial = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnContatos = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnTiposSaida = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -56,16 +50,23 @@
             this.btnCategorias = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnFormasPagto = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnTiposEntrada = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pPlanoContas = new System.Windows.Forms.Panel();
             this.btnConsolidadoPC = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSaidaP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEntradaP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPContas = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pMenuDiarioC = new System.Windows.Forms.Panel();
             this.btnConsolidadoDC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSaida = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEntrada = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDiarioCaixa = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pHeader = new System.Windows.Forms.Panel();
             this.pLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.pConteudo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pMenuEstratoB.SuspendLayout();
@@ -73,8 +74,6 @@
             this.panel3.SuspendLayout();
             this.pPlanoContas.SuspendLayout();
             this.pMenuDiarioC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // pLogo
@@ -85,6 +84,17 @@
             this.pLogo.Name = "pLogo";
             this.pLogo.Size = new System.Drawing.Size(225, 170);
             this.pLogo.TabIndex = 170;
+            // 
+            // imageLogo
+            // 
+            this.imageLogo.Image = global::views.Properties.Resources.logotipo;
+            this.imageLogo.Location = new System.Drawing.Point(38, 29);
+            this.imageLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.imageLogo.Name = "imageLogo";
+            this.imageLogo.Size = new System.Drawing.Size(144, 105);
+            this.imageLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageLogo.TabIndex = 0;
+            this.imageLogo.TabStop = false;
             // 
             // pConteudo
             // 
@@ -109,6 +119,16 @@
             this.lblUsuario.Size = new System.Drawing.Size(128, 17);
             this.lblUsuario.TabIndex = 153;
             this.lblUsuario.Text = "Olá, Kleiton Freitas";
+            // 
+            // fotoUsuario
+            // 
+            this.fotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.fotoUsuario.Location = new System.Drawing.Point(1622, 5);
+            this.fotoUsuario.Name = "fotoUsuario";
+            this.fotoUsuario.Size = new System.Drawing.Size(45, 45);
+            this.fotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.fotoUsuario.TabIndex = 153;
+            this.fotoUsuario.TabStop = false;
             // 
             // panel1
             // 
@@ -170,6 +190,42 @@
             this.pMenuEstratoB.Size = new System.Drawing.Size(229, 71);
             this.pMenuEstratoB.TabIndex = 178;
             // 
+            // btnImportar
+            // 
+            this.btnImportar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnImportar.BackColor = System.Drawing.Color.White;
+            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImportar.BorderRadius = 5;
+            this.btnImportar.ButtonText = "+ Importar Extrato";
+            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnImportar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImportar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnImportar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImportar.Iconimage")));
+            this.btnImportar.Iconimage_right = null;
+            this.btnImportar.Iconimage_right_Selected = null;
+            this.btnImportar.Iconimage_Selected = null;
+            this.btnImportar.IconMarginLeft = 0;
+            this.btnImportar.IconMarginRight = 0;
+            this.btnImportar.IconRightVisible = true;
+            this.btnImportar.IconRightZoom = 0D;
+            this.btnImportar.IconVisible = false;
+            this.btnImportar.IconZoom = 90D;
+            this.btnImportar.IsTab = false;
+            this.btnImportar.Location = new System.Drawing.Point(0, 18);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Normalcolor = System.Drawing.Color.White;
+            this.btnImportar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnImportar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnImportar.selected = false;
+            this.btnImportar.Size = new System.Drawing.Size(229, 36);
+            this.btnImportar.TabIndex = 179;
+            this.btnImportar.Text = "+ Importar Extrato";
+            this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportar.Textcolor = System.Drawing.Color.Gray;
+            this.btnImportar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -213,136 +269,6 @@
             this.pMenuCadastros.Name = "pMenuCadastros";
             this.pMenuCadastros.Size = new System.Drawing.Size(229, 284);
             this.pMenuCadastros.TabIndex = 181;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 18);
-            this.label8.TabIndex = 153;
-            this.label8.Text = "CADASTROS";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pPlanoContas);
-            this.panel3.Controls.Add(this.pMenuDiarioC);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(229, 380);
-            this.panel3.TabIndex = 155;
-            // 
-            // pPlanoContas
-            // 
-            this.pPlanoContas.Controls.Add(this.btnConsolidadoPC);
-            this.pPlanoContas.Controls.Add(this.btnSaidaP);
-            this.pPlanoContas.Controls.Add(this.btnEntradaP);
-            this.pPlanoContas.Controls.Add(this.btnPContas);
-            this.pPlanoContas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pPlanoContas.Location = new System.Drawing.Point(0, 162);
-            this.pPlanoContas.Name = "pPlanoContas";
-            this.pPlanoContas.Size = new System.Drawing.Size(229, 36);
-            this.pPlanoContas.TabIndex = 188;
-            // 
-            // pMenuDiarioC
-            // 
-            this.pMenuDiarioC.Controls.Add(this.btnConsolidadoDC);
-            this.pMenuDiarioC.Controls.Add(this.btnSaida);
-            this.pMenuDiarioC.Controls.Add(this.btnEntrada);
-            this.pMenuDiarioC.Controls.Add(this.btnDiarioCaixa);
-            this.pMenuDiarioC.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pMenuDiarioC.Location = new System.Drawing.Point(0, 18);
-            this.pMenuDiarioC.Name = "pMenuDiarioC";
-            this.pMenuDiarioC.Size = new System.Drawing.Size(229, 144);
-            this.pMenuDiarioC.TabIndex = 177;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 18);
-            this.label1.TabIndex = 153;
-            this.label1.Text = "TRANSAÇÕES";
-            // 
-            // pHeader
-            // 
-            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(107)))), ((int)(((byte)(192)))));
-            this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pHeader.Location = new System.Drawing.Point(0, 0);
-            this.pHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(1693, 17);
-            this.pHeader.TabIndex = 169;
-            // 
-            // imageLogo
-            // 
-            this.imageLogo.Image = global::views.Properties.Resources.logotipo;
-            this.imageLogo.Location = new System.Drawing.Point(38, 29);
-            this.imageLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.imageLogo.Name = "imageLogo";
-            this.imageLogo.Size = new System.Drawing.Size(144, 105);
-            this.imageLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageLogo.TabIndex = 0;
-            this.imageLogo.TabStop = false;
-            // 
-            // fotoUsuario
-            // 
-            this.fotoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.fotoUsuario.Location = new System.Drawing.Point(1622, 5);
-            this.fotoUsuario.Name = "fotoUsuario";
-            this.fotoUsuario.Size = new System.Drawing.Size(45, 45);
-            this.fotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.fotoUsuario.TabIndex = 153;
-            this.fotoUsuario.TabStop = false;
-            // 
-            // btnImportar
-            // 
-            this.btnImportar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnImportar.BackColor = System.Drawing.Color.White;
-            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImportar.BorderRadius = 5;
-            this.btnImportar.ButtonText = "+ Importar Extrato";
-            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImportar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnImportar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImportar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnImportar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImportar.Iconimage")));
-            this.btnImportar.Iconimage_right = null;
-            this.btnImportar.Iconimage_right_Selected = null;
-            this.btnImportar.Iconimage_Selected = null;
-            this.btnImportar.IconMarginLeft = 0;
-            this.btnImportar.IconMarginRight = 0;
-            this.btnImportar.IconRightVisible = true;
-            this.btnImportar.IconRightZoom = 0D;
-            this.btnImportar.IconVisible = false;
-            this.btnImportar.IconZoom = 90D;
-            this.btnImportar.IsTab = false;
-            this.btnImportar.Location = new System.Drawing.Point(0, 18);
-            this.btnImportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Normalcolor = System.Drawing.Color.White;
-            this.btnImportar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnImportar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnImportar.selected = false;
-            this.btnImportar.Size = new System.Drawing.Size(229, 36);
-            this.btnImportar.TabIndex = 179;
-            this.btnImportar.Text = "+ Importar Extrato";
-            this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportar.Textcolor = System.Drawing.Color.Gray;
-            this.btnImportar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // btnSaldoInicial
             // 
@@ -603,6 +529,42 @@
             this.btnTiposEntrada.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTiposEntrada.Click += new System.EventHandler(this.btnTiposEntrada_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 18);
+            this.label8.TabIndex = 153;
+            this.label8.Text = "CADASTROS";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pPlanoContas);
+            this.panel3.Controls.Add(this.pMenuDiarioC);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(229, 380);
+            this.panel3.TabIndex = 155;
+            // 
+            // pPlanoContas
+            // 
+            this.pPlanoContas.Controls.Add(this.btnConsolidadoPC);
+            this.pPlanoContas.Controls.Add(this.btnEntradaP);
+            this.pPlanoContas.Controls.Add(this.btnPContas);
+            this.pPlanoContas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pPlanoContas.Location = new System.Drawing.Point(0, 162);
+            this.pPlanoContas.Name = "pPlanoContas";
+            this.pPlanoContas.Size = new System.Drawing.Size(229, 159);
+            this.pPlanoContas.TabIndex = 188;
+            // 
             // btnConsolidadoPC
             // 
             this.btnConsolidadoPC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -625,7 +587,7 @@
             this.btnConsolidadoPC.IconVisible = true;
             this.btnConsolidadoPC.IconZoom = 30D;
             this.btnConsolidadoPC.IsTab = false;
-            this.btnConsolidadoPC.Location = new System.Drawing.Point(0, 108);
+            this.btnConsolidadoPC.Location = new System.Drawing.Point(0, 72);
             this.btnConsolidadoPC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsolidadoPC.Name = "btnConsolidadoPC";
             this.btnConsolidadoPC.Normalcolor = System.Drawing.Color.White;
@@ -638,43 +600,7 @@
             this.btnConsolidadoPC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsolidadoPC.Textcolor = System.Drawing.Color.Gray;
             this.btnConsolidadoPC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnSaidaP
-            // 
-            this.btnSaidaP.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnSaidaP.BackColor = System.Drawing.Color.White;
-            this.btnSaidaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaidaP.BorderRadius = 5;
-            this.btnSaidaP.ButtonText = "Saída";
-            this.btnSaidaP.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaidaP.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSaidaP.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSaidaP.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSaidaP.Iconimage = global::views.Properties.Resources.Asset_16saida;
-            this.btnSaidaP.Iconimage_right = null;
-            this.btnSaidaP.Iconimage_right_Selected = null;
-            this.btnSaidaP.Iconimage_Selected = null;
-            this.btnSaidaP.IconMarginLeft = 0;
-            this.btnSaidaP.IconMarginRight = 0;
-            this.btnSaidaP.IconRightVisible = true;
-            this.btnSaidaP.IconRightZoom = 0D;
-            this.btnSaidaP.IconVisible = true;
-            this.btnSaidaP.IconZoom = 30D;
-            this.btnSaidaP.IsTab = false;
-            this.btnSaidaP.Location = new System.Drawing.Point(0, 72);
-            this.btnSaidaP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSaidaP.Name = "btnSaidaP";
-            this.btnSaidaP.Normalcolor = System.Drawing.Color.White;
-            this.btnSaidaP.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaidaP.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnSaidaP.selected = false;
-            this.btnSaidaP.Size = new System.Drawing.Size(229, 36);
-            this.btnSaidaP.TabIndex = 176;
-            this.btnSaidaP.Text = "Saída";
-            this.btnSaidaP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaidaP.Textcolor = System.Drawing.Color.Gray;
-            this.btnSaidaP.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaidaP.Click += new System.EventHandler(this.btnSaidaP_Click);
+            this.btnConsolidadoPC.Click += new System.EventHandler(this.btnConsolidadoPC_Click);
             // 
             // btnEntradaP
             // 
@@ -749,6 +675,18 @@
             this.btnPContas.Textcolor = System.Drawing.Color.Gray;
             this.btnPContas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPContas.Click += new System.EventHandler(this.btnPContas_Click);
+            // 
+            // pMenuDiarioC
+            // 
+            this.pMenuDiarioC.Controls.Add(this.btnConsolidadoDC);
+            this.pMenuDiarioC.Controls.Add(this.btnSaida);
+            this.pMenuDiarioC.Controls.Add(this.btnEntrada);
+            this.pMenuDiarioC.Controls.Add(this.btnDiarioCaixa);
+            this.pMenuDiarioC.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pMenuDiarioC.Location = new System.Drawing.Point(0, 18);
+            this.pMenuDiarioC.Name = "pMenuDiarioC";
+            this.pMenuDiarioC.Size = new System.Drawing.Size(229, 144);
+            this.pMenuDiarioC.TabIndex = 177;
             // 
             // btnConsolidadoDC
             // 
@@ -898,6 +836,30 @@
             this.btnDiarioCaixa.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiarioCaixa.Click += new System.EventHandler(this.btnDiarioCaixa_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 18);
+            this.label1.TabIndex = 153;
+            this.label1.Text = "TRANSAÇÕES";
+            // 
+            // pHeader
+            // 
+            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(107)))), ((int)(((byte)(192)))));
+            this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pHeader.Location = new System.Drawing.Point(0, 0);
+            this.pHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.pHeader.Name = "pHeader";
+            this.pHeader.Size = new System.Drawing.Size(1693, 17);
+            this.pHeader.TabIndex = 169;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -913,8 +875,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.DashBoard_Load);
             this.pLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.pConteudo.ResumeLayout(false);
             this.pConteudo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pMenuEstratoB.ResumeLayout(false);
@@ -925,8 +889,6 @@
             this.panel3.PerformLayout();
             this.pPlanoContas.ResumeLayout(false);
             this.pMenuDiarioC.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -963,7 +925,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Panel pMenuDiarioC;
         private System.Windows.Forms.Panel pPlanoContas;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSaidaP;
         private Bunifu.Framework.UI.BunifuFlatButton btnEntradaP;
         private Bunifu.Framework.UI.BunifuFlatButton btnConsolidadoDC;
         private Bunifu.Framework.UI.BunifuFlatButton btnConsolidadoPC;

@@ -25,5 +25,12 @@ namespace Domain
         {
             return new DataEntrada().ListEntradas();
         }
+        public static string Entrada_UpdateSaldoFinal(decimal saldoFinal, DateTime data)
+        {
+            DataEntrada obj = new DataEntrada();
+            obj.SaldoFinal = saldoFinal;
+            obj.Data = data;
+            return obj.UpdateSaldo(obj);
+        }
     }
 }

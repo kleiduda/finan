@@ -7,3 +7,5 @@ M:\ModuloFinanceiro\FinancialModule\Domain\obj\Debug\Domain.csproj.CoreCompileIn
 M:\ModuloFinanceiro\FinancialModule\Domain\obj\Debug\Domain.csproj.CopyComplete
 M:\ModuloFinanceiro\FinancialModule\Domain\obj\Debug\Domain.dll
 M:\ModuloFinanceiro\FinancialModule\Domain\obj\Debug\Domain.pdb
+M:\ModuloFinanceiro\FinancialModule\Domain\bin\Debug\Support.dll
+M:\ModuloFinanceiro\FinancialModule\Domain\bin\Debug\Support.pdb

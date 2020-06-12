@@ -72,7 +72,49 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "select valor, CONVERT(varchar(10), si.data_entrada, 103) as Data from tb_saldo_inicial si";
+                    command.CommandText = "select saldo_inicial, CONVERT(varchar(10), si.data_entrada, 103) as Data from tb_saldo_inicial si";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable DiarioCaixa_SaldoFinal()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select saldo_final, CONVERT(varchar(10), si.data_entrada, 103) as Data from tb_saldo_inicial si";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable DiarioCaixa_SaldoCaixa()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select saldo_caixa From tb_saldo_caixa";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
