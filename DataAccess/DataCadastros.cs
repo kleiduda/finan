@@ -250,6 +250,28 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string CentroCusto_Update(DataCadastros CUSTO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE tb_centro_custo SET descricao=@descricao WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", CUSTO.IdCentroCusto);
+                    command.Parameters.AddWithValue("@descricao", CUSTO.DescricaoCentroCusto);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message + ex.StackTrace;
+                }
+                return rpta;
+            }
+        }
         public bool CentroCusto_Valida(DataCadastros Custo)
         {
             using (var connection = GetConnection())
@@ -273,6 +295,28 @@ namespace DataAccess
 
                 }
                 return false;
+            }
+        }
+        public DataTable CentroCusto_ListaPorID(DataCadastros CUSTO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_centro_custo WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", CUSTO.IdCentroCusto);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
             }
         }
         #endregion CENTRO DE CUSTO
@@ -415,6 +459,28 @@ namespace DataAccess
                 return false;
             }
         }
+        public DataTable Categoria_ListaPorID(DataCadastros CATEGORIA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_categoria WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", CATEGORIA.IdCategoria);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
         #endregion CATEGORIAS
         //
         #region FORMAS DE PAGAMENTO
@@ -448,8 +514,9 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE tb_forma_pagamento SET descricao=@descricao WHERE descricao=@descricao";
+                    command.CommandText = "UPDATE tb_forma_pagamento SET descricao=@descricao WHERE id=@id";
                     command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", Pagto.IdPagamento);
                     command.Parameters.AddWithValue("@descricao", Pagto.DescricaoPagamento);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
                 }
@@ -497,6 +564,28 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "SELECT * FROM tb_forma_pagamento";
                     command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable Pagamento_ListaPorID(DataCadastros PAGTO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_forma_pagamento WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", PAGTO.IdPagamento);
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
                 }
@@ -562,8 +651,9 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE tb_tipo_saida SET descricao=@descricao WHERE descricao=@descricao";
+                    command.CommandText = "UPDATE tb_tipo_saida SET descricao=@descricao WHERE id=@id";
                     command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", TSaida.IdTipoSaida);
                     command.Parameters.AddWithValue("@descricao", TSaida.DescricaoSaida);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
                 }
@@ -642,8 +732,30 @@ namespace DataAccess
                 return rpta;
             }
         }
-        //entrada
-        public string TipoEntrada_Cadastro(DataCadastros TEntrada)
+        public DataTable TipoSaida_ListaPorID(DataCadastros SAIDA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_tipo_saida WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", SAIDA.IdTipoSaida);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+            //entrada
+            public string TipoEntrada_Cadastro(DataCadastros TEntrada)
         {
             using (var connection = GetConnection())
             {
@@ -674,8 +786,9 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE tb_tipo_entrada SET descricao=@descricao WHERE descricao=@descricao";
+                    command.CommandText = "UPDATE tb_tipo_entrada SET descricao=@descricao WHERE id=@id";
                     command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", TEntrada.IdTipoEntrada);
                     command.Parameters.AddWithValue("@descricao", TEntrada.DescricaoEntrada);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
                 }
@@ -754,6 +867,29 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public DataTable TipoEntrada_ListaPorID(DataCadastros ENTRADA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_tipo_entrada WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", ENTRADA.IdTipoEntrada);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        
         #endregion
         //
         #region SALDO INICIAL

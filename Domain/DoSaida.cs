@@ -25,5 +25,11 @@ namespace Domain
         {
             return new DataSaida().Saida_Lista();
         }
+        public static string Saida_Delete(int idSaida)
+        {
+            DataSaida obj = new DataSaida();
+            obj.IdSaida = idSaida;
+            return obj.Saida_Delete(obj);
+        }
     }
 }

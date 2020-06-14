@@ -12,17 +12,50 @@ using Domain;
 
 namespace views
 {
-    public partial class FormTipoEntrada : Form
+    public partial class TipoEntrada : Form
     {
-        public FormTipoEntrada()
+        private bool IsNew = true;
+        public TipoEntrada()
         {
             InitializeComponent();
         }
 
         private void FormTipoEntrada_Load(object sender, EventArgs e)
         {
-            Lista();
+            if (lblID.Text != "novo")
+            {
+                IsNew = false;
+                Edit();
+            }
+           
+        }
+        public TipoEntrada(string value)
+        {
+            InitializeComponent();
+            lblID.Text = value;
+        }
+        
+        public void Edit()
+        {
+            DataTable dt = new DataTable();
+            dt = DoCadastros.TipoEntrada_ListaPorID(int.Parse(lblID.Text));
+            txtCadastro.Text = dt.Rows[0]["descricao"].ToString();
+        }
+        private void LimparCampos()
+        {
+            txtCadastro.Clear();
             
+
+        }
+        public void DesabilitarEdição()
+        {
+            txtCadastro.Enabled = false;
+            chkEspecie.Enabled = false;
+        }
+        public void EnabledEdit()
+        {
+            txtCadastro.Enabled = true;
+            chkEspecie.Enabled = true;
         }
         private void msgError(string msg)
         {
@@ -34,17 +67,8 @@ namespace views
             lblSuc.Text = "      " + msg;
             lblSuc.Visible = true;
         }
-        public void Lista()
-        {
-            dgvCadastros.DataSource = DoCadastros.TipoEntrada_Lista();
-            dgvCadastros.Columns["id"].Visible = false;
-            dgvCadastros.Columns["descricao"].DisplayIndex = 0;
-            dgvCadastros.Columns["descricao"].HeaderText = "Nome";
-            dgvCadastros.Columns["delete"].DisplayIndex = 2;
-            dgvCadastros.Columns["delete"].HeaderText = "...";
-            dgvCadastros.Columns["delete"].Width = 50;
-        }
-       
+
+
         private void txtCadastro_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -72,18 +96,25 @@ namespace views
                         lblError.Visible = true;
                         msgError("Já existe um tipo de Entrada com descrição: " + txtCadastro.Text.Trim().ToUpper());
                     }
-                    else
+                    else if (IsNew == true)
                     {
                         if (chkEspecie.Checked == true)
                         {
                             Especie = 1;
                         }
                         rpta = DoCadastros.TipoEntrada_Cadastro(txtCadastro.Text.Trim().ToUpper(), Especie);
+                    } else if (IsNew == false)
+                    {
+                        DoCadastros.TipoEntrada_Update(int.Parse(lblID.Text), txtCadastro.Text);
                     }
-                    if (rpta.Equals("OK"))
+                    if (rpta.Equals("OK") && IsNew == true)
                     {
                         lblError.Visible = false;
                         msgSuccess("Tipo de Entrada " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
+                    }
+                    else
+                    {
+                        msgSuccess("Tipo de Entrada " + txtCadastro.Text.Trim().ToUpper() + ", atualizado com sucesso!");
                     }
                 }
             }
@@ -91,43 +122,34 @@ namespace views
             {
                 msgError(ex.Message + ex.StackTrace);
             }
-            Lista();
             txtCadastro.Clear();
             chkEspecie.Checked = false;
             txtCadastro.Focus();
         }
 
-        private void dgvCadastros_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                string rpta = "";
-                try
-                {
-                    if (MessageBox.Show("Excluir Tipo de entrada?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        rpta = DoCadastros.TipoEntrada_Delete(int.Parse(dgvCadastros.CurrentRow.Cells["id"].Value.ToString()));
-                    }
-                    else
-                    {
-                        // user clicked no
-                    }
-                    if (rpta.Equals("OK"))
-                    {
-                        lblError.Visible = false;
-                        msgSuccess("Cadastro excluido com sucesso!");
-                    }
-                    else
-                    {
-                        msgError("Erro ao tentar excluir");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    rpta = ex.Message + ex.StackTrace;
-                }
-                Lista();
-            }
+            txtCadastro.Clear();
+            btnNovoCadastro.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnSalvar.Enabled = true;
+            lblSuc.Visible = false;
+            lblError.Visible = false;
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            txtCadastro.Enabled = true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            txtCadastro.Enabled = false;
+            btnNovoCadastro.Enabled = true;
+
+        }
+
+        
     }
 }

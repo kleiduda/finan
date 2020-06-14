@@ -608,7 +608,7 @@
             this.btnEntradaP.BackColor = System.Drawing.Color.White;
             this.btnEntradaP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEntradaP.BorderRadius = 5;
-            this.btnEntradaP.ButtonText = "Entrada";
+            this.btnEntradaP.ButtonText = "Lançamentos";
             this.btnEntradaP.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntradaP.DisabledColor = System.Drawing.Color.Gray;
             this.btnEntradaP.Dock = System.Windows.Forms.DockStyle.Top;
@@ -633,7 +633,7 @@
             this.btnEntradaP.selected = false;
             this.btnEntradaP.Size = new System.Drawing.Size(229, 36);
             this.btnEntradaP.TabIndex = 177;
-            this.btnEntradaP.Text = "Entrada";
+            this.btnEntradaP.Text = "Lançamentos";
             this.btnEntradaP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntradaP.Textcolor = System.Drawing.Color.Gray;
             this.btnEntradaP.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -645,7 +645,7 @@
             this.btnPContas.BackColor = System.Drawing.Color.White;
             this.btnPContas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPContas.BorderRadius = 5;
-            this.btnPContas.ButtonText = "+ Plano de Contas";
+            this.btnPContas.ButtonText = "+ DFC";
             this.btnPContas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPContas.DisabledColor = System.Drawing.Color.Gray;
             this.btnPContas.Dock = System.Windows.Forms.DockStyle.Top;
@@ -670,7 +670,7 @@
             this.btnPContas.selected = false;
             this.btnPContas.Size = new System.Drawing.Size(229, 36);
             this.btnPContas.TabIndex = 176;
-            this.btnPContas.Text = "+ Plano de Contas";
+            this.btnPContas.Text = "+ DFC";
             this.btnPContas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPContas.Textcolor = System.Drawing.Color.Gray;
             this.btnPContas.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

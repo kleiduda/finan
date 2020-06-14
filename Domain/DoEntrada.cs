@@ -32,5 +32,11 @@ namespace Domain
             obj.Data = data;
             return obj.UpdateSaldo(obj);
         }
+        public static string Entrada_Delete(int idEntrada)
+        {
+            DataEntrada obj = new DataEntrada();
+            obj.IdEntrada = idEntrada;
+            return obj.Entrada_Delete(obj);
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace views
         }
         public void Lista()
         {
-            dgvCadastros.DataSource = DoCadastros.Categori_Lista();
+            dgvCadastros.DataSource = DoCadastros.Categoria_Lista();
             dgvCadastros.Columns["id"].Visible = false;
             dgvCadastros.Columns["descricao"].DisplayIndex = 1;
             dgvCadastros.Columns["descricao"].HeaderText = "Nome";

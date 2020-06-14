@@ -75,5 +75,27 @@ namespace DataAccess
                 return dt;
             }
         }
+        //delete
+        public string Saida_Delete(DataSaida SAIDA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from tb_saida Where id=@id_saida";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id_saida", SAIDA.IdSaida);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
     }
 }

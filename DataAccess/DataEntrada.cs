@@ -41,14 +41,14 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO tb_entrada (data_entrada, valor, observacao, id_tipo_entrada, id_forma_pagamento) VALUES (@data_entrada, @valor, @observacao, @id_tipo_entrada, @id_forma_pagamento)";
-                    command.CommandType = CommandType.Text;
+                    command.CommandText = "CadastroEntrada";
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@data_entrada", Entrada.Data);
                     command.Parameters.AddWithValue("@valor", Entrada.Valor);
                     command.Parameters.AddWithValue("@observacao", Entrada.Observacao);
                     command.Parameters.AddWithValue("@id_tipo_entrada", Entrada.IdEntrada);
                     command.Parameters.AddWithValue("@id_forma_pagamento", Entrada.IdPagamento);
-                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao cadastrar";
+                    rpta = command.ExecuteNonQuery() == 2 ? "OK" : "Erro ao cadastrar";
                 }
                 catch (Exception ex)
                 {
@@ -98,6 +98,27 @@ namespace DataAccess
                     dt = null;
                 }
                 return dt;
+            }
+        }
+        public string Entrada_Delete(DataEntrada ENTRADA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from tb_entrada Where id=@id_entrada";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id_entrada", ENTRADA.IdEntrada);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
             }
         }
     }

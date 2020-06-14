@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reactive.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -27,32 +28,7 @@ namespace views
         }
         private void FormDiarioCaixa_Load(object sender, EventArgs e)
         {
-            #region Teste
-            //inserindo o valor de troco ao dia seguinte
-            //var observable = Observable.Interval(TimeSpan.FromSeconds(5));
-            //observable.Subscribe((x) =>
-            //{
-            //    DataTable dt = new DataTable();
-            //    dt = DoCadastros.SaldoInicial_Lista();
-            //    var dtSaldo = dt.AsEnumerable().Where(y => y.Field<DateTime>("data_entrada") == DateTime.Now.AddDays(-1)).Select(k =>
-            //        {
-            //            var row = dt.NewRow();
-            //            row.ItemArray = new object[]
-            //            {
-            //                k.Field<decimal>("valor")
-            //            };
-            //            return row;
-            //        });
-            //    if (dtSaldo.Any())
-            //    {
-            //        DataTable newDt = new DataTable();
-            //        newDt = dtSaldo.CopyToDataTable();
-            //        var saldoIni = newDt.Rows[0][0].ToString();
-            //        DoCadastros.SaldoInicial_Cadastro(decimal.Parse(saldoIni), DateTime.Now);
-            //    }
-            //});
-            #endregion
-
+            lblMes.Text = "";
         }
         private void calendario_DayClick(object sender, Pabo.Calendar.DayClickEventArgs e)
         {
@@ -375,16 +351,47 @@ namespace views
 
         private void calendario_MonthChanged(object sender, Pabo.Calendar.MonthChangedEventArgs e)
         {
-            //#region saida mensal
-            //DataTable dtMensal = new DataTable();
-            //dtMensal = DoDiarioDeCaixa.DiarioDeCaixaResultadoSaida();
-            //if (dtMensal != null)
-            //{
-            //    var valorMensal = dtMensal.AsEnumerable().Where(x => x.Field<int>("Mes") == e.Month).Sum(x => x.Field<decimal>("Valor"));
-            //    totalMesEntrada.Text = valorMensal.ToString("C");
-            //}
-
-            //#endregion saida mensal
+            switch (e.Month)
+            {
+                case 1:
+                    lblMes.Text = "JANEIRO" + " / " + e.Year.ToString();
+                    break;
+                case 2:
+                    lblMes.Text = "FEVEREIRO" + " / " + e.Year.ToString();
+                    break;
+                case 3:
+                    lblMes.Text = "MARÇO" + " / " + e.Year.ToString();
+                    break;
+                case 4:
+                    lblMes.Text = "ABRIL" + " / " + e.Year.ToString();
+                    break;
+                case 5:
+                    lblMes.Text = "MAIO" + " / " + e.Year.ToString();
+                    break;
+                case 6:
+                    lblMes.Text = "JUNHO" + " / " + e.Year.ToString();
+                    break;
+                case 7:
+                    lblMes.Text = "JULHO" + " / " + e.Year.ToString();
+                    break;
+                case 8:
+                    lblMes.Text = "AGOSTO" + " / " + e.Year.ToString();
+                    break;
+                case 9:
+                    lblMes.Text = "SETEMBRO" + " / " + e.Year.ToString();
+                    break;
+                case 10:
+                    lblMes.Text = "OUTUBRO" + " / " + e.Year.ToString();
+                    break;
+                case 11:
+                    lblMes.Text = "NOVEMBRO" + " / " + e.Year.ToString();
+                    break;
+                case 12:
+                    lblMes.Text = "DEZEMBRO" + " / " + e.Year.ToString();
+                    break;
+                default:
+                    break;
+            }
 
         }
     }

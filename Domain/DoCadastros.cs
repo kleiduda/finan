@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 using DataAccess;
 using Support;
 
@@ -60,6 +61,19 @@ namespace Domain
             obj.DescricaoCentroCusto = descricao;
             return obj.CentroCusto_Valida(obj);
         }
+        public static DataTable CentroCusto_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdCentroCusto = id;
+            return obj.CentroCusto_ListaPorID(obj);
+        }
+        public static string CentroCusto_Update(int id, string descricao)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdCentroCusto = id;
+            obj.DescricaoCentroCusto = descricao;
+            return obj.CentroCusto_Update(obj);
+        }
         #endregion CENTRO CUSTO
         //
         #region CATEGORIAS e SUBCATEGORIAS
@@ -77,9 +91,15 @@ namespace Domain
             obj.IdCategoria = idCategoria;
             return obj.Categoria_Delete(obj);
         }
-        public static DataTable Categori_Lista()
+        public static DataTable Categoria_Lista()
         {
             return new DataCadastros().Categoria_Lista();
+        }
+        public static DataTable Categoria_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdCategoria = id;
+            return obj.Categoria_ListaPorID(obj);
         }
         public static DataTable Categoria_ListaSubCategoria()
         {
@@ -112,11 +132,18 @@ namespace Domain
             obj.DescricaoPagamento = descricao;
             return obj.Pagamento_Valida(obj);
         }
-        public static string Pagamento_Update(string descricao)
+        public static string Pagamento_Update(int id,string descricao)
         {
             DataCadastros obj = new DataCadastros();
+            obj.IdPagamento = id;
             obj.DescricaoPagamento = descricao;
             return obj.Pagamento_Update(obj);
+        }
+        public static DataTable Pagamento_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdPagamento = id;
+            return obj.Pagamento_ListaPorID(obj);
         }
         //listar cadastros
         public static DataTable Pagamento_Lista()
@@ -145,9 +172,10 @@ namespace Domain
             obj.DescricaoEntrada = descricao;
             return obj.TipoEntrada_Valida(obj);
         }
-        public static string TipoEntrada_Update(string descricao)
+        public static string TipoEntrada_Update(int id,string descricao)
         {
             DataCadastros obj = new DataCadastros();
+            obj.IdTipoEntrada = id;
             obj.DescricaoEntrada = descricao;
             return obj.TipoEntrada_Update(obj);
         }
@@ -161,6 +189,12 @@ namespace Domain
             DataCadastros obj = new DataCadastros();
             obj.IdTipoEntrada = idTipoEntrada;
             return obj.TipoEntrada_Delete(obj);
+        }
+        public static DataTable TipoEntrada_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdTipoEntrada = id;
+            return obj.TipoEntrada_ListaPorID(obj);
         }
         #endregion TIPO ENTRADA
         #region TIPO SAIDA
@@ -177,9 +211,10 @@ namespace Domain
             obj.DescricaoSaida = descricao;
             return obj.TipoSaida_Valida(obj);
         }
-        public static string TipoSaida_Update(string descricao)
+        public static string TipoSaida_Update(int id, string descricao)
         {
             DataCadastros obj = new DataCadastros();
+            obj.IdTipoSaida = id;
             obj.DescricaoSaida = descricao;
             return obj.TipoSaida_Update(obj);
         }
@@ -193,6 +228,12 @@ namespace Domain
             DataCadastros obj = new DataCadastros();
             obj.IdTipoSaida = idTipoEntrada;
             return obj.TipoSaida_Delete(obj);
+        }
+        public static DataTable TipoSaida_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IdTipoSaida = id;
+            return obj.TipoSaida_ListaPorID(obj);
         }
         #endregion TIPO ENTRADA
         //

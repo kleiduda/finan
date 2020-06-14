@@ -12,21 +12,22 @@ using Domain;
 
 namespace views
 {
-    public partial class FormSaidas : Form
+    public partial class FormEntradaDC : Form
     {
         private bool IsNew = true;
-        public FormSaidas()
+        public FormEntradaDC()
         {
             InitializeComponent();
         }
-        private void FormSaidas_Load(object sender, EventArgs e)
+        private void FormEntradas_Load(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+           
             TabIndex();
-            ListTipoSaida();
+            ListTipoEntrada();
             Listpagamento();
-            ListSaidas();
+
         }
+
         private void msgError(string msg)
         {
             lblError.Text = "      " + msg;
@@ -37,11 +38,11 @@ namespace views
             lblSuc.Text = "      " + msg;
             lblSuc.Visible = true;
         }
-        private void ListTipoSaida()
+        private void ListTipoEntrada()
         {
-            cbTipoSaida.DataSource = DoCadastros.TipoSaida_Lista();
-            cbTipoSaida.ValueMember = "id";
-            cbTipoSaida.DisplayMember = "descricao";
+            cbTipoEntrada.DataSource = DoCadastros.TipoEntrada_Lista();
+            cbTipoEntrada.ValueMember = "id";
+            cbTipoEntrada.DisplayMember = "descricao";
         }
         private void Listpagamento()
         {
@@ -54,7 +55,7 @@ namespace views
         }
         public void TabIndex()
         {
-            cbTipoSaida.TabIndex = 1;
+            cbTipoEntrada.TabIndex = 1;
             cbPagamento.TabIndex = 2;
             dateEntrada.TabIndex = 3;
             txtValor.TabIndex = 4;
@@ -87,39 +88,32 @@ namespace views
         {
             txtValor.Clear();
             txtObservacao.Clear();
-            
+            lblSaldoAnterior.Text = "";
+            lblSaldoFinal.Text = "";
+
         }
         public void DesabilitarEdição()
         {
             txtValor.Enabled = false;
             txtObservacao.Enabled = false;
-            cbTipoSaida.Enabled = false;
+            cbTipoEntrada.Enabled = false;
             cbPagamento.Enabled = false;
         }
         public void EnabledEdit()
         {
             txtValor.Enabled = true;
             txtObservacao.Enabled = true;
-            cbTipoSaida.Enabled = true;
+            cbTipoEntrada.Enabled = true;
             cbPagamento.Enabled = true;
-            cbTipoSaida.Focus();
+            cbTipoEntrada.Focus();
         }
-        public void ListSaidas()
-        {
-            dgvEntradas.DataSource = DoSaida.Saida_Lista();
-           // dgvEntradas.Columns["id"].Visible = false;
-            dgvEntradas.Columns["data_saida"].HeaderText = "Data";
-            dgvEntradas.Columns["valor"].HeaderText = "Valor";
-            dgvEntradas.Columns["observacao"].HeaderText = "Obs";
-            dgvEntradas.Columns["descricao"].HeaderText = "Tipo Saída";
-            //dgvEntradas.Columns["pagamento"].HeaderText = "Tipo Pagamento";
-        }
+        
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
-            cbTipoSaida.Focus();
+            cbTipoEntrada.Focus();
             LimparCampos();
             EnabledEdit();
+            btnNovoCadastro.Enabled = false;
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -129,10 +123,11 @@ namespace views
         }
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
-            cbTipoSaida.Focus();
+
+            cbTipoEntrada.Focus();
             LimparCampos();
             EnabledEdit();
+            btnNovoCadastro.Enabled = false;
             btnCancelar.Enabled = true;
             btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
@@ -140,60 +135,131 @@ namespace views
             lblError.Visible = false;
             this.IsNew = true;
         }
-        
+
+        private void txtValor_TextChanged(object sender, EventArgs e)
+        {
+            Moeda(ref txtValor);
+        }
+
         public void UpdateSaldo()
         {
             string rpta = "";
             try
             {
-                 rpta = DoEntrada.Entrada_UpdateSaldoFinal(Convert.ToDecimal(lblSaldoFinal.Text) - Convert.ToDecimal(txtValor.Text), dateEntrada.Value);
-                
+                if (cbTipoEntrada.Text == "Vendas - dinheiro" || cbTipoEntrada.Text == "Vendas - espécie")
+                {
+                    rpta = DoEntrada.Entrada_UpdateSaldoFinal(Convert.ToDecimal(lblSaldoFinal.Text) + Convert.ToDecimal(txtValor.Text), dateEntrada.Value);
+                }
+
             }
             catch (Exception ex)
             {
                 rpta = ex.Message + ex.StackTrace;
             }
         }
-        private void txtValor_TextChanged(object sender, EventArgs e)
+        public void SaldoAnterior()
         {
-            Moeda(ref txtValor);
+            DataTable dt = new DataTable();
+            dt = DoCadastros.SaldoInicial_Lista();
+            DateTime data = new DateTime();
+            data = Convert.ToDateTime(dateEntrada.Value.ToString());
+            var saldoAnterior = dt.AsEnumerable().Where(x => x.Field<string>("data_entrada") == data.AddDays(-1).ToShortDateString()).
+                Select(k =>
+                {
+                    var row = dt.NewRow();
+                    row.ItemArray = new object[]
+                    {
+                        k.Field<decimal>("saldo_final")
+                    };
+                    return row;
+                });
+            if (saldoAnterior.Any())
+            {
+                DataTable dtResult = saldoAnterior.CopyToDataTable();
+                lblSaldoAnterior.Text = dtResult.Rows[0][0].ToString();
+            }
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string rpta = "";
             try
             {
-                if (this.txtValor.Text == string.Empty)
+                if (txtValor.Text == string.Empty)
                 {
                     lblSuc.Visible = false;
                     msgError("Alguns campos obrigatórios não foram preenchidos!");
                 }
                 else
                 {
-                    rpta = DoSaida.Saida_Cadastro(
-                        dateEntrada.Value, 
+                    decimal saldoInicial;
+                    decimal saldoFinal;
+                    if (lblSaldoFinal.Text == "0" && cbTipoEntrada.Text == "Vendas - dinheiro")
+                    {
+                        saldoInicial = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        saldoFinal = Convert.ToDecimal(lblSaldoAnterior.Text) + Convert.ToDecimal(txtValor.Text);
+                        rpta = DoCadastros.SaldoInicial_Cadastro(saldoInicial, saldoFinal, DateTime.Parse(dateEntrada.Value.ToString()));
+                    }
+                    else if (lblSaldoFinal.Text == "0" && cbTipoEntrada.Text != "Vendas - dinheiro")
+                    {
+                        saldoInicial = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        saldoFinal = Convert.ToDecimal(lblSaldoAnterior.Text);
+                        rpta = DoCadastros.SaldoInicial_Cadastro(saldoInicial, saldoFinal, DateTime.Parse(dateEntrada.Value.ToString()));
+                    }
+                    rpta = DoEntrada.CadastroEntrada(
+                        dateEntrada.Value,
                         decimal.Parse(txtValor.Text),
                         txtObservacao.Text,
-                        Convert.ToInt32(cbTipoSaida.SelectedValue),
+                        Convert.ToInt32(cbTipoEntrada.SelectedValue),
                         Convert.ToInt32(cbPagamento.SelectedValue)
                         );
                 }
-                if (rpta.Equals("OK"))
+                if (rpta.Equals("OK") && lblSaldoFinal.Text != "0")
                 {
                     msgSuccess("Cadastro realizado com sucesso!");
                     UpdateSaldo();
+                }
+                else if (rpta.Equals("OK") && lblSaldoFinal.Text == "0")
+                {
+                    msgSuccess("Cadastrei um novo saldo final");
                 }
                 else
                 {
                     msgError(rpta);
                 }
+
             }
             catch (Exception ex)
             {
                 rpta = ex.Message + ex.StackTrace;
             }
-            ListSaidas();
+            //DesabilitarEdição();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
             DesabilitarEdição();
+            btnNovoCadastro.Enabled = true;
+            btnCancelar.Enabled = false;
+            btnEditar.Enabled = true;
+            btnSalvar.Enabled = false;
+            lblSuc.Visible = false;
+            lblError.Visible = false;
+            this.IsNew = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EnabledEdit();
+            btnSalvar.Enabled = true;
+            btnEditar.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnNovoCadastro.Enabled = false;
+        }
+
+        private void dgvEntradas_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dateEntrada_onValueChanged(object sender, EventArgs e)
@@ -220,6 +286,11 @@ namespace views
             {
                 lblSaldoFinal.Text = "0";
             }
+            if (lblSaldoFinal.Text == "0")
+            {
+                SaldoAnterior();
+            }
+
         }
     }
 }

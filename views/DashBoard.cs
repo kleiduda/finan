@@ -44,35 +44,42 @@ namespace views
         }
         private void btnTiposEntrada_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormTipoEntrada>();
+            AbrirFormulario<ListaTipoEntrada>();
+            pLogo.Hide();
         }
         private void btnTiposSaida_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormTipoSaida>();
+            AbrirFormulario<ListaTipoSaida>();
+            pLogo.Hide();
         }
 
         private void btnFormasPagto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormPagamento>();
+            AbrirFormulario<ListaPagamento>();
+            pLogo.Hide();
         }
 
         private void btnEntrada_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormEntradas>();
+            AbrirFormulario<FormListaEntradaDC>();
+            pLogo.Hide();
         }
 
         private void btnCentroCusto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormCentroCusto>();
+            AbrirFormulario<ListaCentroCusto>();
+            pLogo.Hide();
         }
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormCategorias>();
+            AbrirFormulario<ListaCategoria>();
+            pLogo.Hide();
         }
         private void btnSaida_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormSaidas>();
+            AbrirFormulario<FormListaSaidaDC>();
+            pLogo.Hide();
         }
         private void btnDiarioCaixa_Click(object sender, EventArgs e)
         {

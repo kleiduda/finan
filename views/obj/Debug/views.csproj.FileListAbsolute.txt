@@ -6,7 +6,6 @@ M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Domain.dll
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Domain.pdb
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.csprojAssemblyReference.cache
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.DashBoard.resources
-M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormTipoEntrada.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Properties.Resources.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.csproj.GenerateResource.cache
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.csproj.CoreCompileInputs.cache
@@ -17,10 +16,8 @@ M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\DataAccess.dll
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\DataAccess.pdb
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormTipoSaida.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormPagamento.resources
-M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEntradas.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCentroCusto.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCategorias.resources
-M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormSaidas.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormDiarioCaixa.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEmpresa.resources
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\MonthCalendar.dll
@@ -39,3 +36,17 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEntradaP.resources
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Support.dll
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\Support.pdb
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormPlanoConsolidado.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEntradaDC.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormSaidaDC.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormListaSaidaDC.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormListaEntradaDC.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaTipoEntrada.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.TipoEntrada.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaPagamento.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Pagamento.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.TipoSaida.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaTipoSaida.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaCentroCusto.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.CentroCusto.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaCategoria.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Categoria.resources
