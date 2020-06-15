@@ -317,9 +317,9 @@
             this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovoCadastro.Location = new System.Drawing.Point(10, 25);
             this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(179, 31);
+            this.btnNovoCadastro.Size = new System.Drawing.Size(154, 31);
             this.btnNovoCadastro.TabIndex = 162;
-            this.btnNovoCadastro.Text = "NOVO CADASTRO";
+            this.btnNovoCadastro.Text = "LANÇAMENTO";
             this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovoCadastro.UseVisualStyleBackColor = true;
             this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);

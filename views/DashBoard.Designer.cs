@@ -38,19 +38,7 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.pMenuEstratoB = new System.Windows.Forms.Panel();
-            this.btnImportar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label5 = new System.Windows.Forms.Label();
             this.bunifuSeparator4 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.pMenuCadastros = new System.Windows.Forms.Panel();
-            this.btnSaldoInicial = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnContatos = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnTiposSaida = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCentroCusto = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCategorias = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnFormasPagto = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnTiposEntrada = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pPlanoContas = new System.Windows.Forms.Panel();
             this.btnConsolidadoPC = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -63,22 +51,34 @@
             this.btnDiarioCaixa = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pHeader = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnImportar = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pMenuEstratoB = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnTiposEntrada = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnFormasPagto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCategorias = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCentroCusto = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnTiposSaida = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnContatos = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnSaldoInicial = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pMenuCadastros = new System.Windows.Forms.Panel();
             this.pLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.pConteudo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pMenuEstratoB.SuspendLayout();
-            this.pMenuCadastros.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pPlanoContas.SuspendLayout();
             this.pMenuDiarioC.SuspendLayout();
+            this.pMenuEstratoB.SuspendLayout();
+            this.pMenuCadastros.SuspendLayout();
             this.SuspendLayout();
             // 
             // pLogo
             // 
-            this.pLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(107)))), ((int)(((byte)(192)))));
+            this.pLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(205)))), ((int)(((byte)(212)))));
             this.pLogo.Controls.Add(this.imageLogo);
             this.pLogo.Location = new System.Drawing.Point(293, 17);
             this.pLogo.Name = "pLogo";
@@ -180,66 +180,6 @@
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = false;
             // 
-            // pMenuEstratoB
-            // 
-            this.pMenuEstratoB.Controls.Add(this.btnImportar);
-            this.pMenuEstratoB.Controls.Add(this.label5);
-            this.pMenuEstratoB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pMenuEstratoB.Location = new System.Drawing.Point(0, 396);
-            this.pMenuEstratoB.Name = "pMenuEstratoB";
-            this.pMenuEstratoB.Size = new System.Drawing.Size(229, 71);
-            this.pMenuEstratoB.TabIndex = 178;
-            // 
-            // btnImportar
-            // 
-            this.btnImportar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnImportar.BackColor = System.Drawing.Color.White;
-            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImportar.BorderRadius = 5;
-            this.btnImportar.ButtonText = "+ Importar Extrato";
-            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImportar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnImportar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnImportar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnImportar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImportar.Iconimage")));
-            this.btnImportar.Iconimage_right = null;
-            this.btnImportar.Iconimage_right_Selected = null;
-            this.btnImportar.Iconimage_Selected = null;
-            this.btnImportar.IconMarginLeft = 0;
-            this.btnImportar.IconMarginRight = 0;
-            this.btnImportar.IconRightVisible = true;
-            this.btnImportar.IconRightZoom = 0D;
-            this.btnImportar.IconVisible = false;
-            this.btnImportar.IconZoom = 90D;
-            this.btnImportar.IsTab = false;
-            this.btnImportar.Location = new System.Drawing.Point(0, 18);
-            this.btnImportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnImportar.Name = "btnImportar";
-            this.btnImportar.Normalcolor = System.Drawing.Color.White;
-            this.btnImportar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnImportar.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnImportar.selected = false;
-            this.btnImportar.Size = new System.Drawing.Size(229, 36);
-            this.btnImportar.TabIndex = 179;
-            this.btnImportar.Text = "+ Importar Extrato";
-            this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImportar.Textcolor = System.Drawing.Color.Gray;
-            this.btnImportar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 18);
-            this.label5.TabIndex = 153;
-            this.label5.Text = "EXTRATO BANCÁRIO";
-            // 
             // bunifuSeparator4
             // 
             this.bunifuSeparator4.BackColor = System.Drawing.Color.Transparent;
@@ -253,295 +193,6 @@
             this.bunifuSeparator4.TabIndex = 180;
             this.bunifuSeparator4.Transparency = 255;
             this.bunifuSeparator4.Vertical = false;
-            // 
-            // pMenuCadastros
-            // 
-            this.pMenuCadastros.Controls.Add(this.btnSaldoInicial);
-            this.pMenuCadastros.Controls.Add(this.btnContatos);
-            this.pMenuCadastros.Controls.Add(this.btnTiposSaida);
-            this.pMenuCadastros.Controls.Add(this.btnCentroCusto);
-            this.pMenuCadastros.Controls.Add(this.btnCategorias);
-            this.pMenuCadastros.Controls.Add(this.btnFormasPagto);
-            this.pMenuCadastros.Controls.Add(this.btnTiposEntrada);
-            this.pMenuCadastros.Controls.Add(this.label8);
-            this.pMenuCadastros.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pMenuCadastros.Location = new System.Drawing.Point(0, 535);
-            this.pMenuCadastros.Name = "pMenuCadastros";
-            this.pMenuCadastros.Size = new System.Drawing.Size(229, 284);
-            this.pMenuCadastros.TabIndex = 181;
-            // 
-            // btnSaldoInicial
-            // 
-            this.btnSaldoInicial.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnSaldoInicial.BackColor = System.Drawing.Color.White;
-            this.btnSaldoInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaldoInicial.BorderRadius = 5;
-            this.btnSaldoInicial.ButtonText = "+ Saldo Inicial";
-            this.btnSaldoInicial.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaldoInicial.DisabledColor = System.Drawing.Color.Gray;
-            this.btnSaldoInicial.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSaldoInicial.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnSaldoInicial.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSaldoInicial.Iconimage")));
-            this.btnSaldoInicial.Iconimage_right = null;
-            this.btnSaldoInicial.Iconimage_right_Selected = null;
-            this.btnSaldoInicial.Iconimage_Selected = null;
-            this.btnSaldoInicial.IconMarginLeft = 0;
-            this.btnSaldoInicial.IconMarginRight = 0;
-            this.btnSaldoInicial.IconRightVisible = true;
-            this.btnSaldoInicial.IconRightZoom = 0D;
-            this.btnSaldoInicial.IconVisible = false;
-            this.btnSaldoInicial.IconZoom = 90D;
-            this.btnSaldoInicial.IsTab = false;
-            this.btnSaldoInicial.Location = new System.Drawing.Point(0, 234);
-            this.btnSaldoInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSaldoInicial.Name = "btnSaldoInicial";
-            this.btnSaldoInicial.Normalcolor = System.Drawing.Color.White;
-            this.btnSaldoInicial.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnSaldoInicial.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnSaldoInicial.selected = false;
-            this.btnSaldoInicial.Size = new System.Drawing.Size(229, 36);
-            this.btnSaldoInicial.TabIndex = 188;
-            this.btnSaldoInicial.Text = "+ Saldo Inicial";
-            this.btnSaldoInicial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaldoInicial.Textcolor = System.Drawing.Color.Gray;
-            this.btnSaldoInicial.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaldoInicial.Click += new System.EventHandler(this.btnSaldoInicial_Click);
-            // 
-            // btnContatos
-            // 
-            this.btnContatos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnContatos.BackColor = System.Drawing.Color.White;
-            this.btnContatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnContatos.BorderRadius = 5;
-            this.btnContatos.ButtonText = "+ Empresa";
-            this.btnContatos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnContatos.DisabledColor = System.Drawing.Color.Gray;
-            this.btnContatos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnContatos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnContatos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnContatos.Iconimage")));
-            this.btnContatos.Iconimage_right = null;
-            this.btnContatos.Iconimage_right_Selected = null;
-            this.btnContatos.Iconimage_Selected = null;
-            this.btnContatos.IconMarginLeft = 0;
-            this.btnContatos.IconMarginRight = 0;
-            this.btnContatos.IconRightVisible = true;
-            this.btnContatos.IconRightZoom = 0D;
-            this.btnContatos.IconVisible = false;
-            this.btnContatos.IconZoom = 90D;
-            this.btnContatos.IsTab = false;
-            this.btnContatos.Location = new System.Drawing.Point(0, 198);
-            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnContatos.Name = "btnContatos";
-            this.btnContatos.Normalcolor = System.Drawing.Color.White;
-            this.btnContatos.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnContatos.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnContatos.selected = false;
-            this.btnContatos.Size = new System.Drawing.Size(229, 36);
-            this.btnContatos.TabIndex = 187;
-            this.btnContatos.Text = "+ Empresa";
-            this.btnContatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContatos.Textcolor = System.Drawing.Color.Gray;
-            this.btnContatos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContatos.Click += new System.EventHandler(this.btnContatos_Click);
-            // 
-            // btnTiposSaida
-            // 
-            this.btnTiposSaida.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnTiposSaida.BackColor = System.Drawing.Color.White;
-            this.btnTiposSaida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTiposSaida.BorderRadius = 5;
-            this.btnTiposSaida.ButtonText = "+ Tipo de Saída";
-            this.btnTiposSaida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTiposSaida.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTiposSaida.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTiposSaida.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTiposSaida.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTiposSaida.Iconimage")));
-            this.btnTiposSaida.Iconimage_right = null;
-            this.btnTiposSaida.Iconimage_right_Selected = null;
-            this.btnTiposSaida.Iconimage_Selected = null;
-            this.btnTiposSaida.IconMarginLeft = 0;
-            this.btnTiposSaida.IconMarginRight = 0;
-            this.btnTiposSaida.IconRightVisible = true;
-            this.btnTiposSaida.IconRightZoom = 0D;
-            this.btnTiposSaida.IconVisible = false;
-            this.btnTiposSaida.IconZoom = 90D;
-            this.btnTiposSaida.IsTab = false;
-            this.btnTiposSaida.Location = new System.Drawing.Point(0, 162);
-            this.btnTiposSaida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTiposSaida.Name = "btnTiposSaida";
-            this.btnTiposSaida.Normalcolor = System.Drawing.Color.White;
-            this.btnTiposSaida.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnTiposSaida.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnTiposSaida.selected = false;
-            this.btnTiposSaida.Size = new System.Drawing.Size(229, 36);
-            this.btnTiposSaida.TabIndex = 186;
-            this.btnTiposSaida.Text = "+ Tipo de Saída";
-            this.btnTiposSaida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTiposSaida.Textcolor = System.Drawing.Color.Gray;
-            this.btnTiposSaida.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTiposSaida.Click += new System.EventHandler(this.btnTiposSaida_Click);
-            // 
-            // btnCentroCusto
-            // 
-            this.btnCentroCusto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnCentroCusto.BackColor = System.Drawing.Color.White;
-            this.btnCentroCusto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCentroCusto.BorderRadius = 5;
-            this.btnCentroCusto.ButtonText = "+ Centro de Custo";
-            this.btnCentroCusto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCentroCusto.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCentroCusto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCentroCusto.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCentroCusto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCentroCusto.Iconimage")));
-            this.btnCentroCusto.Iconimage_right = null;
-            this.btnCentroCusto.Iconimage_right_Selected = null;
-            this.btnCentroCusto.Iconimage_Selected = null;
-            this.btnCentroCusto.IconMarginLeft = 0;
-            this.btnCentroCusto.IconMarginRight = 0;
-            this.btnCentroCusto.IconRightVisible = true;
-            this.btnCentroCusto.IconRightZoom = 0D;
-            this.btnCentroCusto.IconVisible = false;
-            this.btnCentroCusto.IconZoom = 90D;
-            this.btnCentroCusto.IsTab = false;
-            this.btnCentroCusto.Location = new System.Drawing.Point(0, 126);
-            this.btnCentroCusto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCentroCusto.Name = "btnCentroCusto";
-            this.btnCentroCusto.Normalcolor = System.Drawing.Color.White;
-            this.btnCentroCusto.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnCentroCusto.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnCentroCusto.selected = false;
-            this.btnCentroCusto.Size = new System.Drawing.Size(229, 36);
-            this.btnCentroCusto.TabIndex = 182;
-            this.btnCentroCusto.Text = "+ Centro de Custo";
-            this.btnCentroCusto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCentroCusto.Textcolor = System.Drawing.Color.Gray;
-            this.btnCentroCusto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCentroCusto.Click += new System.EventHandler(this.btnCentroCusto_Click);
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnCategorias.BackColor = System.Drawing.Color.White;
-            this.btnCategorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCategorias.BorderRadius = 5;
-            this.btnCategorias.ButtonText = "+ Categorias";
-            this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCategorias.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategorias.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCategorias.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Iconimage")));
-            this.btnCategorias.Iconimage_right = null;
-            this.btnCategorias.Iconimage_right_Selected = null;
-            this.btnCategorias.Iconimage_Selected = null;
-            this.btnCategorias.IconMarginLeft = 0;
-            this.btnCategorias.IconMarginRight = 0;
-            this.btnCategorias.IconRightVisible = true;
-            this.btnCategorias.IconRightZoom = 0D;
-            this.btnCategorias.IconVisible = false;
-            this.btnCategorias.IconZoom = 90D;
-            this.btnCategorias.IsTab = false;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 90);
-            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Normalcolor = System.Drawing.Color.White;
-            this.btnCategorias.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnCategorias.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnCategorias.selected = false;
-            this.btnCategorias.Size = new System.Drawing.Size(229, 36);
-            this.btnCategorias.TabIndex = 183;
-            this.btnCategorias.Text = "+ Categorias";
-            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Textcolor = System.Drawing.Color.Gray;
-            this.btnCategorias.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            // 
-            // btnFormasPagto
-            // 
-            this.btnFormasPagto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnFormasPagto.BackColor = System.Drawing.Color.White;
-            this.btnFormasPagto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFormasPagto.BorderRadius = 5;
-            this.btnFormasPagto.ButtonText = "+ Formas de Pagamento";
-            this.btnFormasPagto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFormasPagto.DisabledColor = System.Drawing.Color.Gray;
-            this.btnFormasPagto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFormasPagto.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnFormasPagto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFormasPagto.Iconimage")));
-            this.btnFormasPagto.Iconimage_right = null;
-            this.btnFormasPagto.Iconimage_right_Selected = null;
-            this.btnFormasPagto.Iconimage_Selected = null;
-            this.btnFormasPagto.IconMarginLeft = 0;
-            this.btnFormasPagto.IconMarginRight = 0;
-            this.btnFormasPagto.IconRightVisible = true;
-            this.btnFormasPagto.IconRightZoom = 0D;
-            this.btnFormasPagto.IconVisible = false;
-            this.btnFormasPagto.IconZoom = 90D;
-            this.btnFormasPagto.IsTab = false;
-            this.btnFormasPagto.Location = new System.Drawing.Point(0, 54);
-            this.btnFormasPagto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnFormasPagto.Name = "btnFormasPagto";
-            this.btnFormasPagto.Normalcolor = System.Drawing.Color.White;
-            this.btnFormasPagto.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnFormasPagto.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnFormasPagto.selected = false;
-            this.btnFormasPagto.Size = new System.Drawing.Size(229, 36);
-            this.btnFormasPagto.TabIndex = 184;
-            this.btnFormasPagto.Text = "+ Formas de Pagamento";
-            this.btnFormasPagto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormasPagto.Textcolor = System.Drawing.Color.Gray;
-            this.btnFormasPagto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormasPagto.Click += new System.EventHandler(this.btnFormasPagto_Click);
-            // 
-            // btnTiposEntrada
-            // 
-            this.btnTiposEntrada.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnTiposEntrada.BackColor = System.Drawing.Color.White;
-            this.btnTiposEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTiposEntrada.BorderRadius = 5;
-            this.btnTiposEntrada.ButtonText = "+ Tipos de Entrada";
-            this.btnTiposEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTiposEntrada.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTiposEntrada.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTiposEntrada.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTiposEntrada.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTiposEntrada.Iconimage")));
-            this.btnTiposEntrada.Iconimage_right = null;
-            this.btnTiposEntrada.Iconimage_right_Selected = null;
-            this.btnTiposEntrada.Iconimage_Selected = null;
-            this.btnTiposEntrada.IconMarginLeft = 0;
-            this.btnTiposEntrada.IconMarginRight = 0;
-            this.btnTiposEntrada.IconRightVisible = true;
-            this.btnTiposEntrada.IconRightZoom = 0D;
-            this.btnTiposEntrada.IconVisible = false;
-            this.btnTiposEntrada.IconZoom = 90D;
-            this.btnTiposEntrada.IsTab = false;
-            this.btnTiposEntrada.Location = new System.Drawing.Point(0, 18);
-            this.btnTiposEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnTiposEntrada.Name = "btnTiposEntrada";
-            this.btnTiposEntrada.Normalcolor = System.Drawing.Color.White;
-            this.btnTiposEntrada.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnTiposEntrada.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnTiposEntrada.selected = false;
-            this.btnTiposEntrada.Size = new System.Drawing.Size(229, 36);
-            this.btnTiposEntrada.TabIndex = 185;
-            this.btnTiposEntrada.Text = "+ Tipos de Entrada";
-            this.btnTiposEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTiposEntrada.Textcolor = System.Drawing.Color.Gray;
-            this.btnTiposEntrada.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTiposEntrada.Click += new System.EventHandler(this.btnTiposEntrada_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 18);
-            this.label8.TabIndex = 153;
-            this.label8.Text = "CADASTROS";
             // 
             // panel3
             // 
@@ -852,13 +503,364 @@
             // 
             // pHeader
             // 
-            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(107)))), ((int)(((byte)(192)))));
+            this.pHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(205)))), ((int)(((byte)(212)))));
             this.pHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pHeader.Location = new System.Drawing.Point(0, 0);
             this.pHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(1693, 17);
             this.pHeader.TabIndex = 169;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(158, 18);
+            this.label5.TabIndex = 153;
+            this.label5.Text = "EXTRATO BANCÁRIO";
+            // 
+            // btnImportar
+            // 
+            this.btnImportar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnImportar.BackColor = System.Drawing.Color.White;
+            this.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImportar.BorderRadius = 5;
+            this.btnImportar.ButtonText = "+ Importar Extrato";
+            this.btnImportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnImportar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnImportar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnImportar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnImportar.Iconimage")));
+            this.btnImportar.Iconimage_right = null;
+            this.btnImportar.Iconimage_right_Selected = null;
+            this.btnImportar.Iconimage_Selected = null;
+            this.btnImportar.IconMarginLeft = 0;
+            this.btnImportar.IconMarginRight = 0;
+            this.btnImportar.IconRightVisible = true;
+            this.btnImportar.IconRightZoom = 0D;
+            this.btnImportar.IconVisible = false;
+            this.btnImportar.IconZoom = 90D;
+            this.btnImportar.IsTab = false;
+            this.btnImportar.Location = new System.Drawing.Point(0, 18);
+            this.btnImportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportar.Name = "btnImportar";
+            this.btnImportar.Normalcolor = System.Drawing.Color.White;
+            this.btnImportar.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnImportar.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnImportar.selected = false;
+            this.btnImportar.Size = new System.Drawing.Size(229, 36);
+            this.btnImportar.TabIndex = 179;
+            this.btnImportar.Text = "+ Importar Extrato";
+            this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImportar.Textcolor = System.Drawing.Color.Gray;
+            this.btnImportar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // pMenuEstratoB
+            // 
+            this.pMenuEstratoB.Controls.Add(this.btnImportar);
+            this.pMenuEstratoB.Controls.Add(this.label5);
+            this.pMenuEstratoB.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pMenuEstratoB.Location = new System.Drawing.Point(0, 396);
+            this.pMenuEstratoB.Name = "pMenuEstratoB";
+            this.pMenuEstratoB.Size = new System.Drawing.Size(229, 71);
+            this.pMenuEstratoB.TabIndex = 178;
+            this.pMenuEstratoB.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 18);
+            this.label8.TabIndex = 153;
+            this.label8.Text = "CADASTROS";
+            // 
+            // btnTiposEntrada
+            // 
+            this.btnTiposEntrada.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnTiposEntrada.BackColor = System.Drawing.Color.White;
+            this.btnTiposEntrada.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTiposEntrada.BorderRadius = 5;
+            this.btnTiposEntrada.ButtonText = "+ Tipos de Entrada";
+            this.btnTiposEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiposEntrada.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTiposEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTiposEntrada.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTiposEntrada.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTiposEntrada.Iconimage")));
+            this.btnTiposEntrada.Iconimage_right = null;
+            this.btnTiposEntrada.Iconimage_right_Selected = null;
+            this.btnTiposEntrada.Iconimage_Selected = null;
+            this.btnTiposEntrada.IconMarginLeft = 0;
+            this.btnTiposEntrada.IconMarginRight = 0;
+            this.btnTiposEntrada.IconRightVisible = true;
+            this.btnTiposEntrada.IconRightZoom = 0D;
+            this.btnTiposEntrada.IconVisible = false;
+            this.btnTiposEntrada.IconZoom = 90D;
+            this.btnTiposEntrada.IsTab = false;
+            this.btnTiposEntrada.Location = new System.Drawing.Point(0, 18);
+            this.btnTiposEntrada.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTiposEntrada.Name = "btnTiposEntrada";
+            this.btnTiposEntrada.Normalcolor = System.Drawing.Color.White;
+            this.btnTiposEntrada.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnTiposEntrada.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnTiposEntrada.selected = false;
+            this.btnTiposEntrada.Size = new System.Drawing.Size(229, 36);
+            this.btnTiposEntrada.TabIndex = 185;
+            this.btnTiposEntrada.Text = "+ Tipos de Entrada";
+            this.btnTiposEntrada.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTiposEntrada.Textcolor = System.Drawing.Color.Gray;
+            this.btnTiposEntrada.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiposEntrada.Click += new System.EventHandler(this.btnTiposEntrada_Click);
+            // 
+            // btnFormasPagto
+            // 
+            this.btnFormasPagto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnFormasPagto.BackColor = System.Drawing.Color.White;
+            this.btnFormasPagto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFormasPagto.BorderRadius = 5;
+            this.btnFormasPagto.ButtonText = "+ Formas de Pagamento";
+            this.btnFormasPagto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormasPagto.DisabledColor = System.Drawing.Color.Gray;
+            this.btnFormasPagto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFormasPagto.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnFormasPagto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnFormasPagto.Iconimage")));
+            this.btnFormasPagto.Iconimage_right = null;
+            this.btnFormasPagto.Iconimage_right_Selected = null;
+            this.btnFormasPagto.Iconimage_Selected = null;
+            this.btnFormasPagto.IconMarginLeft = 0;
+            this.btnFormasPagto.IconMarginRight = 0;
+            this.btnFormasPagto.IconRightVisible = true;
+            this.btnFormasPagto.IconRightZoom = 0D;
+            this.btnFormasPagto.IconVisible = false;
+            this.btnFormasPagto.IconZoom = 90D;
+            this.btnFormasPagto.IsTab = false;
+            this.btnFormasPagto.Location = new System.Drawing.Point(0, 54);
+            this.btnFormasPagto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFormasPagto.Name = "btnFormasPagto";
+            this.btnFormasPagto.Normalcolor = System.Drawing.Color.White;
+            this.btnFormasPagto.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnFormasPagto.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnFormasPagto.selected = false;
+            this.btnFormasPagto.Size = new System.Drawing.Size(229, 36);
+            this.btnFormasPagto.TabIndex = 184;
+            this.btnFormasPagto.Text = "+ Formas de Pagamento";
+            this.btnFormasPagto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormasPagto.Textcolor = System.Drawing.Color.Gray;
+            this.btnFormasPagto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormasPagto.Click += new System.EventHandler(this.btnFormasPagto_Click);
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnCategorias.BackColor = System.Drawing.Color.White;
+            this.btnCategorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCategorias.BorderRadius = 5;
+            this.btnCategorias.ButtonText = "+ Categorias";
+            this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategorias.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategorias.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCategorias.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Iconimage")));
+            this.btnCategorias.Iconimage_right = null;
+            this.btnCategorias.Iconimage_right_Selected = null;
+            this.btnCategorias.Iconimage_Selected = null;
+            this.btnCategorias.IconMarginLeft = 0;
+            this.btnCategorias.IconMarginRight = 0;
+            this.btnCategorias.IconRightVisible = true;
+            this.btnCategorias.IconRightZoom = 0D;
+            this.btnCategorias.IconVisible = false;
+            this.btnCategorias.IconZoom = 90D;
+            this.btnCategorias.IsTab = false;
+            this.btnCategorias.Location = new System.Drawing.Point(0, 90);
+            this.btnCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Normalcolor = System.Drawing.Color.White;
+            this.btnCategorias.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnCategorias.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnCategorias.selected = false;
+            this.btnCategorias.Size = new System.Drawing.Size(229, 36);
+            this.btnCategorias.TabIndex = 183;
+            this.btnCategorias.Text = "+ Categorias";
+            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Textcolor = System.Drawing.Color.Gray;
+            this.btnCategorias.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // btnCentroCusto
+            // 
+            this.btnCentroCusto.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnCentroCusto.BackColor = System.Drawing.Color.White;
+            this.btnCentroCusto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCentroCusto.BorderRadius = 5;
+            this.btnCentroCusto.ButtonText = "+ Centro de Custo";
+            this.btnCentroCusto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCentroCusto.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCentroCusto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCentroCusto.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCentroCusto.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCentroCusto.Iconimage")));
+            this.btnCentroCusto.Iconimage_right = null;
+            this.btnCentroCusto.Iconimage_right_Selected = null;
+            this.btnCentroCusto.Iconimage_Selected = null;
+            this.btnCentroCusto.IconMarginLeft = 0;
+            this.btnCentroCusto.IconMarginRight = 0;
+            this.btnCentroCusto.IconRightVisible = true;
+            this.btnCentroCusto.IconRightZoom = 0D;
+            this.btnCentroCusto.IconVisible = false;
+            this.btnCentroCusto.IconZoom = 90D;
+            this.btnCentroCusto.IsTab = false;
+            this.btnCentroCusto.Location = new System.Drawing.Point(0, 126);
+            this.btnCentroCusto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCentroCusto.Name = "btnCentroCusto";
+            this.btnCentroCusto.Normalcolor = System.Drawing.Color.White;
+            this.btnCentroCusto.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnCentroCusto.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnCentroCusto.selected = false;
+            this.btnCentroCusto.Size = new System.Drawing.Size(229, 36);
+            this.btnCentroCusto.TabIndex = 182;
+            this.btnCentroCusto.Text = "+ Centro de Custo";
+            this.btnCentroCusto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCentroCusto.Textcolor = System.Drawing.Color.Gray;
+            this.btnCentroCusto.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCentroCusto.Click += new System.EventHandler(this.btnCentroCusto_Click);
+            // 
+            // btnTiposSaida
+            // 
+            this.btnTiposSaida.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnTiposSaida.BackColor = System.Drawing.Color.White;
+            this.btnTiposSaida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTiposSaida.BorderRadius = 5;
+            this.btnTiposSaida.ButtonText = "+ Tipo de Saída";
+            this.btnTiposSaida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTiposSaida.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTiposSaida.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTiposSaida.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTiposSaida.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTiposSaida.Iconimage")));
+            this.btnTiposSaida.Iconimage_right = null;
+            this.btnTiposSaida.Iconimage_right_Selected = null;
+            this.btnTiposSaida.Iconimage_Selected = null;
+            this.btnTiposSaida.IconMarginLeft = 0;
+            this.btnTiposSaida.IconMarginRight = 0;
+            this.btnTiposSaida.IconRightVisible = true;
+            this.btnTiposSaida.IconRightZoom = 0D;
+            this.btnTiposSaida.IconVisible = false;
+            this.btnTiposSaida.IconZoom = 90D;
+            this.btnTiposSaida.IsTab = false;
+            this.btnTiposSaida.Location = new System.Drawing.Point(0, 162);
+            this.btnTiposSaida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTiposSaida.Name = "btnTiposSaida";
+            this.btnTiposSaida.Normalcolor = System.Drawing.Color.White;
+            this.btnTiposSaida.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnTiposSaida.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnTiposSaida.selected = false;
+            this.btnTiposSaida.Size = new System.Drawing.Size(229, 36);
+            this.btnTiposSaida.TabIndex = 186;
+            this.btnTiposSaida.Text = "+ Tipo de Saída";
+            this.btnTiposSaida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTiposSaida.Textcolor = System.Drawing.Color.Gray;
+            this.btnTiposSaida.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTiposSaida.Click += new System.EventHandler(this.btnTiposSaida_Click);
+            // 
+            // btnContatos
+            // 
+            this.btnContatos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnContatos.BackColor = System.Drawing.Color.White;
+            this.btnContatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContatos.BorderRadius = 5;
+            this.btnContatos.ButtonText = "+ Empresa";
+            this.btnContatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnContatos.DisabledColor = System.Drawing.Color.Gray;
+            this.btnContatos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnContatos.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnContatos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnContatos.Iconimage")));
+            this.btnContatos.Iconimage_right = null;
+            this.btnContatos.Iconimage_right_Selected = null;
+            this.btnContatos.Iconimage_Selected = null;
+            this.btnContatos.IconMarginLeft = 0;
+            this.btnContatos.IconMarginRight = 0;
+            this.btnContatos.IconRightVisible = true;
+            this.btnContatos.IconRightZoom = 0D;
+            this.btnContatos.IconVisible = false;
+            this.btnContatos.IconZoom = 90D;
+            this.btnContatos.IsTab = false;
+            this.btnContatos.Location = new System.Drawing.Point(0, 198);
+            this.btnContatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContatos.Name = "btnContatos";
+            this.btnContatos.Normalcolor = System.Drawing.Color.White;
+            this.btnContatos.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnContatos.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnContatos.selected = false;
+            this.btnContatos.Size = new System.Drawing.Size(229, 36);
+            this.btnContatos.TabIndex = 187;
+            this.btnContatos.Text = "+ Empresa";
+            this.btnContatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnContatos.Textcolor = System.Drawing.Color.Gray;
+            this.btnContatos.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContatos.Click += new System.EventHandler(this.btnContatos_Click);
+            // 
+            // btnSaldoInicial
+            // 
+            this.btnSaldoInicial.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnSaldoInicial.BackColor = System.Drawing.Color.White;
+            this.btnSaldoInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaldoInicial.BorderRadius = 5;
+            this.btnSaldoInicial.ButtonText = "+ Saldo Inicial";
+            this.btnSaldoInicial.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaldoInicial.DisabledColor = System.Drawing.Color.Gray;
+            this.btnSaldoInicial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaldoInicial.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnSaldoInicial.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnSaldoInicial.Iconimage")));
+            this.btnSaldoInicial.Iconimage_right = null;
+            this.btnSaldoInicial.Iconimage_right_Selected = null;
+            this.btnSaldoInicial.Iconimage_Selected = null;
+            this.btnSaldoInicial.IconMarginLeft = 0;
+            this.btnSaldoInicial.IconMarginRight = 0;
+            this.btnSaldoInicial.IconRightVisible = true;
+            this.btnSaldoInicial.IconRightZoom = 0D;
+            this.btnSaldoInicial.IconVisible = false;
+            this.btnSaldoInicial.IconZoom = 90D;
+            this.btnSaldoInicial.IsTab = false;
+            this.btnSaldoInicial.Location = new System.Drawing.Point(0, 234);
+            this.btnSaldoInicial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaldoInicial.Name = "btnSaldoInicial";
+            this.btnSaldoInicial.Normalcolor = System.Drawing.Color.White;
+            this.btnSaldoInicial.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnSaldoInicial.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnSaldoInicial.selected = false;
+            this.btnSaldoInicial.Size = new System.Drawing.Size(229, 36);
+            this.btnSaldoInicial.TabIndex = 188;
+            this.btnSaldoInicial.Text = "+ Saldo Inicial";
+            this.btnSaldoInicial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldoInicial.Textcolor = System.Drawing.Color.Gray;
+            this.btnSaldoInicial.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaldoInicial.Click += new System.EventHandler(this.btnSaldoInicial_Click);
+            // 
+            // pMenuCadastros
+            // 
+            this.pMenuCadastros.Controls.Add(this.btnSaldoInicial);
+            this.pMenuCadastros.Controls.Add(this.btnContatos);
+            this.pMenuCadastros.Controls.Add(this.btnTiposSaida);
+            this.pMenuCadastros.Controls.Add(this.btnCentroCusto);
+            this.pMenuCadastros.Controls.Add(this.btnCategorias);
+            this.pMenuCadastros.Controls.Add(this.btnFormasPagto);
+            this.pMenuCadastros.Controls.Add(this.btnTiposEntrada);
+            this.pMenuCadastros.Controls.Add(this.label8);
+            this.pMenuCadastros.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pMenuCadastros.Location = new System.Drawing.Point(0, 535);
+            this.pMenuCadastros.Name = "pMenuCadastros";
+            this.pMenuCadastros.Size = new System.Drawing.Size(229, 284);
+            this.pMenuCadastros.TabIndex = 181;
+            this.pMenuCadastros.Visible = false;
             // 
             // DashBoard
             // 
@@ -881,14 +883,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.fotoUsuario)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.pMenuEstratoB.ResumeLayout(false);
-            this.pMenuEstratoB.PerformLayout();
-            this.pMenuCadastros.ResumeLayout(false);
-            this.pMenuCadastros.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pPlanoContas.ResumeLayout(false);
             this.pMenuDiarioC.ResumeLayout(false);
+            this.pMenuEstratoB.ResumeLayout(false);
+            this.pMenuEstratoB.PerformLayout();
+            this.pMenuCadastros.ResumeLayout(false);
+            this.pMenuCadastros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -903,18 +905,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pHeader;
-        private Bunifu.Framework.UI.BunifuFlatButton btnContatos;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTiposSaida;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTiposEntrada;
-        private Bunifu.Framework.UI.BunifuFlatButton btnFormasPagto;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCategorias;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCentroCusto;
-        private System.Windows.Forms.Panel pMenuCadastros;
-        private System.Windows.Forms.Label label8;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator4;
-        private Bunifu.Framework.UI.BunifuFlatButton btnImportar;
-        private System.Windows.Forms.Panel pMenuEstratoB;
-        private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
         private Bunifu.Framework.UI.BunifuFlatButton btnPContas;
         private Bunifu.Framework.UI.BunifuFlatButton btnDiarioCaixa;
@@ -928,7 +919,18 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnEntradaP;
         private Bunifu.Framework.UI.BunifuFlatButton btnConsolidadoDC;
         private Bunifu.Framework.UI.BunifuFlatButton btnConsolidadoPC;
+        private System.Windows.Forms.Panel pMenuEstratoB;
+        private Bunifu.Framework.UI.BunifuFlatButton btnImportar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pMenuCadastros;
         private Bunifu.Framework.UI.BunifuFlatButton btnSaldoInicial;
+        private Bunifu.Framework.UI.BunifuFlatButton btnContatos;
+        private Bunifu.Framework.UI.BunifuFlatButton btnTiposSaida;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCentroCusto;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCategorias;
+        private Bunifu.Framework.UI.BunifuFlatButton btnFormasPagto;
+        private Bunifu.Framework.UI.BunifuFlatButton btnTiposEntrada;
+        private System.Windows.Forms.Label label8;
     }
 }
 

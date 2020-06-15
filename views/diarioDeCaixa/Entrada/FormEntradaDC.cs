@@ -25,6 +25,7 @@ namespace views
             TabIndex();
             ListTipoEntrada();
             Listpagamento();
+            SaldoAnterior();
 
         }
 
@@ -178,6 +179,10 @@ namespace views
                 DataTable dtResult = saldoAnterior.CopyToDataTable();
                 lblSaldoAnterior.Text = dtResult.Rows[0][0].ToString();
             }
+            else
+            {
+                lblSaldoAnterior.Text = "0";
+            }
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -232,7 +237,9 @@ namespace views
             {
                 rpta = ex.Message + ex.StackTrace;
             }
-            //DesabilitarEdição();
+            EnabledEdit();
+            txtValor.Clear();
+            txtObservacao.Clear();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -45,6 +45,7 @@
     <Compile Include="DoDiarioDeCaixa.cs" />
     <Compile Include="DoSaida.cs" />
     <Compile Include="DoEntrada.cs" />
+    <Compile Include="DoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

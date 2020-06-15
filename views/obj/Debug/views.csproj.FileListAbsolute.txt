@@ -50,3 +50,5 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaCentroCusto.resou
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.CentroCusto.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaCategoria.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Categoria.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormAdministrador.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormLogin.resources
