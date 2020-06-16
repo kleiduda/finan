@@ -47,6 +47,7 @@ namespace DataAccess
         public string DescricaoPlano { get; set; }
         public decimal ValorPlano { get; set; }
         public DateTime DataPlano { get; set; }
+        public DateTime DataFim { get; set; }
         public string Doc { get; set; }
         public string Parcela { get; set; }
         public string ObsPlano { get; set; }
@@ -61,7 +62,7 @@ namespace DataAccess
             string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, 
             string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, 
             DateTime data, decimal saldoInicial, decimal troco, int status, string descricaoPlano, decimal valorPlano, 
-            DateTime dataPlano, string doc, string parcela, string obsPlano)
+            DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -88,6 +89,7 @@ namespace DataAccess
             DescricaoPlano = descricaoPlano;
             ValorPlano = valorPlano;
             DataPlano = dataPlano;
+            DataFim = dataFim;
             Doc = doc;
             Parcela = parcela;
             ObsPlano = obsPlano;
@@ -1223,6 +1225,30 @@ namespace DataAccess
                         "INNER JOIN tb_plano_contas pc ON pc.id_sub_categoria = sc.id " +
                         "GROUP BY c.descricao, MONTH(pc.data_pagamento)";
                     command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable PlanoContas_FiltroData(DataCadastros FILTRO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "FiltroData";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@inicio", FILTRO.DataPlano );
+                    command.Parameters.AddWithValue("@fim", FILTRO.DataFim);
+                    command.Parameters.AddWithValue("@texto", FILTRO.DescricaoPlano);
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
                 }

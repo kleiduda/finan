@@ -42,14 +42,19 @@ namespace views
             //dgvLancamentos.Columns["parcela"].HeaderText = "Parcela";
             //dgvLancamentos.Columns["observacao"].HeaderText = "Observação";
 
-            
-
-
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Pesquisa(txtSearch.Text);
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            var inicio = DateTime.Parse(dtInicio.Value.ToString()).ToShortDateString();
+            var fim = DateTime.Parse(dtFim.Value.ToString()).ToShortDateString();
+            MessageBox.Show(inicio.ToString());
+            dgvLancamentos.DataSource = DoCadastros.PlanoContas_FiltroData(Convert.ToDateTime(inicio), Convert.ToDateTime(fim), txtSearch.Text);
         }
     }
 }

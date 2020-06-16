@@ -326,6 +326,14 @@ namespace Domain
         {
             return new DataCadastros().PlanoContas_Lista();
         }
+        public static DataTable PlanoContas_FiltroData(DateTime inicio, DateTime fim, string descricao)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DataPlano = inicio;
+            obj.DataFim = fim;
+            obj.DescricaoPlano = descricao;
+            return obj.PlanoContas_FiltroData(obj);
+        }
         public static DataTable Status_Lista()
         {
             return new DataCadastros().Status_Lista();

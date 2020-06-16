@@ -40,6 +40,11 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pesquisa = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFiltro = new System.Windows.Forms.Button();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.pDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
             this.pButtons.SuspendLayout();
@@ -97,7 +102,7 @@
             this.dgvLancamentos.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvLancamentos.HeaderBgColor = System.Drawing.Color.WhiteSmoke;
             this.dgvLancamentos.HeaderForeColor = System.Drawing.Color.Black;
-            this.dgvLancamentos.Location = new System.Drawing.Point(9, 17);
+            this.dgvLancamentos.Location = new System.Drawing.Point(9, 19);
             this.dgvLancamentos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLancamentos.MultiSelect = false;
             this.dgvLancamentos.Name = "dgvLancamentos";
@@ -121,11 +126,16 @@
             this.dgvLancamentos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvLancamentos.RowTemplate.Height = 40;
             this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLancamentos.Size = new System.Drawing.Size(1349, 642);
+            this.dgvLancamentos.Size = new System.Drawing.Size(1349, 634);
             this.dgvLancamentos.TabIndex = 168;
             // 
             // pButtons
             // 
+            this.pButtons.Controls.Add(this.dtFim);
+            this.pButtons.Controls.Add(this.dtInicio);
+            this.pButtons.Controls.Add(this.btnFiltro);
+            this.pButtons.Controls.Add(this.label1);
+            this.pButtons.Controls.Add(this.label7);
             this.pButtons.Controls.Add(this.pesquisa);
             this.pButtons.Controls.Add(this.btnNovoCadastro);
             this.pButtons.Controls.Add(this.txtSearch);
@@ -158,7 +168,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
             this.txtSearch.Location = new System.Drawing.Point(399, 22);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(947, 38);
+            this.txtSearch.Size = new System.Drawing.Size(359, 38);
             this.txtSearch.TabIndex = 167;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -183,6 +193,64 @@
             this.pesquisa.Size = new System.Drawing.Size(66, 17);
             this.pesquisa.TabIndex = 169;
             this.pesquisa.Text = "Pesquisa";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(792, 9);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 14);
+            this.label7.TabIndex = 170;
+            this.label7.Text = "Data Inicio:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(953, 8);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 14);
+            this.label1.TabIndex = 172;
+            this.label1.Text = "Data Fim:";
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.FlatAppearance.BorderSize = 0;
+            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
+            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltro.Location = new System.Drawing.Point(1135, 25);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(103, 31);
+            this.btnFiltro.TabIndex = 174;
+            this.btnFiltro.Text = "FILTRAR";
+            this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.CustomFormat = "";
+            this.dtInicio.Location = new System.Drawing.Point(795, 32);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(130, 22);
+            this.dtInicio.TabIndex = 169;
+            this.dtInicio.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
+            // 
+            // dtFim
+            // 
+            this.dtFim.CustomFormat = "";
+            this.dtFim.Location = new System.Drawing.Point(948, 32);
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(130, 22);
+            this.dtFim.TabIndex = 175;
+            this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
             // 
             // FormListaP
             // 
@@ -216,5 +284,10 @@
         private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvLancamentos;
         private System.Windows.Forms.Label pesquisa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnFiltro;
+        private System.Windows.Forms.DateTimePicker dtFim;
+        private System.Windows.Forms.DateTimePicker dtInicio;
     }
 }
