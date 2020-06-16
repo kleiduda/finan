@@ -17,7 +17,6 @@ M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\DataAccess.pdb
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormTipoSaida.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormPagamento.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCentroCusto.resources
-M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormCategorias.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormDiarioCaixa.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormEmpresa.resources
 M:\ModuloFinanceiro\FinancialModule\views\bin\Debug\MonthCalendar.dll

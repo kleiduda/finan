@@ -23,6 +23,7 @@ namespace views
         private void Categoria_Load(object sender, EventArgs e)
         {
             ListCentroCusto();
+            ListCategoria();
             ListSubCategoria();
             if (lblID.Text != "novo")
             {
@@ -41,22 +42,10 @@ namespace views
         {
             DataTable dt = new DataTable();
             dt = DoCadastros.Categoria_ListaPorID(int.Parse(lblID.Text));
-            txtCadastro.Text = dt.Rows[0]["descricao"].ToString();
         }
-        private void LimparCampos()
-        {
-            txtCadastro.Clear();
-            
-
-        }
-        public void DesabilitarEdição()
-        {
-            txtCadastro.Enabled = false;
-        }
-        public void EnabledEdit()
-        {
-            txtCadastro.Enabled = true;
-        }
+        
+        
+       
         private void msgError(string msg)
         {
             lblError.Text = "      " + msg;
@@ -72,6 +61,12 @@ namespace views
             cbCentroCusto.DataSource = DoCadastros.CentroCusto_Lista();
             cbCentroCusto.ValueMember = "id";
             cbCentroCusto.DisplayMember = "descricao";
+        }
+        public void ListCategoria()
+        {
+            cbCategoria.DataSource = DoCadastros.Categoria_Lista2();
+            cbCategoria.ValueMember = "id";
+            cbCategoria.DisplayMember = "descricao";
         }
         public void ListSubCategoria()
         {
@@ -89,75 +84,122 @@ namespace views
         }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            string rpta = "";
             try
             {
-                string rpta = "";
-                int Especie = 0;
-                if (string.IsNullOrEmpty(txtCadastro.Text))
+                rpta = DoCadastros.Categoria_Agrupamento(cbCategoria.Text, Convert.ToInt32(cbCentroCusto.SelectedValue), Convert.ToInt32(cbCategoria.SelectedValue), cbSubCategoria.Text);
+                if (rpta.Equals("OK"))
                 {
-                    lblError.Visible = true;
-                    lblSuc.Visible = false;
-                    msgError("Campo não pode estar vazio!");
+                    msgSuccess("Cadastro realizado com sucesso!");
                 }
                 else
                 {
-                    if (DoCadastros.Categoria_Valida(txtCadastro.Text))
-                    {
-                        lblSuc.Visible = false;
-                        lblError.Visible = true;
-                        msgError("Já existe um tipo de Entrada com descrição: " + txtCadastro.Text.Trim().ToUpper());
-                    }
-                    else if (IsNew == true)
-                    {
-
-                        rpta = DoCadastros.Categoria_Cadastro(txtCadastro.Text.Trim().ToUpper(), Convert.ToInt32(cbCentroCusto.SelectedValue), cbSubCategoria.Text);
-                    }
-                    else if (IsNew == false)
-                    {
-                       // DoCadastros.Categoria_Update(int.Parse(lblID.Text), txtCadastro.Text);
-                    }
-                    if (rpta.Equals("OK") && IsNew == true)
-                    {
-                        lblError.Visible = false;
-                        msgSuccess("Tipo de Entrada " + txtCadastro.Text.Trim().ToUpper() + ", cadastrado com sucesso!");
-                    }
-                    else
-                    {
-                        msgSuccess("Tipo de Entrada " + txtCadastro.Text.Trim().ToUpper() + ", atualizado com sucesso!");
-                    }
+                    msgError("Erro no cadastro");
                 }
             }
             catch (Exception ex)
             {
-                msgError(ex.Message + ex.StackTrace);
+
+                rpta = ex.Message;
             }
-            txtCadastro.Clear();
-            txtCadastro.Focus();
         }
 
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            txtCadastro.Clear();
-            btnNovoCadastro.Enabled = false;
-            btnCancelar.Enabled = true;
-            btnEditar.Enabled = false;
             btnSalvar.Enabled = true;
             lblSuc.Visible = false;
             lblError.Visible = false;
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnSaveCC_Click(object sender, EventArgs e)
         {
-            txtCadastro.Enabled = true;
+            string rpta = "";
+            try
+            {
+                if (string.IsNullOrEmpty(txtCentroCusto.Text))
+                {
+                    txtCentroCusto.BackColor = Color.Red;
+                }
+                else
+                {
+                    rpta = DoCadastros.CentroCusto_Cadastro(txtCentroCusto.Text);
+                }
+                if (rpta.Equals("OK"))
+                {
+                    txtCentroCusto.Clear();
+                    pCentroCusto.Visible = false;
+                    ListCentroCusto();
+                }
+                else
+                {
+                    MessageBox.Show(rpta);
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message + ex.StackTrace;
+            }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnSaveCategoria_Click(object sender, EventArgs e)
         {
-            txtCadastro.Enabled = false;
-            btnNovoCadastro.Enabled = true;
-
+            string rpta = "";
+            try
+            {
+                if (string.IsNullOrEmpty(txtCategoria.Text))
+                {
+                    txtCategoria.BackColor = Color.Red;
+                }
+                else
+                {
+                    rpta = DoCadastros.Categoria_Cadastro(txtCategoria.Text);
+                }
+                if (rpta.Equals("OK"))
+                {
+                    txtCategoria.Clear();
+                    pCategoria.Visible = false;
+                    ListCategoria();
+                }
+                else
+                {
+                    MessageBox.Show(rpta);
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message + ex.StackTrace;
+            }
         }
 
-        
+        private void btnSaveSubCategoria_Click(object sender, EventArgs e)
+        {
+            string rpta = "";
+            try
+            {
+                if (string.IsNullOrEmpty(txtSubCategoria.Text))
+                {
+                    txtSubCategoria.BackColor = Color.Red;
+                }
+                else
+                {
+                    rpta = DoCadastros.SubCategoria_Cadastro(txtSubCategoria.Text);
+                }
+                if (rpta.Equals("OK"))
+                {
+                    txtSubCategoria.Clear();
+                    pSubCategoria.Visible = false;
+                    ListSubCategoria();
+                }
+                else
+                {
+                    MessageBox.Show(rpta);
+                }
+            }
+            catch (Exception ex)
+            {
+                rpta = ex.Message + ex.StackTrace;
+            }
+        }
     }
+
 }

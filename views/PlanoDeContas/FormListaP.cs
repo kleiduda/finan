@@ -33,19 +33,13 @@ namespace views
         {
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Lista();
             dgvLancamentos.Columns["id"].Visible = false;
-            dgvLancamentos.Columns["cnpj"].Visible = false;
-            dgvLancamentos.Columns["id_tipo_entrada"].Visible = false;
-            dgvLancamentos.Columns["id_tipo_saida"].Visible = false;
 
             dgvLancamentos.Columns["descricao"].HeaderText = "Descrição";
             dgvLancamentos.Columns["valor"].HeaderText = "Valor";
             dgvLancamentos.Columns["data_pagamento"].HeaderText = "Data";
-            dgvLancamentos.Columns["id_status"].HeaderText = "STATUS";
-            dgvLancamentos.Columns["id_pagamento"].HeaderText = "Forma Pagamento";
+            dgvLancamentos.Columns["status"].HeaderText = "STATUS";
             dgvLancamentos.Columns["doc"].HeaderText = "DOC";
             dgvLancamentos.Columns["parcela"].HeaderText = "Parcela";
-            dgvLancamentos.Columns["id_empresa"].HeaderText = "Empresa";
-            dgvLancamentos.Columns["id_sub_categoria"].HeaderText = "Sub Categoria";
             dgvLancamentos.Columns["observacao"].HeaderText = "Observação";
 
         }

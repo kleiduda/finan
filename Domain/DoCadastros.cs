@@ -77,13 +77,26 @@ namespace Domain
         #endregion CENTRO CUSTO
         //
         #region CATEGORIAS e SUBCATEGORIAS
-        public static string Categoria_Cadastro(string nomeCategoria, int idCentroCusto, string nomeSubCategoria)
+        public static string Categoria_Cadastro(string descricao)
         {
             DataCadastros obj = new DataCadastros();
-            obj.NomeCategoria = nomeCategoria;
-            obj.IdCentroCusto = idCentroCusto;
-            obj.NomeSubCategoria = nomeSubCategoria;
+            obj.NomeCategoria = descricao;
             return obj.Categoria_Cadastro(obj);
+        }
+        public static string Categoria_Agrupamento(string descricaoCategoria, int idCentroCusto, int idCategoria, string descricaoSub)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.NomeCategoria = descricaoCategoria;
+            obj.IdCentroCusto = idCentroCusto;
+            obj.IdCategoria = idCategoria;
+            obj.NomeSubCategoria = descricaoSub;
+            return obj.Categoria_Cadastro(obj);
+        }
+        public static string SubCategoria_Cadastro(string descricao)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.NomeSubCategoria = descricao;
+            return obj.SubCategoria_Cadastro(obj);
         }
         public static string Categoria_Delete(int idCategoria)
         {
@@ -94,6 +107,10 @@ namespace Domain
         public static DataTable Categoria_Lista()
         {
             return new DataCadastros().Categoria_Lista();
+        }
+        public static DataTable Categoria_Lista2()
+        {
+            return new DataCadastros().Categoria_Lista2();
         }
         public static DataTable Categoria_ListaPorID(int id)
         {

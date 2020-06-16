@@ -331,12 +331,57 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
+                    command.CommandText = "INSERT INTO tb_categoria (descricao) VALUES (@descricao)";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@descricao", Categoria.NomeCategoria);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao cadastrar";
+
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public string Categoria_Agrupamento(DataCadastros Categoria)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
                     command.CommandText = "CadastroCategoria";
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@nome_categoria", Categoria.NomeCategoria);
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@descricao_categoria", Categoria.NomeCategoria);
                     command.Parameters.AddWithValue("@id_centro_custo", Categoria.IdCentroCusto);
-                    command.Parameters.AddWithValue("@nome_sub_categoria", Categoria.NomeSubCategoria);
+                    command.Parameters.AddWithValue("@id_categoria", Categoria.IdCategoria);
+                    command.Parameters.AddWithValue("@descricao_sub", Categoria.NomeSubCategoria);
                     rpta = command.ExecuteNonQuery() == 2 ? "OK" : "Erro ao cadastrar";
+
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public string SubCategoria_Cadastro(DataCadastros Categoria)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO tb_sub_categoria (descricao) VALUES (@descricao)";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@descricao", Categoria.NomeSubCategoria);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao cadastrar";
 
                 }
                 catch (Exception ex)
@@ -356,6 +401,27 @@ namespace DataAccess
                 {
                     command.Connection = connection;
                     command.CommandText = "SELECT * FROM View_Categoria";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable Categoria_Lista2()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM tb_categoria";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
@@ -1099,7 +1165,12 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM tb_plano_contas";
+                    command.CommandText = "SELECT pc.id, pc.descricao, pc.valor, pc.data_pagamento,s.status,fp.descricao as Pagamento,pc.doc, pc.parcela,e.nome_fantasia as Empresa, sc.descricao as SubCategoria, pc.observacao " +
+                        "FROM tb_plano_contas pc " +
+                        "INNER JOIN tb_status s ON pc.id_status = s.id " +
+                        "INNER JOIN tb_forma_pagamento fp ON pc.id_pagamento = fp.id " +
+                        "INNER JOIN tb_empresa e ON pc.id_empresa = e.id " +
+                        "INNER JOIN tb_sub_categoria sc ON pc.id_sub_categoria = sc.id";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
