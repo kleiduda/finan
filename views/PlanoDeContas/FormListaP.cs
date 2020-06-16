@@ -70,8 +70,15 @@ namespace views
         {
             var inicio = DateTime.Parse(dtInicio.Value.ToString()).ToShortDateString();
             var fim = DateTime.Parse(dtFim.Value.ToString()).ToShortDateString();
-            //MessageBox.Show(inicio.ToString());
-            dgvLancamentos.DataSource = DoCadastros.PlanoContas_FiltroData(Convert.ToDateTime(inicio), Convert.ToDateTime(fim), txtSearch.Text);
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                dgvLancamentos.DataSource = DoCadastros.PlanoContas_FiltroDataSemDescricao(Convert.ToDateTime(inicio), Convert.ToDateTime(fim));
+            }
+            else
+            {
+                dgvLancamentos.DataSource = DoCadastros.PlanoContas_FiltroData(Convert.ToDateTime(inicio), Convert.ToDateTime(fim), txtSearch.Text);
+            }
+
             CalculoTotais();
         }
 

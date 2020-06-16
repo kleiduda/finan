@@ -357,6 +357,13 @@ namespace Domain
             obj.DescricaoPlano = descricao;
             return obj.PlanoContas_FiltroData(obj);
         }
+        public static DataTable PlanoContas_FiltroDataSemDescricao(DateTime inicio, DateTime fim)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DataPlano = inicio;
+            obj.DataFim = fim;
+            return obj.PlanoContas_FiltroDataSemDescricao(obj);
+        }
         public static DataTable Status_Lista()
         {
             return new DataCadastros().Status_Lista();

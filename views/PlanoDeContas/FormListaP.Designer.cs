@@ -36,18 +36,18 @@
             this.pDataGrid = new System.Windows.Forms.Panel();
             this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pButtons = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTSaidas = new System.Windows.Forms.Label();
+            this.lblTEntradas = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.btnFiltro = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pesquisa = new System.Windows.Forms.Label();
             this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.pesquisa = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnFiltro = new System.Windows.Forms.Button();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtFim = new System.Windows.Forms.DateTimePicker();
-            this.lblTEntradas = new System.Windows.Forms.Label();
-            this.lblTSaidas = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.pDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
             this.pButtons.SuspendLayout();
@@ -151,6 +151,100 @@
             this.pButtons.Size = new System.Drawing.Size(1363, 88);
             this.pButtons.TabIndex = 174;
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(258, 63);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
+            this.lblTotal.TabIndex = 177;
+            this.lblTotal.Text = "Total:";
+            // 
+            // lblTSaidas
+            // 
+            this.lblTSaidas.AutoSize = true;
+            this.lblTSaidas.Location = new System.Drawing.Point(258, 37);
+            this.lblTSaidas.Name = "lblTSaidas";
+            this.lblTSaidas.Size = new System.Drawing.Size(91, 17);
+            this.lblTSaidas.TabIndex = 176;
+            this.lblTSaidas.Text = "Total Saídas:";
+            // 
+            // lblTEntradas
+            // 
+            this.lblTEntradas.AutoSize = true;
+            this.lblTEntradas.Location = new System.Drawing.Point(258, 11);
+            this.lblTEntradas.Name = "lblTEntradas";
+            this.lblTEntradas.Size = new System.Drawing.Size(105, 17);
+            this.lblTEntradas.TabIndex = 169;
+            this.lblTEntradas.Text = "Total Entradas:";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(1138, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 14);
+            this.label7.TabIndex = 170;
+            this.label7.Text = "Data Inicio:";
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.CustomFormat = "";
+            this.dtInicio.Location = new System.Drawing.Point(1216, 9);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(130, 22);
+            this.dtInicio.TabIndex = 169;
+            this.dtInicio.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
+            // 
+            // dtFim
+            // 
+            this.dtFim.CustomFormat = "";
+            this.dtFim.Location = new System.Drawing.Point(1216, 36);
+            this.dtFim.Name = "dtFim";
+            this.dtFim.Size = new System.Drawing.Size(130, 22);
+            this.dtFim.TabIndex = 175;
+            this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
+            // 
+            // btnFiltro
+            // 
+            this.btnFiltro.FlatAppearance.BorderSize = 0;
+            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
+            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltro.Location = new System.Drawing.Point(1240, 60);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(103, 23);
+            this.btnFiltro.TabIndex = 174;
+            this.btnFiltro.Text = "FILTRAR";
+            this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(1138, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 14);
+            this.label1.TabIndex = 172;
+            this.label1.Text = "Data Fim:";
+            // 
+            // pesquisa
+            // 
+            this.pesquisa.AutoSize = true;
+            this.pesquisa.Location = new System.Drawing.Point(677, 31);
+            this.pesquisa.Name = "pesquisa";
+            this.pesquisa.Size = new System.Drawing.Size(66, 17);
+            this.pesquisa.TabIndex = 169;
+            this.pesquisa.Text = "Pesquisa";
+            // 
             // btnNovoCadastro
             // 
             this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
@@ -160,9 +254,9 @@
             this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNovoCadastro.Location = new System.Drawing.Point(11, 32);
             this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(179, 31);
+            this.btnNovoCadastro.Size = new System.Drawing.Size(155, 31);
             this.btnNovoCadastro.TabIndex = 162;
-            this.btnNovoCadastro.Text = "NOVO CADASTRO";
+            this.btnNovoCadastro.Text = "LANÇAMENTO";
             this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNovoCadastro.UseVisualStyleBackColor = true;
             this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
@@ -191,100 +285,6 @@
             this.label9.Size = new System.Drawing.Size(504, 44);
             this.label9.TabIndex = 173;
             this.label9.Text = "#LISTA DE LANÇAMENTOS";
-            // 
-            // pesquisa
-            // 
-            this.pesquisa.AutoSize = true;
-            this.pesquisa.Location = new System.Drawing.Point(677, 31);
-            this.pesquisa.Name = "pesquisa";
-            this.pesquisa.Size = new System.Drawing.Size(66, 17);
-            this.pesquisa.TabIndex = 169;
-            this.pesquisa.Text = "Pesquisa";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(1138, 14);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 14);
-            this.label7.TabIndex = 170;
-            this.label7.Text = "Data Inicio:";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(1138, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 14);
-            this.label1.TabIndex = 172;
-            this.label1.Text = "Data Fim:";
-            // 
-            // btnFiltro
-            // 
-            this.btnFiltro.FlatAppearance.BorderSize = 0;
-            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
-            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltro.Location = new System.Drawing.Point(1240, 60);
-            this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(103, 23);
-            this.btnFiltro.TabIndex = 174;
-            this.btnFiltro.Text = "FILTRAR";
-            this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltro.UseVisualStyleBackColor = true;
-            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
-            // 
-            // dtInicio
-            // 
-            this.dtInicio.CustomFormat = "";
-            this.dtInicio.Location = new System.Drawing.Point(1216, 9);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(130, 22);
-            this.dtInicio.TabIndex = 169;
-            this.dtInicio.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
-            // 
-            // dtFim
-            // 
-            this.dtFim.CustomFormat = "";
-            this.dtFim.Location = new System.Drawing.Point(1216, 36);
-            this.dtFim.Name = "dtFim";
-            this.dtFim.Size = new System.Drawing.Size(130, 22);
-            this.dtFim.TabIndex = 175;
-            this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
-            // 
-            // lblTEntradas
-            // 
-            this.lblTEntradas.AutoSize = true;
-            this.lblTEntradas.Location = new System.Drawing.Point(258, 11);
-            this.lblTEntradas.Name = "lblTEntradas";
-            this.lblTEntradas.Size = new System.Drawing.Size(105, 17);
-            this.lblTEntradas.TabIndex = 169;
-            this.lblTEntradas.Text = "Total Entradas:";
-            // 
-            // lblTSaidas
-            // 
-            this.lblTSaidas.AutoSize = true;
-            this.lblTSaidas.Location = new System.Drawing.Point(258, 37);
-            this.lblTSaidas.Name = "lblTSaidas";
-            this.lblTSaidas.Size = new System.Drawing.Size(91, 17);
-            this.lblTSaidas.TabIndex = 176;
-            this.lblTSaidas.Text = "Total Saídas:";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(258, 63);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 17);
-            this.lblTotal.TabIndex = 177;
-            this.lblTotal.Text = "Total:";
             // 
             // FormListaP
             // 

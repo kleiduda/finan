@@ -1327,6 +1327,29 @@ namespace DataAccess
                 return dt;
             }
         }
+        public DataTable PlanoContas_FiltroDataSemDescricao(DataCadastros FILTRO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "FiltroDataSemDescricao";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@inicio", FILTRO.DataPlano);
+                    command.Parameters.AddWithValue("@fim", FILTRO.DataFim);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
         public DataTable PlanoContas_Pesquisa(DataCadastros PLANO)
         {
             DataTable DtResultado = new DataTable("plano");
