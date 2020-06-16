@@ -44,11 +44,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblMes = new System.Windows.Forms.Label();
             this.pContainer = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pTotais = new System.Windows.Forms.Panel();
-            this.painelSaidas = new System.Windows.Forms.Panel();
             this.painelEntradas = new System.Windows.Forms.Panel();
             this.lblResumoVendasT = new System.Windows.Forms.Label();
             this.bunifuSeparator7 = new Bunifu.Framework.UI.BunifuSeparator();
@@ -271,78 +266,19 @@
             // 
             // pContainer
             // 
-            this.pContainer.Controls.Add(this.label7);
-            this.pContainer.Controls.Add(this.label5);
-            this.pContainer.Controls.Add(this.label4);
-            this.pContainer.Controls.Add(this.pTotais);
-            this.pContainer.Controls.Add(this.painelSaidas);
             this.pContainer.Controls.Add(this.painelEntradas);
             this.pContainer.Location = new System.Drawing.Point(18, 121);
             this.pContainer.Name = "pContainer";
             this.pContainer.Size = new System.Drawing.Size(1001, 612);
             this.pContainer.TabIndex = 174;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label7.Location = new System.Drawing.Point(705, 28);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 26);
-            this.label7.TabIndex = 186;
-            this.label7.Text = "TOTAIS";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label5.Location = new System.Drawing.Point(365, 28);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 26);
-            this.label5.TabIndex = 185;
-            this.label5.Text = "SAÍDA";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(137)))), ((int)(((byte)(137)))), ((int)(((byte)(137)))));
-            this.label4.Location = new System.Drawing.Point(27, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 26);
-            this.label4.TabIndex = 184;
-            this.label4.Text = "ENTRADA";
-            // 
-            // pTotais
-            // 
-            this.pTotais.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pTotais.Location = new System.Drawing.Point(679, 64);
-            this.pTotais.Name = "pTotais";
-            this.pTotais.Size = new System.Drawing.Size(313, 536);
-            this.pTotais.TabIndex = 182;
-            // 
-            // painelSaidas
-            // 
-            this.painelSaidas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelSaidas.Location = new System.Drawing.Point(345, 64);
-            this.painelSaidas.Name = "painelSaidas";
-            this.painelSaidas.Size = new System.Drawing.Size(328, 536);
-            this.painelSaidas.TabIndex = 181;
-            // 
             // painelEntradas
             // 
-            this.painelEntradas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.painelEntradas.Location = new System.Drawing.Point(11, 64);
+            this.painelEntradas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.painelEntradas.AutoScroll = true;
+            this.painelEntradas.Location = new System.Drawing.Point(11, 21);
             this.painelEntradas.Name = "painelEntradas";
-            this.painelEntradas.Size = new System.Drawing.Size(328, 536);
+            this.painelEntradas.Size = new System.Drawing.Size(328, 579);
             this.painelEntradas.TabIndex = 175;
             // 
             // lblResumoVendasT
@@ -354,9 +290,9 @@
             this.lblResumoVendasT.Location = new System.Drawing.Point(38, 14);
             this.lblResumoVendasT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblResumoVendasT.Name = "lblResumoVendasT";
-            this.lblResumoVendasT.Size = new System.Drawing.Size(198, 26);
+            this.lblResumoVendasT.Size = new System.Drawing.Size(239, 26);
             this.lblResumoVendasT.TabIndex = 162;
-            this.lblResumoVendasT.Text = "DIARIO DE CAIXA";
+            this.lblResumoVendasT.Text = "DFC - CONSOLIDADO";
             // 
             // bunifuSeparator7
             // 
@@ -394,7 +330,6 @@
             this.painelDinheiro.ResumeLayout(false);
             this.painelDinheiro.PerformLayout();
             this.pContainer.ResumeLayout(false);
-            this.pContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,7 +344,6 @@
         private System.Windows.Forms.Panel pContainer;
         private Pabo.Calendar.MonthCalendar calendario;
         private System.Windows.Forms.Panel painelEntradas;
-        private System.Windows.Forms.Panel painelSaidas;
         private System.Windows.Forms.Panel panelCalendario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
@@ -420,9 +354,5 @@
         private System.Windows.Forms.Label totalMesEntrada;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel pTotais;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
     }
 }

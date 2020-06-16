@@ -1165,12 +1165,16 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT pc.id, pc.descricao, pc.valor, pc.data_pagamento,s.status,fp.descricao as Pagamento,pc.doc, pc.parcela,e.nome_fantasia as Empresa, sc.descricao as SubCategoria, pc.observacao " +
+                    command.CommandText = "SELECT pc.id, e.nome_fantasia as Empresa, sc.descricao as SubCategoria, c.descricao as Categoria, " +
+                        "cc.descricao as CentroCusto, pc.descricao, pc.valor, pc.data_pagamento, fp.descricao as Pagamento, s.status, pc.parcela,  " +
+                        "pc.doc, pc.observacao " +
                         "FROM tb_plano_contas pc " +
                         "INNER JOIN tb_status s ON pc.id_status = s.id " +
                         "INNER JOIN tb_forma_pagamento fp ON pc.id_pagamento = fp.id " +
                         "INNER JOIN tb_empresa e ON pc.id_empresa = e.id " +
-                        "INNER JOIN tb_sub_categoria sc ON pc.id_sub_categoria = sc.id";
+                        "INNER JOIN tb_sub_categoria sc ON pc.id_sub_categoria = sc.id " +
+                        "INNER JOIN tb_categoria c ON sc.id_categoria = c.id " +
+                        "INNER JOIN tb_centro_custo cc ON c.id_centro_custo = cc.id";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
@@ -1213,8 +1217,11 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "select pc.descricao, SUM(pc.valor) as Valor, Convert(varchar(10), pc.data_pagamento, 103) as Data, Month(pc.data_pagamento)as Mes " +
-                        "from tb_plano_contas pc GROUP BY pc.descricao, pc.valor, pc.data_pagamento ORDER BY pc.data_pagamento asc";
+                    command.CommandText = "SELECT c.descricao, MONTH(pc.data_pagamento) as Mes, SUM(pc.valor) as Valor " +
+                        "FROM tb_categoria c " +
+                        "INNER JOIN tb_sub_categoria sc ON c.id = sc.id_categoria " +
+                        "INNER JOIN tb_plano_contas pc ON pc.id_sub_categoria = sc.id " +
+                        "GROUP BY c.descricao, MONTH(pc.data_pagamento)";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
@@ -1225,6 +1232,38 @@ namespace DataAccess
                 }
                 return dt;
             }
+        }
+        public DataTable PlanoContas_Pesquisa(DataCadastros PLANO)
+        {
+            DataTable DtResultado = new DataTable("plano");
+            using (var connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "PesquisaPlanoContas";
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter parPesquisa = new SqlParameter();
+                    parPesquisa.ParameterName = "@texto";
+                    parPesquisa.SqlDbType = SqlDbType.VarChar;
+                    parPesquisa.Size = 500;
+                    parPesquisa.Value = PLANO.DescricaoPlano;
+                    command.Parameters.Add(parPesquisa);
+
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(DtResultado);
+
+                    command.Parameters.Clear();
+                }
+                catch (Exception ex)
+                {
+                    DtResultado = null;
+                }
+                return DtResultado;
+            }
+
         }
 
         #endregion PLANO CONTAS

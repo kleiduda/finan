@@ -34,14 +34,22 @@ namespace views
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Lista();
             dgvLancamentos.Columns["id"].Visible = false;
 
-            dgvLancamentos.Columns["descricao"].HeaderText = "Descrição";
-            dgvLancamentos.Columns["valor"].HeaderText = "Valor";
-            dgvLancamentos.Columns["data_pagamento"].HeaderText = "Data";
-            dgvLancamentos.Columns["status"].HeaderText = "STATUS";
-            dgvLancamentos.Columns["doc"].HeaderText = "DOC";
-            dgvLancamentos.Columns["parcela"].HeaderText = "Parcela";
-            dgvLancamentos.Columns["observacao"].HeaderText = "Observação";
+            //dgvLancamentos.Columns["descricao"].HeaderText = "Descrição";
+            //dgvLancamentos.Columns["valor"].HeaderText = "Valor";
+            //dgvLancamentos.Columns["data_pagamento"].HeaderText = "Data";
+            //dgvLancamentos.Columns["status"].HeaderText = "STATUS";
+            //dgvLancamentos.Columns["doc"].HeaderText = "DOC";
+            //dgvLancamentos.Columns["parcela"].HeaderText = "Parcela";
+            //dgvLancamentos.Columns["observacao"].HeaderText = "Observação";
 
+            
+
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            dgvLancamentos.DataSource = DoCadastros.PlanoContas_Pesquisa(txtSearch.Text);
         }
     }
 }

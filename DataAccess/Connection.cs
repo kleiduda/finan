@@ -15,6 +15,7 @@ namespace DataAccess
         public Connection()
         {
             connectionString = @"Server=DESKTOP-JNLM84J\SQLEXPRESS; DataBase=dbFinan; Integrated Security=true";
+            //connectionString = @"Server=DESKTOP-KIC98GR\SQLEXPRESS01; DataBase=dbFinan; Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {

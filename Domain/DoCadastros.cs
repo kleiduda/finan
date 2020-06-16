@@ -335,6 +335,12 @@ namespace Domain
         {
             return new DataCadastros().PlanoContas_Consolidado();
         }
+        public static DataTable PlanoContas_Pesquisa(string texto)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DescricaoPlano = texto;
+            return obj.PlanoContas_Pesquisa(obj);
+        }
         #endregion 
     }
 

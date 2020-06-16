@@ -34,14 +34,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pDataGrid = new System.Windows.Forms.Panel();
+            this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pButtons = new System.Windows.Forms.Panel();
             this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.pesquisa = new System.Windows.Forms.Label();
             this.pDataGrid.SuspendLayout();
-            this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
+            this.pButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -61,56 +62,6 @@
             this.pDataGrid.Name = "pDataGrid";
             this.pDataGrid.Size = new System.Drawing.Size(1363, 667);
             this.pDataGrid.TabIndex = 175;
-            // 
-            // pButtons
-            // 
-            this.pButtons.Controls.Add(this.btnNovoCadastro);
-            this.pButtons.Controls.Add(this.txtSearch);
-            this.pButtons.Location = new System.Drawing.Point(32, 730);
-            this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(1363, 81);
-            this.pButtons.TabIndex = 174;
-            // 
-            // btnNovoCadastro
-            // 
-            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
-            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
-            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(10, 25);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(179, 31);
-            this.btnNovoCadastro.TabIndex = 162;
-            this.btnNovoCadastro.Text = "NOVO CADASTRO";
-            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoCadastro.UseVisualStyleBackColor = true;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
-            this.txtSearch.Location = new System.Drawing.Point(238, 24);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1108, 31);
-            this.txtSearch.TabIndex = 167;
-            this.txtSearch.Text = "Pesquisar";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 9);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(504, 44);
-            this.label9.TabIndex = 173;
-            this.label9.Text = "#LISTA DE LANÇAMENTOS";
             // 
             // dgvLancamentos
             // 
@@ -173,6 +124,66 @@
             this.dgvLancamentos.Size = new System.Drawing.Size(1349, 642);
             this.dgvLancamentos.TabIndex = 168;
             // 
+            // pButtons
+            // 
+            this.pButtons.Controls.Add(this.pesquisa);
+            this.pButtons.Controls.Add(this.btnNovoCadastro);
+            this.pButtons.Controls.Add(this.txtSearch);
+            this.pButtons.Location = new System.Drawing.Point(32, 730);
+            this.pButtons.Name = "pButtons";
+            this.pButtons.Size = new System.Drawing.Size(1363, 81);
+            this.pButtons.TabIndex = 174;
+            // 
+            // btnNovoCadastro
+            // 
+            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
+            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
+            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(10, 25);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Size = new System.Drawing.Size(179, 31);
+            this.btnNovoCadastro.TabIndex = 162;
+            this.btnNovoCadastro.Text = "NOVO CADASTRO";
+            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoCadastro.UseVisualStyleBackColor = true;
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
+            this.txtSearch.Location = new System.Drawing.Point(399, 22);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(947, 38);
+            this.txtSearch.TabIndex = 167;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(504, 44);
+            this.label9.TabIndex = 173;
+            this.label9.Text = "#LISTA DE LANÇAMENTOS";
+            // 
+            // pesquisa
+            // 
+            this.pesquisa.AutoSize = true;
+            this.pesquisa.Location = new System.Drawing.Point(320, 32);
+            this.pesquisa.Name = "pesquisa";
+            this.pesquisa.Size = new System.Drawing.Size(66, 17);
+            this.pesquisa.TabIndex = 169;
+            this.pesquisa.Text = "Pesquisa";
+            // 
             // FormListaP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,9 +199,9 @@
             this.Text = "FormTipoEntrada";
             this.Load += new System.EventHandler(this.FormListaP_Load);
             this.pDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).EndInit();
             this.pButtons.ResumeLayout(false);
             this.pButtons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +215,6 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvLancamentos;
+        private System.Windows.Forms.Label pesquisa;
     }
 }
