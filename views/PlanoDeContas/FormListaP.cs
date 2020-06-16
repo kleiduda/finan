@@ -21,40 +21,65 @@ namespace views
 
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
-            FormEntradaP frm = new FormEntradaP();
+            FormEntradaP frm = new FormEntradaP("novo");
             frm.ShowDialog();
+            PlanoContas_Lista();
         }
 
         private void FormListaP_Load(object sender, EventArgs e)
         {
             PlanoContas_Lista();
         }
+        public void CalculoTotais()
+        {
+            decimal entradas = Convert.ToDecimal(dgvLancamentos.Rows.Cast<DataGridViewRow>().Where(x => x.Cells["status"].Value.ToString() == "Recebido").Sum(x => Convert.ToDecimal(x.Cells["Valor"].Value ?? 0)).ToString());
+            decimal saidas = Convert.ToDecimal(dgvLancamentos.Rows.Cast<DataGridViewRow>().Where(x => x.Cells["status"].Value.ToString() == "Pago").Sum(x => Convert.ToDecimal(x.Cells["Valor"].Value ?? 0)).ToString());
+            decimal total = entradas - saidas;
+            lblTEntradas.Text = "Entradas: " + entradas.ToString("C");
+            lblTSaidas.Text = "Saídas: " + saidas.ToString("C");
+            lblTotal.Text = "Total: " + total.ToString("C");
+        }
         public void PlanoContas_Lista()
         {
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Lista();
             dgvLancamentos.Columns["id"].Visible = false;
+            CalculoTotais();
 
-            //dgvLancamentos.Columns["descricao"].HeaderText = "Descrição";
-            //dgvLancamentos.Columns["valor"].HeaderText = "Valor";
-            //dgvLancamentos.Columns["data_pagamento"].HeaderText = "Data";
-            //dgvLancamentos.Columns["status"].HeaderText = "STATUS";
-            //dgvLancamentos.Columns["doc"].HeaderText = "DOC";
-            //dgvLancamentos.Columns["parcela"].HeaderText = "Parcela";
-            //dgvLancamentos.Columns["observacao"].HeaderText = "Observação";
+            dgvLancamentos.Columns["descricao"].HeaderText = "DESCRIÇÂO";
+            dgvLancamentos.Columns["valor"].HeaderText = "VALOR";
+            dgvLancamentos.Columns["data_pagamento"].HeaderText = "DATA";
+            dgvLancamentos.Columns["status"].HeaderText = "STATUS";
+            dgvLancamentos.Columns["doc"].HeaderText = "DOC";
+            dgvLancamentos.Columns["parcela"].HeaderText = "PARCELA";
+            dgvLancamentos.Columns["observacao"].HeaderText = "OBS";
+            dgvLancamentos.Columns["Pagamento"].HeaderText = "F.PAGTO";
+            dgvLancamentos.Columns["Categoria"].HeaderText = "CATEGORIA";
+            dgvLancamentos.Columns["SubCategoria"].HeaderText = "SUBCATEGORIA";
+            dgvLancamentos.Columns["Empresa"].HeaderText = "EMPRESA";
+            dgvLancamentos.Columns["CentroCusto"].HeaderText = "C.CUSTO";
 
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Pesquisa(txtSearch.Text);
+            CalculoTotais();
         }
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             var inicio = DateTime.Parse(dtInicio.Value.ToString()).ToShortDateString();
             var fim = DateTime.Parse(dtFim.Value.ToString()).ToShortDateString();
-            MessageBox.Show(inicio.ToString());
+            //MessageBox.Show(inicio.ToString());
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_FiltroData(Convert.ToDateTime(inicio), Convert.ToDateTime(fim), txtSearch.Text);
+            CalculoTotais();
+        }
+
+        private void dgvLancamentos_DoubleClick(object sender, EventArgs e)
+        {
+            FormEntradaP _frm = new FormEntradaP(dgvLancamentos.CurrentRow.Cells["id"].Value.ToString());
+            _frm.ShowDialog();
+            PlanoContas_Lista();
         }
     }
 }

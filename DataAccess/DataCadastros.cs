@@ -51,6 +51,8 @@ namespace DataAccess
         public string Doc { get; set; }
         public string Parcela { get; set; }
         public string ObsPlano { get; set; }
+        public int IDPlanoContas { get; set; }
+
 
 
         public DataCadastros()
@@ -62,7 +64,7 @@ namespace DataAccess
             string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, 
             string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, 
             DateTime data, decimal saldoInicial, decimal troco, int status, string descricaoPlano, decimal valorPlano, 
-            DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano)
+            DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano, int idPlanoContas)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -93,6 +95,7 @@ namespace DataAccess
             Doc = doc;
             Parcela = parcela;
             ObsPlano = obsPlano;
+            IDPlanoContas = idPlanoContas;
         }
 
         private SqlCommand command = new SqlCommand();
@@ -1158,6 +1161,40 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string PlanoContas_Update(DataCadastros PLANO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE tb_plano_contas SET descricao=@descricao, valor=@valor, data_pagamento=@data_pagamento, id_status=@id_status," +
+                        "id_pagamento=@id_pagamento, doc=@doc, parcela=@parcela, id_empresa=@id_empresa, id_sub_categoria=@id_sub_categoria, observacao=@observacao " +
+                        "where id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", PLANO.IDPlanoContas);
+                    command.Parameters.AddWithValue("@descricao", PLANO.DescricaoPlano);
+                    command.Parameters.AddWithValue("@valor", PLANO.ValorPlano);
+                    command.Parameters.AddWithValue("@data_pagamento", PLANO.DataPlano);
+                    command.Parameters.AddWithValue("@id_status", PLANO.IDStatus);
+                    command.Parameters.AddWithValue("@id_pagamento", PLANO.IdPagamento);
+                    command.Parameters.AddWithValue("@doc", PLANO.Doc);
+                    command.Parameters.AddWithValue("@parcela", PLANO.Parcela);
+                    command.Parameters.AddWithValue("@id_empresa", PLANO.IdEmpresa);
+                    command.Parameters.AddWithValue("@id_sub_categoria", PLANO.IdSubCategoria);
+                    command.Parameters.AddWithValue("@observacao", PLANO.ObsPlano);
+
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message + ex.StackTrace;
+                }
+                return rpta;
+            }
+        }
         public DataTable PlanoContas_Lista()
         {
             using (var connection = GetConnection())
@@ -1199,6 +1236,37 @@ namespace DataAccess
                     command.Connection = connection;
                     command.CommandText = "SELECT * FROM tb_status";
                     command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable PlanoContas_ListaPorID(DataCadastros PLANO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT pc.id, e.nome_fantasia as Empresa, sc.descricao as SubCategoria, c.descricao as Categoria, " +
+                        "cc.descricao as CentroCusto, pc.descricao, pc.valor, pc.data_pagamento, fp.descricao as Pagamento, s.status, pc.parcela,  " +
+                        "pc.doc, pc.observacao " +
+                        "FROM tb_plano_contas pc " +
+                        "INNER JOIN tb_status s ON pc.id_status = s.id " +
+                        "INNER JOIN tb_forma_pagamento fp ON pc.id_pagamento = fp.id " +
+                        "INNER JOIN tb_empresa e ON pc.id_empresa = e.id " +
+                        "INNER JOIN tb_sub_categoria sc ON pc.id_sub_categoria = sc.id " +
+                        "INNER JOIN tb_categoria c ON sc.id_categoria = c.id " +
+                        "INNER JOIN tb_centro_custo cc ON c.id_centro_custo = cc.id where pc.id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", PLANO.IDPlanoContas);
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);
                 }

@@ -322,9 +322,32 @@ namespace Domain
             obj.ObsPlano = observacao;
             return obj.PlanoContas_Cadastro(obj);
         }
+        public static DataTable PlanoContas_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDPlanoContas = id;
+            return obj.PlanoContas_ListaPorID(obj);
+        }
         public static DataTable PlanoContas_Lista()
         {
             return new DataCadastros().PlanoContas_Lista();
+        }
+        public static string PlanoContas_Update(int idPlano, string descricao, decimal valor, DateTime data, int idStatus, int idPagamento, string doc, string parcela, 
+            int id_empresa, int idSubCategoria, string observacao)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDPlanoContas = idPlano;
+            obj.DescricaoPlano = descricao;
+            obj.ValorPlano = valor;
+            obj.DataPlano = data;
+            obj.IDStatus = idStatus;
+            obj.IdPagamento = idPagamento;
+            obj.Doc = doc;
+            obj.Parcela = parcela;
+            obj.IdEmpresa = id_empresa;
+            obj.IdSubCategoria = idSubCategoria;
+            obj.ObsPlano = observacao;
+            return obj.PlanoContas_Update(obj);
         }
         public static DataTable PlanoContas_FiltroData(DateTime inicio, DateTime fim, string descricao)
         {

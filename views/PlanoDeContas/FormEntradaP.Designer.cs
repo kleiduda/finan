@@ -60,12 +60,14 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblID = new System.Windows.Forms.Label();
             this.pDataGrid.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pDataGrid
             // 
+            this.pDataGrid.Controls.Add(this.lblID);
             this.pDataGrid.Controls.Add(this.lblError);
             this.pDataGrid.Controls.Add(this.lblSuc);
             this.pDataGrid.Controls.Add(this.bunifuCheckbox1);
@@ -505,6 +507,15 @@
             this.dataGridViewImageColumn1.ToolTipText = "Excluir";
             this.dataGridViewImageColumn1.Width = 623;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(13, 23);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(19, 17);
+            this.lblID.TabIndex = 189;
+            this.lblID.Text = "id";
+            // 
             // FormEntradaP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -560,5 +571,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblSuc;
+        private System.Windows.Forms.Label lblID;
     }
 }

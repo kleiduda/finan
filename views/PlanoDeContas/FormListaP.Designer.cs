@@ -45,6 +45,9 @@
             this.btnFiltro = new System.Windows.Forms.Button();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.lblTEntradas = new System.Windows.Forms.Label();
+            this.lblTSaidas = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.pDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
             this.pButtons.SuspendLayout();
@@ -128,20 +131,24 @@
             this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLancamentos.Size = new System.Drawing.Size(1349, 634);
             this.dgvLancamentos.TabIndex = 168;
+            this.dgvLancamentos.DoubleClick += new System.EventHandler(this.dgvLancamentos_DoubleClick);
             // 
             // pButtons
             // 
-            this.pButtons.Controls.Add(this.dtFim);
+            this.pButtons.Controls.Add(this.lblTotal);
+            this.pButtons.Controls.Add(this.lblTSaidas);
+            this.pButtons.Controls.Add(this.lblTEntradas);
+            this.pButtons.Controls.Add(this.label7);
             this.pButtons.Controls.Add(this.dtInicio);
+            this.pButtons.Controls.Add(this.dtFim);
             this.pButtons.Controls.Add(this.btnFiltro);
             this.pButtons.Controls.Add(this.label1);
-            this.pButtons.Controls.Add(this.label7);
             this.pButtons.Controls.Add(this.pesquisa);
             this.pButtons.Controls.Add(this.btnNovoCadastro);
             this.pButtons.Controls.Add(this.txtSearch);
             this.pButtons.Location = new System.Drawing.Point(32, 730);
             this.pButtons.Name = "pButtons";
-            this.pButtons.Size = new System.Drawing.Size(1363, 81);
+            this.pButtons.Size = new System.Drawing.Size(1363, 88);
             this.pButtons.TabIndex = 174;
             // 
             // btnNovoCadastro
@@ -151,7 +158,7 @@
             this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
             this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(10, 25);
+            this.btnNovoCadastro.Location = new System.Drawing.Point(11, 32);
             this.btnNovoCadastro.Name = "btnNovoCadastro";
             this.btnNovoCadastro.Size = new System.Drawing.Size(179, 31);
             this.btnNovoCadastro.TabIndex = 162;
@@ -166,9 +173,9 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
-            this.txtSearch.Location = new System.Drawing.Point(399, 22);
+            this.txtSearch.Location = new System.Drawing.Point(749, 17);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(359, 38);
+            this.txtSearch.Size = new System.Drawing.Size(362, 38);
             this.txtSearch.TabIndex = 167;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -188,7 +195,7 @@
             // pesquisa
             // 
             this.pesquisa.AutoSize = true;
-            this.pesquisa.Location = new System.Drawing.Point(320, 32);
+            this.pesquisa.Location = new System.Drawing.Point(677, 31);
             this.pesquisa.Name = "pesquisa";
             this.pesquisa.Size = new System.Drawing.Size(66, 17);
             this.pesquisa.TabIndex = 169;
@@ -199,7 +206,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(792, 9);
+            this.label7.Location = new System.Drawing.Point(1138, 14);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 14);
@@ -211,7 +218,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(953, 8);
+            this.label1.Location = new System.Drawing.Point(1138, 40);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 14);
@@ -225,9 +232,9 @@
             this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
             this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltro.Location = new System.Drawing.Point(1135, 25);
+            this.btnFiltro.Location = new System.Drawing.Point(1240, 60);
             this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(103, 31);
+            this.btnFiltro.Size = new System.Drawing.Size(103, 23);
             this.btnFiltro.TabIndex = 174;
             this.btnFiltro.Text = "FILTRAR";
             this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -237,7 +244,7 @@
             // dtInicio
             // 
             this.dtInicio.CustomFormat = "";
-            this.dtInicio.Location = new System.Drawing.Point(795, 32);
+            this.dtInicio.Location = new System.Drawing.Point(1216, 9);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(130, 22);
             this.dtInicio.TabIndex = 169;
@@ -246,11 +253,38 @@
             // dtFim
             // 
             this.dtFim.CustomFormat = "";
-            this.dtFim.Location = new System.Drawing.Point(948, 32);
+            this.dtFim.Location = new System.Drawing.Point(1216, 36);
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(130, 22);
             this.dtFim.TabIndex = 175;
             this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
+            // 
+            // lblTEntradas
+            // 
+            this.lblTEntradas.AutoSize = true;
+            this.lblTEntradas.Location = new System.Drawing.Point(258, 11);
+            this.lblTEntradas.Name = "lblTEntradas";
+            this.lblTEntradas.Size = new System.Drawing.Size(105, 17);
+            this.lblTEntradas.TabIndex = 169;
+            this.lblTEntradas.Text = "Total Entradas:";
+            // 
+            // lblTSaidas
+            // 
+            this.lblTSaidas.AutoSize = true;
+            this.lblTSaidas.Location = new System.Drawing.Point(258, 37);
+            this.lblTSaidas.Name = "lblTSaidas";
+            this.lblTSaidas.Size = new System.Drawing.Size(91, 17);
+            this.lblTSaidas.TabIndex = 176;
+            this.lblTSaidas.Text = "Total Saídas:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(258, 63);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 17);
+            this.lblTotal.TabIndex = 177;
+            this.lblTotal.Text = "Total:";
             // 
             // FormListaP
             // 
@@ -289,5 +323,8 @@
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.DateTimePicker dtFim;
         private System.Windows.Forms.DateTimePicker dtInicio;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblTSaidas;
+        private System.Windows.Forms.Label lblTEntradas;
     }
 }

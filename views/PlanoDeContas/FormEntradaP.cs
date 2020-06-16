@@ -20,6 +20,11 @@ namespace views
         {
             InitializeComponent();
         }
+        public FormEntradaP(string value)
+        {
+            InitializeComponent();
+            lblID.Text = value;
+        }
         private void FormEntradas_Load(object sender, EventArgs e)
         {
             TabIndex();
@@ -27,7 +32,11 @@ namespace views
             ListEmpresa();
             Listpagamento();
             ListStatus();
-
+            if (lblID.Text != "novo")
+            {
+                IsNew = false;
+                Edit();
+            }
         }
 
         private void msgError(string msg)
@@ -40,14 +49,14 @@ namespace views
             lblSuc.Text = "      " + msg;
             lblSuc.Visible = true;
         }
-        
+
         private void ListEmpresa()
         {
             cbEmpresa.DataSource = DoCadastros.EmpresaLista();
             cbEmpresa.ValueMember = "id";
             cbEmpresa.DisplayMember = "nome_fantasia";
         }
-        
+
         private void ListSubCategoria()
         {
             cbSubCategoria.DataSource = DoCadastros.Categoria_ListaSubCategoria();
@@ -66,9 +75,21 @@ namespace views
             cbStatus.ValueMember = "id";
             cbStatus.DisplayMember = "status";
         }
-        public void CarregarDataGrid()
+        public void Edit()
         {
+            DataTable dt = new DataTable();
+            dt = DoCadastros.PlanoContas_ListaPorID(int.Parse(lblID.Text));
+            txtDescricao.Text = dt.Rows[0]["descricao"].ToString();
+            txtValor.Text = dt.Rows[0]["valor"].ToString();
+            txtDoc.Text = dt.Rows[0]["doc"].ToString();
+            txtParcela.Text = dt.Rows[0]["parcela"].ToString();
+            txtObservacao.Text = dt.Rows[0]["observacao"].ToString();
+            cbSubCategoria.Text = dt.Rows[0]["SubCategoria"].ToString();
+            cbEmpresa.Text = dt.Rows[0]["Empresa"].ToString();
+            cbPagamento.Text = dt.Rows[0]["Pagamento"].ToString();
+            cbStatus.Text = dt.Rows[0]["status"].ToString();
         }
+
         public void TabIndex()
         {
             cbStatus.TabIndex = 1;
@@ -119,11 +140,11 @@ namespace views
         {
             txtValor.Enabled = false;
             txtObservacao.Enabled = false;
-            txtDescricao.Enabled = false; 
-            txtParcela.Enabled = false; 
-            txtDoc.Enabled = false; 
-            dateEntrada.Enabled = false; 
-            cbEmpresa.Enabled = false; 
+            txtDescricao.Enabled = false;
+            txtParcela.Enabled = false;
+            txtDoc.Enabled = false;
+            dateEntrada.Enabled = false;
+            cbEmpresa.Enabled = false;
             cbPagamento.Enabled = false;
             Status.Enabled = false;
             cbSubCategoria.Enabled = false;
@@ -143,7 +164,7 @@ namespace views
             cbSubCategoria.Enabled = true;
             cbStatus.Enabled = true;
         }
-        
+
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
             dateEntrada.Focus();
@@ -190,7 +211,13 @@ namespace views
             string rpta = "";
             try
             {
-                rpta = DoCadastros.PlanoContas_Cadastro
+                if (string.IsNullOrEmpty(txtValor.Text))
+                {
+                    MessageBox.Show("Campo valor não pode estar vazio!");
+                }
+                else if (IsNew == true)
+                {
+                    rpta = DoCadastros.PlanoContas_Cadastro
                     (
                         txtDescricao.Text,
                         Convert.ToDecimal(txtValor.Text),
@@ -203,18 +230,38 @@ namespace views
                         Convert.ToInt32(cbSubCategoria.SelectedValue),
                         txtObservacao.Text
                     );
-                if (rpta.Equals("OK"))
+                }
+                else if (IsNew == false)
                 {
-                    msgSuccess("Cadastro realizado com sucesso!");
+                    rpta = DoCadastros.PlanoContas_Update
+                        (
+                        Convert.ToInt32(lblID.Text),
+                        txtDescricao.Text,
+                        Convert.ToDecimal(txtValor.Text),
+                        dateEntrada.Value,
+                        Convert.ToInt32(cbStatus.SelectedValue),
+                        Convert.ToInt32(cbPagamento.SelectedValue),
+                        txtDoc.Text,
+                        txtParcela.Text,
+                        Convert.ToInt32(cbEmpresa.SelectedValue),
+                        Convert.ToInt32(cbSubCategoria.SelectedValue),
+                        txtObservacao.Text
+                        );
+                }
+
+                if (rpta.Equals("OK") && IsNew == true)
+                {
+                    msgSuccess("Cadastro REALIZADO com sucesso!");
                 }
                 else
                 {
-                    msgError(rpta);
+                    //msgError(rpta);
+                    msgSuccess("Cadastro ATUALIZADO com sucesso!");
                 }
             }
             catch (Exception ex)
             {
-
+                msgError(ex.Message);
             }
         }
 
