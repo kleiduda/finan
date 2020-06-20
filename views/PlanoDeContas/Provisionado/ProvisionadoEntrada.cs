@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -13,31 +14,32 @@ using Support;
 
 namespace views
 {
-    public partial class FormEntradaP : Form
+    public partial class ProvisionadoEntrada : Form
     {
         private bool IsNew = true;
-        public FormEntradaP()
+        public ProvisionadoEntrada()
         {
             InitializeComponent();
         }
-        public FormEntradaP(string value)
+        public ProvisionadoEntrada(string value, string value2)
         {
             InitializeComponent();
             lblID.Text = value;
+            lblUltimoIdCadastrado.Text = value2;
         }
-        private void FormEntradas_Load(object sender, EventArgs e)
+        private void ProvisionadoEntrada_Load(object sender, EventArgs e)
         {
-            TabIndex();
-            ListSubCategoria();
-            ListEmpresa();
-            Listpagamento();
-            ListStatus();
-            ListTipoRecorrencia();
             if (lblID.Text != "novo")
             {
                 IsNew = false;
                 Edit();
             }
+            TabIndex();
+            ListSubCategoria();
+            ListEmpresa();
+            Listpagamento();
+            ListTipoRecorrencia();
+
         }
 
         private void msgError(string msg)
@@ -76,30 +78,23 @@ namespace views
             cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "descricao";
         }
-        private void ListStatus()
-        {
-            cbStatus.DataSource = DoCadastros.Status_Lista();
-            cbStatus.ValueMember = "id";
-            cbStatus.DisplayMember = "status";
-        }
+
         public void Edit()
         {
             DataTable dt = new DataTable();
-            dt = DoCadastros.PlanoContas_ListaPorID(int.Parse(lblID.Text));
+            dt = DoCadastros.Recorrencia_ListaPorID(int.Parse(lblID.Text));
+            dateEntrada.Value = Convert.ToDateTime(dt.Rows[0]["data_inicio"].ToString());
             txtDescricao.Text = dt.Rows[0]["descricao"].ToString();
             txtValor.Text = dt.Rows[0]["valor"].ToString();
-            txtDoc.Text = dt.Rows[0]["doc"].ToString();
-            txtParcela.Text = dt.Rows[0]["parcela"].ToString();
-            txtObservacao.Text = dt.Rows[0]["observacao"].ToString();
-            cbSubCategoria.Text = dt.Rows[0]["SubCategoria"].ToString();
-            cbEmpresa.Text = dt.Rows[0]["Empresa"].ToString();
-            cbPagamento.Text = dt.Rows[0]["Pagamento"].ToString();
-            cbStatus.Text = dt.Rows[0]["status"].ToString();
+            cbRecorrencia.Text = dt.Rows[0]["tipo_recorrencia"].ToString();
+            txtParcelas.Text = dt.Rows[0]["parcelas"].ToString();
+            cbPagamento.Text = dt.Rows[0]["forma_pagamento"].ToString();
+            cbSubCategoria.Text = dt.Rows[0]["sub_categoria"].ToString();
+            cbEmpresa.Text = dt.Rows[0]["empresa"].ToString();
         }
 
         public void TabIndex()
         {
-            cbStatus.TabIndex = 1;
             cbPagamento.TabIndex = 2;
             dateEntrada.TabIndex = 3;
             txtValor.TabIndex = 4;
@@ -133,14 +128,10 @@ namespace views
             txtValor.Clear();
             txtObservacao.Clear();
             txtDescricao.Clear();
-            txtParcela.Clear();
-            txtDoc.Clear();
             dateEntrada.ResetText();
             cbEmpresa.ResetText();
             cbPagamento.ResetText();
-            Status.ResetText();
             cbSubCategoria.ResetText();
-            cbStatus.ResetText();
 
         }
         public void DesabilitarEdição()
@@ -148,28 +139,20 @@ namespace views
             txtValor.Enabled = false;
             txtObservacao.Enabled = false;
             txtDescricao.Enabled = false;
-            txtParcela.Enabled = false;
-            txtDoc.Enabled = false;
             dateEntrada.Enabled = false;
             cbEmpresa.Enabled = false;
             cbPagamento.Enabled = false;
-            Status.Enabled = false;
             cbSubCategoria.Enabled = false;
-            cbStatus.Enabled = false;
         }
         public void EnabledEdit()
         {
             txtValor.Enabled = true;
             txtObservacao.Enabled = true;
             txtDescricao.Enabled = true;
-            txtParcela.Enabled = true;
-            txtDoc.Enabled = true;
             dateEntrada.Enabled = true;
             cbEmpresa.Enabled = true;
             cbPagamento.Enabled = true;
-            Status.Enabled = true;
             cbSubCategoria.Enabled = true;
-            cbStatus.Enabled = true;
         }
 
         private void btnNovoCadastro_Click(object sender, EventArgs e)
@@ -212,10 +195,34 @@ namespace views
             btnCancelar.Enabled = true;
             btnNovoCadastro.Enabled = false;
         }
+        public void CadastroParcelas()
+        {
+            string rpta = "";
+            try
+            {
+                DateTime data;
+                for (int i = 0; i < int.Parse(txtParcelas.Text); i++)
+                {
+                    data = Convert.ToDateTime(dateEntrada.Value.AddMonths(i).ToString());
+                    rpta = DoCadastros.Parcela_Cadastro(
+                          data,
+                          txtDescricao.Text,
+                          i.ToString(),
+                          Convert.ToInt32(Support.Enum.PagtoRec.Pendente),
+                          Convert.ToInt32(lblUltimoIdCadastrado.Text)
+                          );
+                }
+            }
+            catch (Exception ex)
+            {
 
+            }
+
+        }
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string rpta = "";
+            string parcela = "";
             try
             {
                 if (string.IsNullOrEmpty(txtValor.Text))
@@ -224,41 +231,58 @@ namespace views
                 }
                 else if (IsNew == true)
                 {
-                    rpta = DoCadastros.PlanoContas_Cadastro
+                    rpta = DoCadastros.Recorrencia_Cadastro
                     (
+                        dateEntrada.Value,
                         txtDescricao.Text,
                         Convert.ToDecimal(txtValor.Text),
-                        dateEntrada.Value,
-                        Convert.ToInt32(cbStatus.SelectedValue),
+                        Convert.ToInt32(cbRecorrencia.SelectedValue),
+                        Convert.ToInt32(txtParcelas.Text),
                         Convert.ToInt32(cbPagamento.SelectedValue),
-                        txtDoc.Text,
-                        txtParcela.Text,
-                        Convert.ToInt32(cbEmpresa.SelectedValue),
                         Convert.ToInt32(cbSubCategoria.SelectedValue),
-                        txtObservacao.Text
+                        Convert.ToInt32(cbEmpresa.SelectedValue),
+                        Convert.ToInt32(Support.Enum.PagtoRec.Pendente)
                     );
+                    
                 }
                 else if (IsNew == false)
                 {
-                    rpta = DoCadastros.PlanoContas_Update
+                    rpta = DoCadastros.Recorrencia_Update
                         (
                         Convert.ToInt32(lblID.Text),
                         txtDescricao.Text,
                         Convert.ToDecimal(txtValor.Text),
-                        dateEntrada.Value,
-                        Convert.ToInt32(cbStatus.SelectedValue),
+                        Convert.ToInt32(cbRecorrencia.SelectedValue),
+                        Convert.ToInt32(txtParcelas.Text),
                         Convert.ToInt32(cbPagamento.SelectedValue),
-                        txtDoc.Text,
-                        txtParcela.Text,
-                        Convert.ToInt32(cbEmpresa.SelectedValue),
                         Convert.ToInt32(cbSubCategoria.SelectedValue),
-                        txtObservacao.Text
+                        Convert.ToInt32(cbEmpresa.SelectedValue)
                         );
                 }
-
                 if (rpta.Equals("OK") && IsNew == true)
                 {
-                    msgSuccess("Cadastro REALIZADO com sucesso!");
+                    DateTime data;
+                    var ultimoId = Convert.ToInt32(lblUltimoIdCadastrado.Text) + 1;
+                    for (int i = 0; i < int.Parse(txtParcelas.Text); i++)
+                    {
+                        data = Convert.ToDateTime(dateEntrada.Value.AddMonths(i).ToString());
+                        parcela = DoCadastros.Parcela_Cadastro(
+                              data,
+                              txtDescricao.Text,
+                              i.ToString(),
+                              Convert.ToInt32(Support.Enum.PagtoRec.Pendente),
+                              ultimoId
+                              );
+                    }
+                    if (parcela.Equals("OK"))
+                    {
+                        msgSuccess("Cadastro Realizado com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show(parcela);
+                    }
+                    //msgSuccess("Cadastro REALIZADO com sucesso!");
                 }
                 else
                 {
@@ -272,15 +296,11 @@ namespace views
             }
         }
 
-        private void bunifuCheckbox1_OnChange(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (chkRecorrencia.Checked == true)
+            for (int i = 0; i < int.Parse(txtParcelas.Text); i++)
             {
-                pRecorrencia.Visible = true;
-            }
-            else
-            {
-                pRecorrencia.Visible = false;
+                MessageBox.Show(dateEntrada.Value.AddMonths(i).ToString());
             }
         }
     }

@@ -21,11 +21,12 @@ namespace views
         }
         private void FormEntradas_Load(object sender, EventArgs e)
         {
-           
+
             TabIndex();
             ListTipoEntrada();
             Listpagamento();
             SaldoAnterior();
+            ListTipoRecorrencia();
 
         }
 
@@ -50,6 +51,12 @@ namespace views
             cbPagamento.DataSource = DoCadastros.Pagamento_Lista();
             cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "descricao";
+        }
+        private void ListTipoRecorrencia()
+        {
+            cbRecorrencia.DataSource = DoCadastros.RecorrenciaTipo_Lista();
+            cbRecorrencia.ValueMember = "id";
+            cbRecorrencia.DisplayMember = "tipo_recorrencia";
         }
         public void CarregarDataGrid()
         {
@@ -108,7 +115,7 @@ namespace views
             cbPagamento.Enabled = true;
             cbTipoEntrada.Focus();
         }
-        
+
         private void btnNovo_Click(object sender, EventArgs e)
         {
             cbTipoEntrada.Focus();
@@ -184,6 +191,27 @@ namespace views
                 lblSaldoAnterior.Text = "0";
             }
         }
+        //public void Recorrencia()
+        //{
+        //    try
+        //    {
+        //        string rpta = "";
+               
+        //            rpta = DoCadastros.Recorrencia_Cadastro
+        //                (
+        //                    dateEntrada.Value,
+        //                    Convert.ToInt32(cbTipoEntrada.SelectedValue),
+        //                    Convert.ToDecimal(txtValor.Text),
+        //                    Convert.ToInt32(cbRecorrencia.SelectedValue),
+        //                    Convert.ToInt32(cbPagamento.SelectedValue)
+        //                );
+                
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string rpta = "";
@@ -217,6 +245,17 @@ namespace views
                         Convert.ToInt32(cbTipoEntrada.SelectedValue),
                         Convert.ToInt32(cbPagamento.SelectedValue)
                         );
+                    //if (chkRecorrencia.Checked == true)
+                    //{
+                    //    rpta = DoCadastros.Recorrencia_Cadastro
+                    //    (
+                    //        dateEntrada.Value,
+                    //        Convert.ToInt32(cbTipoEntrada.SelectedValue),
+                    //        Convert.ToDecimal(txtValor.Text),
+                    //        Convert.ToInt32(cbRecorrencia.SelectedValue),
+                    //        Convert.ToInt32(cbPagamento.SelectedValue)
+                    //    );
+                    //}
                 }
                 if (rpta.Equals("OK") && lblSaldoFinal.Text != "0")
                 {
@@ -298,6 +337,18 @@ namespace views
                 SaldoAnterior();
             }
 
+        }
+
+        private void chkRecorrencia_OnChange(object sender, EventArgs e)
+        {
+            if (chkRecorrencia.Checked == true)
+            {
+                pRecorrencia.Visible = true;
+            }
+            else
+            {
+                pRecorrencia.Visible = false;
+            }
         }
     }
 }

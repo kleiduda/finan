@@ -52,6 +52,17 @@ namespace DataAccess
         public string Parcela { get; set; }
         public string ObsPlano { get; set; }
         public int IDPlanoContas { get; set; }
+        //recorrencia
+        public int IDRecorrencia { get; set; }
+        public int IDTipoRecorrencia { get; set; }
+        public DateTime DataFimRecorrencia { get; set; }
+        public int PagtoRecorrencia { get; set; }
+        public int ParcelasRecorrente { get; set; }
+        public int IDStatusPagtoRecorrente { get; set; }
+        public string DescricaoRecorrencia { get; set; }
+        public DateTime DataParcela { get; set; }
+        public int IDParcela { get; set; }
+
 
 
 
@@ -64,7 +75,9 @@ namespace DataAccess
             string nomeCategoria, int idSubCategoria, string nomeSubCategoria, int idPagamento, string descricaoPagamento, int idTipoEntrada, 
             string descricaoEntrada, int especieEntrada, int idTipoSaida, string descricaoSaida, int especieSaida, int idSaldoInicial, 
             DateTime data, decimal saldoInicial, decimal troco, int status, string descricaoPlano, decimal valorPlano, 
-            DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano, int idPlanoContas)
+            DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano, int idPlanoContas, int idRecorrencia, int idTipoRecorrencia, 
+            DateTime dataFimRecorrencia, int pagtoRecorrencia, int parcelasRecorrente, int idStatusPagtoRecorrente, string descricaoRecorrencia,
+            DateTime dataParcela, int idParcela)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -96,6 +109,15 @@ namespace DataAccess
             Parcela = parcela;
             ObsPlano = obsPlano;
             IDPlanoContas = idPlanoContas;
+            IDRecorrencia = idRecorrencia;
+            IDTipoRecorrencia = idTipoRecorrencia;
+            DataFimRecorrencia = dataFimRecorrencia;
+            PagtoRecorrencia = pagtoRecorrencia;
+            ParcelasRecorrente = parcelasRecorrente;
+            IDStatusPagtoRecorrente = idStatusPagtoRecorrente;
+            DescricaoRecorrencia = descricaoRecorrencia;
+            DataParcela = dataParcela;
+            IDParcela = idParcela;
         }
 
         private SqlCommand command = new SqlCommand();
@@ -1384,5 +1406,204 @@ namespace DataAccess
         }
 
         #endregion PLANO CONTAS
+        #region RECORRENCIA
+        public string Recorrencia_Cadastro(DataCadastros RECORRENCIA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Provisionado_Cadastro";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@data_inicio", RECORRENCIA.Data);
+                    command.Parameters.AddWithValue("@descricao", RECORRENCIA.DescricaoRecorrencia);
+                    command.Parameters.AddWithValue("@valor", RECORRENCIA.ValorPlano);
+                    command.Parameters.AddWithValue("@id_tipo_recorrencia", RECORRENCIA.IDTipoRecorrencia);
+                    command.Parameters.AddWithValue("@parcelas", RECORRENCIA.ParcelasRecorrente);
+                    command.Parameters.AddWithValue("@id_forma_pagamento", RECORRENCIA.IdPagamento);
+                    command.Parameters.AddWithValue("@id_sub_categoria", RECORRENCIA.IdSubCategoria);
+                    command.Parameters.AddWithValue("@id_empresa", RECORRENCIA.IdEmpresa);
+                    command.Parameters.AddWithValue("@id_status_pagamento", RECORRENCIA.IDStatusPagtoRecorrente);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao realizar cadastro";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public string Recorrencia_Update(DataCadastros RECORRENCIA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Provisionado_Update";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@id", RECORRENCIA.IDRecorrencia);
+                    command.Parameters.AddWithValue("@descricao", RECORRENCIA.DescricaoRecorrencia);
+                    command.Parameters.AddWithValue("@valor", RECORRENCIA.ValorPlano);
+                    command.Parameters.AddWithValue("@id_tipo_recorrencia", RECORRENCIA.IDTipoRecorrencia);
+                    command.Parameters.AddWithValue("@parcelas", RECORRENCIA.ParcelasRecorrente);
+                    command.Parameters.AddWithValue("@id_forma_pagamento", RECORRENCIA.IdPagamento);
+                    command.Parameters.AddWithValue("@id_sub_categoria", RECORRENCIA.IdSubCategoria);
+                    command.Parameters.AddWithValue("@id_empresa", RECORRENCIA.IdEmpresa);
+
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao atualizar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message + ex.StackTrace;
+                }
+                return rpta;
+            }
+        }
+        public DataTable Recorrencia_ListaPorID(DataCadastros RECO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Provisionado_ListaID";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@id", RECO.IDRecorrencia);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable RecorrenciaTipo_Lista()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "select * from tb_tipo_recorrencia";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public DataTable Recorrencia_Lista()
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT r.id, r.data_inicio, r.descricao, r.valor, tr.tipo_recorrencia, r.parcelas,	fp.descricao as forma_pagamento," +
+                        "sc.descricao as sub_categoria,	e.nome_fantasia as empresa FROM tb_recorrencia r" +
+                        " LEFT JOIN  tb_tipo_recorrencia tr ON r.id_tipo_recorrencia = tr.id" +
+                        " LEFT JOIN  tb_forma_pagamento fp ON r.id_forma_pagamento = fp.id " +
+                        " LEFT JOIN  tb_sub_categoria sc ON r.id_sub_categoria = sc.id" +
+                        " LEFT JOIN  tb_empresa e ON r.id_empresa = e.id";
+                    command.CommandType = CommandType.Text;
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public string Parcelas_Cadastro(DataCadastros PARCELA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "Parcelas_Cadastro";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@data_pagamento", PARCELA.DataParcela);
+                    command.Parameters.AddWithValue("@descricao", PARCELA.DescricaoRecorrencia);
+                    command.Parameters.AddWithValue("@parcela", PARCELA.ParcelasRecorrente);
+                    command.Parameters.AddWithValue("@id_status_pagamento", PARCELA.IDStatusPagtoRecorrente);
+                    command.Parameters.AddWithValue("@id_recorrencia", PARCELA.IDRecorrencia);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao realizar cadastro";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public DataTable Parcela_ListaID(DataCadastros PARCELA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                DataTable dt = new DataTable();
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT p.id, CONVERT(varchar(10), p.data_pagamento, 103) as DataPagamento, p.descricao, p.parcela, s.status_pagamento " +
+                        "FROM tb_parcelas p INNER JOIN tb_status_pagamento_recorrente s ON p.id_status_pagamento = s.id WHERE id_recorrencia=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", PARCELA.IDRecorrencia);
+                    SqlDataAdapter SqlDat = new SqlDataAdapter(command);
+                    SqlDat.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    dt = null;
+                }
+                return dt;
+            }
+        }
+        public string Parcelas_Update(DataCadastros PARCELA)
+        {
+            using (var connection=GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE tb_parcelas SET id_status_pagamento=@id_status_pagamento WHERE id=@id_Parcela";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id_parcela", PARCELA.IDParcela);
+                    command.Parameters.AddWithValue("@id_status_pagamento", PARCELA.IDStatusPagtoRecorrente);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Error";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message + ex.StackTrace;
+                }
+                return rpta;
+            }
+        }
+        #endregion
     }
 }

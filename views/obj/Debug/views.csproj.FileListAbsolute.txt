@@ -51,3 +51,6 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ListaCategoria.resourc
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Categoria.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormAdministrador.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormLogin.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ProvisionadoLista.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ProvisionadoEntrada.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.PlanoDeContas.Provisionado.Parcelas.resources

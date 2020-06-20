@@ -1,6 +1,6 @@
 ﻿namespace views
 {
-    partial class FormListaP
+    partial class ProvisionadoLista
     {
         /// <summary>
         /// Required designer variable.
@@ -35,19 +35,16 @@
             this.pDataGrid = new System.Windows.Forms.Panel();
             this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pButtons = new System.Windows.Forms.Panel();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTSaidas = new System.Windows.Forms.Label();
-            this.lblTEntradas = new System.Windows.Forms.Label();
+            this.btnNovoCadastro = new System.Windows.Forms.Button();
+            this.lblProvisionado = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.btnFiltro = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pesquisa = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblProvisionado = new System.Windows.Forms.Label();
-            this.btnFiltro = new System.Windows.Forms.Button();
-            this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
@@ -96,7 +93,7 @@
             this.dgvLancamentos.GridColor = System.Drawing.Color.WhiteSmoke;
             this.dgvLancamentos.HeaderBgColor = System.Drawing.Color.WhiteSmoke;
             this.dgvLancamentos.HeaderForeColor = System.Drawing.Color.Black;
-            this.dgvLancamentos.Location = new System.Drawing.Point(7, 13);
+            this.dgvLancamentos.Location = new System.Drawing.Point(9, 19);
             this.dgvLancamentos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLancamentos.MultiSelect = false;
             this.dgvLancamentos.Name = "dgvLancamentos";
@@ -122,53 +119,49 @@
             this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLancamentos.Size = new System.Drawing.Size(1349, 634);
             this.dgvLancamentos.TabIndex = 168;
+            this.dgvLancamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLancamentos_CellClick);
             this.dgvLancamentos.DoubleClick += new System.EventHandler(this.dgvLancamentos_DoubleClick);
             // 
             // pButtons
             // 
+            this.pButtons.Controls.Add(this.btnNovoCadastro);
             this.pButtons.Controls.Add(this.lblProvisionado);
-            this.pButtons.Controls.Add(this.lblTotal);
-            this.pButtons.Controls.Add(this.lblTSaidas);
-            this.pButtons.Controls.Add(this.lblTEntradas);
             this.pButtons.Controls.Add(this.label7);
             this.pButtons.Controls.Add(this.dtInicio);
             this.pButtons.Controls.Add(this.dtFim);
             this.pButtons.Controls.Add(this.btnFiltro);
             this.pButtons.Controls.Add(this.label1);
             this.pButtons.Controls.Add(this.pesquisa);
-            this.pButtons.Controls.Add(this.btnNovoCadastro);
             this.pButtons.Controls.Add(this.txtSearch);
             this.pButtons.Location = new System.Drawing.Point(32, 730);
             this.pButtons.Name = "pButtons";
             this.pButtons.Size = new System.Drawing.Size(1363, 88);
             this.pButtons.TabIndex = 174;
             // 
-            // lblTotal
+            // btnNovoCadastro
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(184, 63);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 17);
-            this.lblTotal.TabIndex = 177;
-            this.lblTotal.Text = "Total:";
+            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
+            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
+            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(9, 30);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Size = new System.Drawing.Size(143, 31);
+            this.btnNovoCadastro.TabIndex = 180;
+            this.btnNovoCadastro.Text = "LANÇAMENTO";
+            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoCadastro.UseVisualStyleBackColor = true;
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
             // 
-            // lblTSaidas
+            // lblProvisionado
             // 
-            this.lblTSaidas.AutoSize = true;
-            this.lblTSaidas.Location = new System.Drawing.Point(184, 37);
-            this.lblTSaidas.Name = "lblTSaidas";
-            this.lblTSaidas.Size = new System.Drawing.Size(91, 17);
-            this.lblTSaidas.TabIndex = 176;
-            this.lblTSaidas.Text = "Total Saídas:";
-            // 
-            // lblTEntradas
-            // 
-            this.lblTEntradas.AutoSize = true;
-            this.lblTEntradas.Location = new System.Drawing.Point(184, 11);
-            this.lblTEntradas.Name = "lblTEntradas";
-            this.lblTEntradas.Size = new System.Drawing.Size(105, 17);
-            this.lblTEntradas.TabIndex = 169;
-            this.lblTEntradas.Text = "Total Entradas:";
+            this.lblProvisionado.AutoSize = true;
+            this.lblProvisionado.Location = new System.Drawing.Point(428, 40);
+            this.lblProvisionado.Name = "lblProvisionado";
+            this.lblProvisionado.Size = new System.Drawing.Size(94, 17);
+            this.lblProvisionado.TabIndex = 179;
+            this.lblProvisionado.Text = "Provisionado:";
             // 
             // label7
             // 
@@ -200,61 +193,6 @@
             this.dtFim.TabIndex = 175;
             this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(1138, 40);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 14);
-            this.label1.TabIndex = 172;
-            this.label1.Text = "Data Fim:";
-            // 
-            // pesquisa
-            // 
-            this.pesquisa.AutoSize = true;
-            this.pesquisa.Location = new System.Drawing.Point(677, 31);
-            this.pesquisa.Name = "pesquisa";
-            this.pesquisa.Size = new System.Drawing.Size(66, 17);
-            this.pesquisa.TabIndex = 169;
-            this.pesquisa.Text = "Pesquisa";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
-            this.txtSearch.Location = new System.Drawing.Point(749, 17);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(362, 38);
-            this.txtSearch.TabIndex = 167;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 9);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(504, 44);
-            this.label9.TabIndex = 173;
-            this.label9.Text = "#LISTA DE LANÇAMENTOS";
-            // 
-            // lblProvisionado
-            // 
-            this.lblProvisionado.AutoSize = true;
-            this.lblProvisionado.Location = new System.Drawing.Point(418, 35);
-            this.lblProvisionado.Name = "lblProvisionado";
-            this.lblProvisionado.Size = new System.Drawing.Size(94, 17);
-            this.lblProvisionado.TabIndex = 178;
-            this.lblProvisionado.Text = "Provisionado:";
-            // 
             // btnFiltro
             // 
             this.btnFiltro.FlatAppearance.BorderSize = 0;
@@ -271,21 +209,51 @@
             this.btnFiltro.UseVisualStyleBackColor = true;
             this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
             // 
-            // btnNovoCadastro
+            // label1
             // 
-            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
-            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
-            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(11, 32);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(155, 31);
-            this.btnNovoCadastro.TabIndex = 162;
-            this.btnNovoCadastro.Text = "LANÇAMENTO";
-            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoCadastro.UseVisualStyleBackColor = true;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(1138, 40);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 14);
+            this.label1.TabIndex = 172;
+            this.label1.Text = "Data Fim:";
+            // 
+            // pesquisa
+            // 
+            this.pesquisa.AutoSize = true;
+            this.pesquisa.Location = new System.Drawing.Point(638, 40);
+            this.pesquisa.Name = "pesquisa";
+            this.pesquisa.Size = new System.Drawing.Size(66, 17);
+            this.pesquisa.TabIndex = 169;
+            this.pesquisa.Text = "Pesquisa";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtSearch.ForeColor = System.Drawing.Color.LightGray;
+            this.txtSearch.Location = new System.Drawing.Point(710, 26);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(362, 38);
+            this.txtSearch.TabIndex = 167;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 9);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(357, 44);
+            this.label9.TabIndex = 173;
+            this.label9.Text = "#PROVISIONADOS";
             // 
             // dataGridViewImageColumn1
             // 
@@ -297,7 +265,7 @@
             this.dataGridViewImageColumn1.ToolTipText = "Excluir";
             this.dataGridViewImageColumn1.Width = 623;
             // 
-            // FormListaP
+            // ProvisionadoLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -306,11 +274,11 @@
             this.Controls.Add(this.pDataGrid);
             this.Controls.Add(this.pButtons);
             this.Controls.Add(this.label9);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "FormListaP";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "ProvisionadoLista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormTipoEntrada";
-            this.Load += new System.EventHandler(this.FormListaP_Load);
+            this.Text = "Provisionados";
+            this.Load += new System.EventHandler(this.ProvisionadoLista_Load);
             this.pDataGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).EndInit();
             this.pButtons.ResumeLayout(false);
@@ -324,7 +292,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Panel pDataGrid;
         private System.Windows.Forms.Panel pButtons;
-        private System.Windows.Forms.Button btnNovoCadastro;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuCustomDataGrid dgvLancamentos;
@@ -334,9 +301,7 @@
         private System.Windows.Forms.Button btnFiltro;
         private System.Windows.Forms.DateTimePicker dtFim;
         private System.Windows.Forms.DateTimePicker dtInicio;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblTSaidas;
-        private System.Windows.Forms.Label lblTEntradas;
         private System.Windows.Forms.Label lblProvisionado;
+        private System.Windows.Forms.Button btnNovoCadastro;
     }
 }

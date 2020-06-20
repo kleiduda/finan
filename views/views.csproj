@@ -165,6 +165,24 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\Parcelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\Parcelas.Designer.cs">
+      <DependentUpon>Parcelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\ProvisionadoEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\ProvisionadoEntrada.Designer.cs">
+      <DependentUpon>ProvisionadoEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\ProvisionadoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanoDeContas\Provisionado\ProvisionadoLista.Designer.cs">
+      <DependentUpon>ProvisionadoLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanoDeContas\FormPlanoConsolidado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +298,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\Provisionado\Parcelas.resx">
+      <DependentUpon>Parcelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\Provisionado\ProvisionadoEntrada.resx">
+      <DependentUpon>ProvisionadoEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanoDeContas\Provisionado\ProvisionadoLista.resx">
+      <DependentUpon>ProvisionadoLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanoDeContas\FormPlanoConsolidado.resx">
       <DependentUpon>FormPlanoConsolidado.cs</DependentUpon>

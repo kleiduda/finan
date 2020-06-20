@@ -138,5 +138,11 @@ namespace views
             pLogo.Hide();
             AbrirFormulario<FormPlanoConsolidado>();
         }
+
+        private void btnProvisionados_Click(object sender, EventArgs e)
+        {
+            pLogo.Hide();
+            AbrirFormulario<ProvisionadoLista>();
+        }
     }
 }

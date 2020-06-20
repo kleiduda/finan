@@ -30,8 +30,10 @@
         {
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pProduct = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtParcelas = new System.Windows.Forms.TextBox();
             this.lblSaldoAnterior = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.chkRecorrencia = new Bunifu.Framework.UI.BunifuCheckbox();
             this.lblSaldoFinal = new System.Windows.Forms.Label();
             this.cbPagamento = new System.Windows.Forms.ComboBox();
             this.lblError = new System.Windows.Forms.Label();
@@ -51,8 +53,12 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.cbRecorrencia = new System.Windows.Forms.ComboBox();
+            this.pRecorrencia = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.pProduct.SuspendLayout();
             this.pButtons.SuspendLayout();
+            this.pRecorrencia.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -69,8 +75,9 @@
             // 
             this.pProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pProduct.Controls.Add(this.pRecorrencia);
             this.pProduct.Controls.Add(this.lblSaldoAnterior);
-            this.pProduct.Controls.Add(this.bunifuCheckbox1);
+            this.pProduct.Controls.Add(this.chkRecorrencia);
             this.pProduct.Controls.Add(this.lblSaldoFinal);
             this.pProduct.Controls.Add(this.cbPagamento);
             this.pProduct.Controls.Add(this.lblError);
@@ -91,6 +98,32 @@
             this.pProduct.Size = new System.Drawing.Size(1363, 667);
             this.pProduct.TabIndex = 4;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(11, 73);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 14);
+            this.label5.TabIndex = 169;
+            this.label5.Text = "Parcelas";
+            // 
+            // txtParcelas
+            // 
+            this.txtParcelas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtParcelas.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtParcelas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtParcelas.Font = new System.Drawing.Font("Arial", 16F);
+            this.txtParcelas.ForeColor = System.Drawing.Color.Black;
+            this.txtParcelas.Location = new System.Drawing.Point(10, 95);
+            this.txtParcelas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtParcelas.MaxLength = 150;
+            this.txtParcelas.Name = "txtParcelas";
+            this.txtParcelas.Size = new System.Drawing.Size(255, 38);
+            this.txtParcelas.TabIndex = 168;
+            // 
             // lblSaldoAnterior
             // 
             this.lblSaldoAnterior.AutoSize = true;
@@ -100,19 +133,20 @@
             this.lblSaldoAnterior.TabIndex = 167;
             this.lblSaldoAnterior.Text = "saldoAnterior";
             // 
-            // bunifuCheckbox1
+            // chkRecorrencia
             // 
-            this.bunifuCheckbox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
-            this.bunifuCheckbox1.Checked = false;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCheckbox1.Location = new System.Drawing.Point(427, 395);
-            this.bunifuCheckbox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            this.bunifuCheckbox1.Size = new System.Drawing.Size(20, 20);
-            this.bunifuCheckbox1.TabIndex = 165;
+            this.chkRecorrencia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chkRecorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkRecorrencia.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.chkRecorrencia.Checked = false;
+            this.chkRecorrencia.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.chkRecorrencia.ForeColor = System.Drawing.Color.White;
+            this.chkRecorrencia.Location = new System.Drawing.Point(427, 393);
+            this.chkRecorrencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkRecorrencia.Name = "chkRecorrencia";
+            this.chkRecorrencia.Size = new System.Drawing.Size(20, 20);
+            this.chkRecorrencia.TabIndex = 165;
+            this.chkRecorrencia.OnChange += new System.EventHandler(this.chkRecorrencia_OnChange);
             // 
             // lblSaldoFinal
             // 
@@ -184,12 +218,12 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(345, 398);
+            this.label4.Location = new System.Drawing.Point(346, 396);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 14);
+            this.label4.Size = new System.Drawing.Size(80, 14);
             this.label4.TabIndex = 162;
-            this.label4.Text = "Recorrente?";
+            this.label4.Text = "Recorrência?";
             // 
             // label3
             // 
@@ -242,7 +276,7 @@
             this.txtValor.Margin = new System.Windows.Forms.Padding(4);
             this.txtValor.MaxLength = 150;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(277, 38);
+            this.txtValor.Size = new System.Drawing.Size(265, 38);
             this.txtValor.TabIndex = 154;
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
             // 
@@ -372,6 +406,45 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // cbRecorrencia
+            // 
+            this.cbRecorrencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbRecorrencia.BackColor = System.Drawing.SystemColors.Control;
+            this.cbRecorrencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbRecorrencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbRecorrencia.FormattingEnabled = true;
+            this.cbRecorrencia.Location = new System.Drawing.Point(10, 24);
+            this.cbRecorrencia.Name = "cbRecorrencia";
+            this.cbRecorrencia.Size = new System.Drawing.Size(255, 33);
+            this.cbRecorrencia.TabIndex = 170;
+            // 
+            // pRecorrencia
+            // 
+            this.pRecorrencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pRecorrencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pRecorrencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pRecorrencia.Controls.Add(this.label6);
+            this.pRecorrencia.Controls.Add(this.label5);
+            this.pRecorrencia.Controls.Add(this.cbRecorrencia);
+            this.pRecorrencia.Controls.Add(this.txtParcelas);
+            this.pRecorrencia.Location = new System.Drawing.Point(477, 342);
+            this.pRecorrencia.Name = "pRecorrencia";
+            this.pRecorrencia.Size = new System.Drawing.Size(282, 149);
+            this.pRecorrencia.TabIndex = 179;
+            this.pRecorrencia.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 6.25F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(11, 7);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 14);
+            this.label6.TabIndex = 180;
+            this.label6.Text = "Tipo";
+            // 
             // FormEntradaDC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,6 +461,8 @@
             this.pProduct.ResumeLayout(false);
             this.pProduct.PerformLayout();
             this.pButtons.ResumeLayout(false);
+            this.pRecorrencia.ResumeLayout(false);
+            this.pRecorrencia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -397,7 +472,7 @@
         private System.Windows.Forms.Panel pProduct;
         private System.Windows.Forms.Label lblSaldoAnterior;
         private System.Windows.Forms.Label lblSaldoFinal;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private Bunifu.Framework.UI.BunifuCheckbox chkRecorrencia;
         private System.Windows.Forms.ComboBox cbPagamento;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblSuc;
@@ -416,5 +491,10 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtParcelas;
+        private System.Windows.Forms.ComboBox cbRecorrencia;
+        private System.Windows.Forms.Panel pRecorrencia;
+        private System.Windows.Forms.Label label6;
     }
 }

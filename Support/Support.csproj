@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Cache\FuncaoCache.cs" />
     <Compile Include="Cache\UserLoginCache.cs" />
+    <Compile Include="Enum\PagtoRec.cs" />
     <Compile Include="Enum\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

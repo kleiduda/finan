@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
@@ -379,7 +380,75 @@ namespace Domain
             obj.DescricaoPlano = texto;
             return obj.PlanoContas_Pesquisa(obj);
         }
-        #endregion 
+        #endregion
+        #region
+        public static string Recorrencia_Cadastro(DateTime dataInicio, string descricao, decimal valor, int idTipoRecorrencia, int parcelas, int idFormaPagamento, 
+            int idSubCategoria, int idEmpresa, int idStatusPagto)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.Data = dataInicio;
+            obj.DescricaoRecorrencia = descricao;
+            obj.ValorPlano = valor;
+            obj.IDTipoRecorrencia = idTipoRecorrencia;
+            obj.ParcelasRecorrente = parcelas;
+            obj.IdPagamento = idFormaPagamento;
+            obj.IdSubCategoria = idSubCategoria;
+            obj.IdEmpresa = idEmpresa;
+            obj.IDStatusPagtoRecorrente = idStatusPagto;
+            return obj.Recorrencia_Cadastro(obj);
+        }
+        public static string Recorrencia_Update(int id, string descricao, decimal valor, int idTipoRecorrencia, int parcelas, int idFormaPagamento,
+           int idSubCategoria, int idEmpresa)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDRecorrencia = id;
+            obj.DescricaoRecorrencia = descricao;
+            obj.ValorPlano = valor;
+            obj.IDTipoRecorrencia = idTipoRecorrencia;
+            obj.ParcelasRecorrente = parcelas;
+            obj.IdPagamento = idFormaPagamento;
+            obj.IdSubCategoria = idSubCategoria;
+            obj.IdEmpresa = idEmpresa;
+            return obj.Recorrencia_Update(obj);
+        }
+        public static DataTable RecorrenciaTipo_Lista()
+        {
+            return new DataCadastros().RecorrenciaTipo_Lista();
+        }
+        public static DataTable Recorrencia_Lista()
+        {
+            return new DataCadastros().Recorrencia_Lista();
+        }
+        public static DataTable Recorrencia_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDRecorrencia = id;
+            return obj.Recorrencia_ListaPorID(obj);
+        }
+        public static string Parcela_Cadastro(DateTime dataParcela, string descricao, string parcela, int idStatusPagamento, int idRecorrencia)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DataParcela = dataParcela;
+            obj.DescricaoRecorrencia = descricao;
+            obj.Parcela = parcela;
+            obj.IDStatusPagtoRecorrente = idStatusPagamento;
+            obj.IDRecorrencia = idRecorrencia;
+            return obj.Parcelas_Cadastro(obj);
+        }
+        public static DataTable Parcela_ListaPorID(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDRecorrencia = id;
+            return obj.Parcela_ListaID(obj);
+        }
+        public static string Parcela_Update(int idParcela, int idStatusPagamento)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDParcela = idParcela;
+            obj.IDStatusPagtoRecorrente = idStatusPagamento;
+            return obj.Parcelas_Update(obj);
+        }
+        #endregion
     }
 
 
