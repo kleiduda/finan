@@ -62,9 +62,7 @@ namespace DataAccess
         public string DescricaoRecorrencia { get; set; }
         public DateTime DataParcela { get; set; }
         public int IDParcela { get; set; }
-
-
-
+        public decimal ValorParcela { get; set; }
 
         public DataCadastros()
         {
@@ -77,7 +75,7 @@ namespace DataAccess
             DateTime data, decimal saldoInicial, decimal troco, int status, string descricaoPlano, decimal valorPlano, 
             DateTime dataPlano, DateTime dataFim, string doc, string parcela, string obsPlano, int idPlanoContas, int idRecorrencia, int idTipoRecorrencia, 
             DateTime dataFimRecorrencia, int pagtoRecorrencia, int parcelasRecorrente, int idStatusPagtoRecorrente, string descricaoRecorrencia,
-            DateTime dataParcela, int idParcela)
+            DateTime dataParcela, int idParcela, decimal valorParcela)
         {
             IdEmpresa = idEmpresa;
             NomeFantasia = nomeFantasia;
@@ -118,6 +116,7 @@ namespace DataAccess
             DescricaoRecorrencia = descricaoRecorrencia;
             DataParcela = dataParcela;
             IDParcela = idParcela;
+            ValorParcela = valorParcela;
         }
 
         private SqlCommand command = new SqlCommand();
@@ -1217,6 +1216,27 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string PlanoContas_Delete(DataCadastros PLANO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM tb_plano_Contas WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", PLANO.IDPlanoContas);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
         public DataTable PlanoContas_Lista()
         {
             using (var connection = GetConnection())
@@ -1436,6 +1456,27 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string Recorrencia_Delete(DataCadastros RECO)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM tb_recorrencia WHERE id=@id";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id", RECO.IDRecorrencia);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
         public string Recorrencia_Update(DataCadastros RECORRENCIA)
         {
             using (var connection = GetConnection())
@@ -1517,7 +1558,7 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT r.id, r.data_inicio, r.descricao, r.valor, tr.tipo_recorrencia, r.parcelas,	fp.descricao as forma_pagamento," +
+                    command.CommandText = "SELECT r.id, sc.id as id_sub, e.id as id_emp, fp.id as id_pagto, r.data_inicio, r.descricao, r.valor, tr.tipo_recorrencia, r.parcelas,	fp.descricao as forma_pagamento," +
                         "sc.descricao as sub_categoria,	e.nome_fantasia as empresa FROM tb_recorrencia r" +
                         " LEFT JOIN  tb_tipo_recorrencia tr ON r.id_tipo_recorrencia = tr.id" +
                         " LEFT JOIN  tb_forma_pagamento fp ON r.id_forma_pagamento = fp.id " +
@@ -1547,9 +1588,10 @@ namespace DataAccess
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@data_pagamento", PARCELA.DataParcela);
                     command.Parameters.AddWithValue("@descricao", PARCELA.DescricaoRecorrencia);
-                    command.Parameters.AddWithValue("@parcela", PARCELA.ParcelasRecorrente);
+                    command.Parameters.AddWithValue("@parcela", PARCELA.Parcela);
                     command.Parameters.AddWithValue("@id_status_pagamento", PARCELA.IDStatusPagtoRecorrente);
                     command.Parameters.AddWithValue("@id_recorrencia", PARCELA.IDRecorrencia);
+                    command.Parameters.AddWithValue("@valor_parcela", PARCELA.ValorParcela);
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao realizar cadastro";
                 }
                 catch (Exception ex)
@@ -1568,7 +1610,7 @@ namespace DataAccess
                 try
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT p.id, CONVERT(varchar(10), p.data_pagamento, 103) as DataPagamento, p.descricao, p.parcela, s.status_pagamento " +
+                    command.CommandText = "SELECT p.id, CONVERT(varchar(10), p.data_pagamento, 103) as DataPagamento, p.descricao, p.parcela, p.valor, s.status_pagamento " +
                         "FROM tb_parcelas p INNER JOIN tb_status_pagamento_recorrente s ON p.id_status_pagamento = s.id WHERE id_recorrencia=@id";
                     command.CommandType = CommandType.Text;
                     command.Parameters.AddWithValue("@id", PARCELA.IDRecorrencia);

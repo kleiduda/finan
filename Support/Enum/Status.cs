@@ -8,7 +8,7 @@ namespace Support
 {
     public enum Status : int
     {
-        pago = 1,
-        recebido =2
+        pago = 98,
+        recebido =99
     }
 }

@@ -35,19 +35,19 @@
             this.pDataGrid = new System.Windows.Forms.Panel();
             this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.pButtons = new System.Windows.Forms.Panel();
+            this.lblProvisionado = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTSaidas = new System.Windows.Forms.Label();
             this.lblTEntradas = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
+            this.btnFiltro = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pesquisa = new System.Windows.Forms.Label();
+            this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblProvisionado = new System.Windows.Forms.Label();
-            this.btnFiltro = new System.Windows.Forms.Button();
-            this.btnNovoCadastro = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pDataGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
@@ -122,6 +122,7 @@
             this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLancamentos.Size = new System.Drawing.Size(1349, 634);
             this.dgvLancamentos.TabIndex = 168;
+            this.dgvLancamentos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLancamentos_CellFormatting);
             this.dgvLancamentos.DoubleClick += new System.EventHandler(this.dgvLancamentos_DoubleClick);
             // 
             // pButtons
@@ -142,6 +143,15 @@
             this.pButtons.Name = "pButtons";
             this.pButtons.Size = new System.Drawing.Size(1363, 88);
             this.pButtons.TabIndex = 174;
+            // 
+            // lblProvisionado
+            // 
+            this.lblProvisionado.AutoSize = true;
+            this.lblProvisionado.Location = new System.Drawing.Point(418, 35);
+            this.lblProvisionado.Name = "lblProvisionado";
+            this.lblProvisionado.Size = new System.Drawing.Size(94, 17);
+            this.lblProvisionado.TabIndex = 178;
+            this.lblProvisionado.Text = "Provisionado:";
             // 
             // lblTotal
             // 
@@ -200,6 +210,22 @@
             this.dtFim.TabIndex = 175;
             this.dtFim.Value = new System.DateTime(2020, 6, 16, 0, 9, 46, 0);
             // 
+            // btnFiltro
+            // 
+            this.btnFiltro.FlatAppearance.BorderSize = 0;
+            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
+            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFiltro.Location = new System.Drawing.Point(1240, 60);
+            this.btnFiltro.Name = "btnFiltro";
+            this.btnFiltro.Size = new System.Drawing.Size(103, 23);
+            this.btnFiltro.TabIndex = 174;
+            this.btnFiltro.Text = "FILTRAR";
+            this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFiltro.UseVisualStyleBackColor = true;
+            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -220,6 +246,22 @@
             this.pesquisa.Size = new System.Drawing.Size(66, 17);
             this.pesquisa.TabIndex = 169;
             this.pesquisa.Text = "Pesquisa";
+            // 
+            // btnNovoCadastro
+            // 
+            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
+            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
+            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovoCadastro.Location = new System.Drawing.Point(11, 32);
+            this.btnNovoCadastro.Name = "btnNovoCadastro";
+            this.btnNovoCadastro.Size = new System.Drawing.Size(155, 31);
+            this.btnNovoCadastro.TabIndex = 162;
+            this.btnNovoCadastro.Text = "LANÇAMENTO";
+            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNovoCadastro.UseVisualStyleBackColor = true;
+            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
             // 
             // txtSearch
             // 
@@ -245,47 +287,6 @@
             this.label9.Size = new System.Drawing.Size(504, 44);
             this.label9.TabIndex = 173;
             this.label9.Text = "#LISTA DE LANÇAMENTOS";
-            // 
-            // lblProvisionado
-            // 
-            this.lblProvisionado.AutoSize = true;
-            this.lblProvisionado.Location = new System.Drawing.Point(418, 35);
-            this.lblProvisionado.Name = "lblProvisionado";
-            this.lblProvisionado.Size = new System.Drawing.Size(94, 17);
-            this.lblProvisionado.TabIndex = 178;
-            this.lblProvisionado.Text = "Provisionado:";
-            // 
-            // btnFiltro
-            // 
-            this.btnFiltro.FlatAppearance.BorderSize = 0;
-            this.btnFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFiltro.Image = global::views.Properties.Resources.sucesso;
-            this.btnFiltro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFiltro.Location = new System.Drawing.Point(1240, 60);
-            this.btnFiltro.Name = "btnFiltro";
-            this.btnFiltro.Size = new System.Drawing.Size(103, 23);
-            this.btnFiltro.TabIndex = 174;
-            this.btnFiltro.Text = "FILTRAR";
-            this.btnFiltro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFiltro.UseVisualStyleBackColor = true;
-            this.btnFiltro.Click += new System.EventHandler(this.btnFiltro_Click);
-            // 
-            // btnNovoCadastro
-            // 
-            this.btnNovoCadastro.FlatAppearance.BorderSize = 0;
-            this.btnNovoCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovoCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCadastro.Image = global::views.Properties.Resources.add__lista;
-            this.btnNovoCadastro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovoCadastro.Location = new System.Drawing.Point(11, 32);
-            this.btnNovoCadastro.Name = "btnNovoCadastro";
-            this.btnNovoCadastro.Size = new System.Drawing.Size(155, 31);
-            this.btnNovoCadastro.TabIndex = 162;
-            this.btnNovoCadastro.Text = "LANÇAMENTO";
-            this.btnNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNovoCadastro.UseVisualStyleBackColor = true;
-            this.btnNovoCadastro.Click += new System.EventHandler(this.btnNovoCadastro_Click);
             // 
             // dataGridViewImageColumn1
             // 

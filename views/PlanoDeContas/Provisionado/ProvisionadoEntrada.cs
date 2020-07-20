@@ -195,30 +195,7 @@ namespace views
             btnCancelar.Enabled = true;
             btnNovoCadastro.Enabled = false;
         }
-        public void CadastroParcelas()
-        {
-            string rpta = "";
-            try
-            {
-                DateTime data;
-                for (int i = 0; i < int.Parse(txtParcelas.Text); i++)
-                {
-                    data = Convert.ToDateTime(dateEntrada.Value.AddMonths(i).ToString());
-                    rpta = DoCadastros.Parcela_Cadastro(
-                          data,
-                          txtDescricao.Text,
-                          i.ToString(),
-                          Convert.ToInt32(Support.Enum.PagtoRec.Pendente),
-                          Convert.ToInt32(lblUltimoIdCadastrado.Text)
-                          );
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
+        
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string rpta = "";
@@ -262,17 +239,21 @@ namespace views
                 if (rpta.Equals("OK") && IsNew == true)
                 {
                     DateTime data;
+                    string p = "";
                     var ultimoId = Convert.ToInt32(lblUltimoIdCadastrado.Text) + 1;
                     for (int i = 0; i < int.Parse(txtParcelas.Text); i++)
                     {
+                        p = (i + 1) + "/" + txtParcelas.Text;
                         data = Convert.ToDateTime(dateEntrada.Value.AddMonths(i).ToString());
                         parcela = DoCadastros.Parcela_Cadastro(
                               data,
                               txtDescricao.Text,
-                              i.ToString(),
-                              Convert.ToInt32(Support.Enum.PagtoRec.Pendente),
-                              ultimoId
+                              p,
+                        Convert.ToInt32(Support.Enum.PagtoRec.Pendente),
+                              ultimoId,
+                              Convert.ToDecimal(txtValor.Text)
                               );
+                        
                     }
                     if (parcela.Equals("OK"))
                     {

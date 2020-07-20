@@ -323,6 +323,12 @@ namespace Domain
             obj.ObsPlano = observacao;
             return obj.PlanoContas_Cadastro(obj);
         }
+        public static string PlanoContas_Delete(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDPlanoContas = id;
+            return obj.PlanoContas_Delete(obj);
+        }
         public static DataTable PlanoContas_ListaPorID(int id)
         {
             DataCadastros obj = new DataCadastros();
@@ -381,7 +387,7 @@ namespace Domain
             return obj.PlanoContas_Pesquisa(obj);
         }
         #endregion
-        #region
+        #region RECORRENCIA
         public static string Recorrencia_Cadastro(DateTime dataInicio, string descricao, decimal valor, int idTipoRecorrencia, int parcelas, int idFormaPagamento, 
             int idSubCategoria, int idEmpresa, int idStatusPagto)
         {
@@ -411,6 +417,12 @@ namespace Domain
             obj.IdEmpresa = idEmpresa;
             return obj.Recorrencia_Update(obj);
         }
+        public static string Recorrencia_Delete(int id)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.IDRecorrencia = id;
+            return obj.Recorrencia_Delete(obj);
+        }
         public static DataTable RecorrenciaTipo_Lista()
         {
             return new DataCadastros().RecorrenciaTipo_Lista();
@@ -425,7 +437,7 @@ namespace Domain
             obj.IDRecorrencia = id;
             return obj.Recorrencia_ListaPorID(obj);
         }
-        public static string Parcela_Cadastro(DateTime dataParcela, string descricao, string parcela, int idStatusPagamento, int idRecorrencia)
+        public static string Parcela_Cadastro(DateTime dataParcela, string descricao, string parcela, int idStatusPagamento, int idRecorrencia, decimal valor)
         {
             DataCadastros obj = new DataCadastros();
             obj.DataParcela = dataParcela;
@@ -433,6 +445,7 @@ namespace Domain
             obj.Parcela = parcela;
             obj.IDStatusPagtoRecorrente = idStatusPagamento;
             obj.IDRecorrencia = idRecorrencia;
+            obj.ValorParcela = valor;
             return obj.Parcelas_Cadastro(obj);
         }
         public static DataTable Parcela_ListaPorID(int id)

@@ -33,9 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvParcelas = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.pagamento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblId = new System.Windows.Forms.Label();
             this.btnSelecionarTudo = new System.Windows.Forms.Button();
-            this.pagamento = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.lblFpagto = new System.Windows.Forms.Label();
+            this.lblSucCat = new System.Windows.Forms.Label();
+            this.lblEmpresa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParcelas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,16 +104,29 @@
             this.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParcelas.Size = new System.Drawing.Size(1147, 482);
             this.dgvParcelas.TabIndex = 169;
+            this.dgvParcelas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParcelas_CellClick);
             this.dgvParcelas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParcelas_CellContentClick);
+            this.dgvParcelas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvParcelas_CellFormatting);
+            // 
+            // pagamento
+            // 
+            this.pagamento.FalseValue = "0";
+            this.pagamento.HeaderText = "Status";
+            this.pagamento.MinimumWidth = 6;
+            this.pagamento.Name = "pagamento";
+            this.pagamento.ReadOnly = true;
+            this.pagamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.pagamento.TrueValue = "1";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(1142, 521);
+            this.lblId.Location = new System.Drawing.Point(793, 528);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(19, 17);
             this.lblId.TabIndex = 170;
             this.lblId.Text = "id";
+            this.lblId.Visible = false;
             // 
             // btnSelecionarTudo
             // 
@@ -128,15 +144,35 @@
             this.btnSelecionarTudo.UseVisualStyleBackColor = true;
             this.btnSelecionarTudo.Click += new System.EventHandler(this.btnSelecionarTudo_Click);
             // 
-            // pagamento
+            // lblFpagto
             // 
-            this.pagamento.FalseValue = "0";
-            this.pagamento.HeaderText = "Status";
-            this.pagamento.MinimumWidth = 6;
-            this.pagamento.Name = "pagamento";
-            this.pagamento.ReadOnly = true;
-            this.pagamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.pagamento.TrueValue = "1";
+            this.lblFpagto.AutoSize = true;
+            this.lblFpagto.Location = new System.Drawing.Point(832, 528);
+            this.lblFpagto.Name = "lblFpagto";
+            this.lblFpagto.Size = new System.Drawing.Size(40, 17);
+            this.lblFpagto.TabIndex = 172;
+            this.lblFpagto.Text = "fpgto";
+            this.lblFpagto.Visible = false;
+            // 
+            // lblSucCat
+            // 
+            this.lblSucCat.AutoSize = true;
+            this.lblSucCat.Location = new System.Drawing.Point(889, 528);
+            this.lblSucCat.Name = "lblSucCat";
+            this.lblSucCat.Size = new System.Drawing.Size(52, 17);
+            this.lblSucCat.TabIndex = 173;
+            this.lblSucCat.Text = "subCat";
+            this.lblSucCat.Visible = false;
+            // 
+            // lblEmpresa
+            // 
+            this.lblEmpresa.AutoSize = true;
+            this.lblEmpresa.Location = new System.Drawing.Point(959, 528);
+            this.lblEmpresa.Name = "lblEmpresa";
+            this.lblEmpresa.Size = new System.Drawing.Size(63, 17);
+            this.lblEmpresa.TabIndex = 174;
+            this.lblEmpresa.Text = "empresa";
+            this.lblEmpresa.Visible = false;
             // 
             // Parcelas
             // 
@@ -144,6 +180,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1173, 564);
+            this.Controls.Add(this.lblEmpresa);
+            this.Controls.Add(this.lblSucCat);
+            this.Controls.Add(this.lblFpagto);
             this.Controls.Add(this.btnSelecionarTudo);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.dgvParcelas);
@@ -164,5 +203,8 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnSelecionarTudo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn pagamento;
+        private System.Windows.Forms.Label lblFpagto;
+        private System.Windows.Forms.Label lblSucCat;
+        private System.Windows.Forms.Label lblEmpresa;
     }
 }

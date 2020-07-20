@@ -89,6 +89,9 @@ namespace views
             PlanoContas_Lista();
         }
 
-        
+        private void dgvLancamentos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+        }
     }
 }
