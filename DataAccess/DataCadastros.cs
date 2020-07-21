@@ -1182,6 +1182,32 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string Extrato_Importar(DataCadastros IMPORT)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "ImportarExtrato";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@descricao", IMPORT.DescricaoPlano);
+                    command.Parameters.AddWithValue("@valor", IMPORT.ValorPlano);
+                    command.Parameters.AddWithValue("@data_pagamento", IMPORT.DataPlano);
+                    command.Parameters.AddWithValue("@id_status", IMPORT.IDStatus);
+
+
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Error";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
         public string PlanoContas_Update(DataCadastros PLANO)
         {
             using (var connection = GetConnection())

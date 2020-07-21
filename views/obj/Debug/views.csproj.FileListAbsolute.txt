@@ -54,3 +54,4 @@ M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.FormLogin.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ProvisionadoLista.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.ProvisionadoEntrada.resources
 M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.PlanoDeContas.Provisionado.Parcelas.resources
+M:\ModuloFinanceiro\FinancialModule\views\obj\Debug\views.Cadastros.ExtratoBancario.FormImport.resources

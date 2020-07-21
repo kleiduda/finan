@@ -81,6 +81,12 @@
     <Compile Include="Cadastros\Categoria\Categoria.Designer.cs">
       <DependentUpon>Categoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\ExtratoBancario\FormImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\ExtratoBancario\FormImport.Designer.cs">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastros\Pagamento\ListaPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     <EmbeddedResource Include="Cadastros\Categoria\Categoria.resx">
       <DependentUpon>Categoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\ExtratoBancario\FormImport.resx">
+      <DependentUpon>FormImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\Pagamento\ListaPagamento.resx">
       <DependentUpon>ListaPagamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -420,5 +429,6 @@
   <ItemGroup>
     <None Include="Resources\minus.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,6 +53,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pPlanoContas = new System.Windows.Forms.Panel();
+            this.btnProvisionados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnConsolidadoPC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnEntradaP = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPContas = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -63,7 +64,6 @@
             this.btnDiarioCaixa = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pHeader = new System.Windows.Forms.Panel();
-            this.btnProvisionados = new Bunifu.Framework.UI.BunifuFlatButton();
             this.pLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.pConteudo.SuspendLayout();
@@ -226,6 +226,7 @@
             this.btnImportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImportar.Textcolor = System.Drawing.Color.Gray;
             this.btnImportar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportar.Click += new System.EventHandler(this.btnImportar_Click);
             // 
             // label5
             // 
@@ -567,6 +568,43 @@
             this.pPlanoContas.Size = new System.Drawing.Size(229, 159);
             this.pPlanoContas.TabIndex = 188;
             // 
+            // btnProvisionados
+            // 
+            this.btnProvisionados.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.btnProvisionados.BackColor = System.Drawing.Color.White;
+            this.btnProvisionados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProvisionados.BorderRadius = 5;
+            this.btnProvisionados.ButtonText = "Provisionados";
+            this.btnProvisionados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProvisionados.DisabledColor = System.Drawing.Color.Gray;
+            this.btnProvisionados.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProvisionados.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnProvisionados.Iconimage = global::views.Properties.Resources.Asset_16saida;
+            this.btnProvisionados.Iconimage_right = null;
+            this.btnProvisionados.Iconimage_right_Selected = null;
+            this.btnProvisionados.Iconimage_Selected = null;
+            this.btnProvisionados.IconMarginLeft = 0;
+            this.btnProvisionados.IconMarginRight = 0;
+            this.btnProvisionados.IconRightVisible = true;
+            this.btnProvisionados.IconRightZoom = 0D;
+            this.btnProvisionados.IconVisible = true;
+            this.btnProvisionados.IconZoom = 30D;
+            this.btnProvisionados.IsTab = false;
+            this.btnProvisionados.Location = new System.Drawing.Point(0, 108);
+            this.btnProvisionados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProvisionados.Name = "btnProvisionados";
+            this.btnProvisionados.Normalcolor = System.Drawing.Color.White;
+            this.btnProvisionados.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.btnProvisionados.OnHoverTextColor = System.Drawing.Color.Black;
+            this.btnProvisionados.selected = false;
+            this.btnProvisionados.Size = new System.Drawing.Size(229, 36);
+            this.btnProvisionados.TabIndex = 179;
+            this.btnProvisionados.Text = "Provisionados";
+            this.btnProvisionados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProvisionados.Textcolor = System.Drawing.Color.Gray;
+            this.btnProvisionados.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProvisionados.Click += new System.EventHandler(this.btnProvisionados_Click);
+            // 
             // btnConsolidadoPC
             // 
             this.btnConsolidadoPC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
@@ -861,43 +899,6 @@
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(1693, 17);
             this.pHeader.TabIndex = 169;
-            // 
-            // btnProvisionados
-            // 
-            this.btnProvisionados.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnProvisionados.BackColor = System.Drawing.Color.White;
-            this.btnProvisionados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProvisionados.BorderRadius = 5;
-            this.btnProvisionados.ButtonText = "Provisionados";
-            this.btnProvisionados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProvisionados.DisabledColor = System.Drawing.Color.Gray;
-            this.btnProvisionados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProvisionados.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnProvisionados.Iconimage = global::views.Properties.Resources.Asset_16saida;
-            this.btnProvisionados.Iconimage_right = null;
-            this.btnProvisionados.Iconimage_right_Selected = null;
-            this.btnProvisionados.Iconimage_Selected = null;
-            this.btnProvisionados.IconMarginLeft = 0;
-            this.btnProvisionados.IconMarginRight = 0;
-            this.btnProvisionados.IconRightVisible = true;
-            this.btnProvisionados.IconRightZoom = 0D;
-            this.btnProvisionados.IconVisible = true;
-            this.btnProvisionados.IconZoom = 30D;
-            this.btnProvisionados.IsTab = false;
-            this.btnProvisionados.Location = new System.Drawing.Point(0, 108);
-            this.btnProvisionados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnProvisionados.Name = "btnProvisionados";
-            this.btnProvisionados.Normalcolor = System.Drawing.Color.White;
-            this.btnProvisionados.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.btnProvisionados.OnHoverTextColor = System.Drawing.Color.Black;
-            this.btnProvisionados.selected = false;
-            this.btnProvisionados.Size = new System.Drawing.Size(229, 36);
-            this.btnProvisionados.TabIndex = 179;
-            this.btnProvisionados.Text = "Provisionados";
-            this.btnProvisionados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProvisionados.Textcolor = System.Drawing.Color.Gray;
-            this.btnProvisionados.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProvisionados.Click += new System.EventHandler(this.btnProvisionados_Click);
             // 
             // FormAdministrador
             // 

@@ -323,6 +323,17 @@ namespace Domain
             obj.ObsPlano = observacao;
             return obj.PlanoContas_Cadastro(obj);
         }
+        public static string Extrato_Importar(string descricao, decimal valor, DateTime data, int status)
+        {
+            DataCadastros obj = new DataCadastros();
+            obj.DescricaoPlano = descricao;
+            obj.ValorPlano = valor;
+            obj.DataPlano = data;
+            obj.IDStatus = status;
+           
+            return obj.Extrato_Importar(obj);
+        }
+
         public static string PlanoContas_Delete(int id)
         {
             DataCadastros obj = new DataCadastros();

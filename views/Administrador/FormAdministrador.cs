@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using views.Cadastros.ExtratoBancario;
 
 namespace views
 {
@@ -143,6 +144,12 @@ namespace views
         {
             pLogo.Hide();
             AbrirFormulario<ProvisionadoLista>();
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            FormImport frm = new FormImport();
+            frm.ShowDialog();
         }
     }
 }
