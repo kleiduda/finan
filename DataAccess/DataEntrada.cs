@@ -48,7 +48,32 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@observacao", Entrada.Observacao);
                     command.Parameters.AddWithValue("@id_tipo_entrada", Entrada.IdEntrada);
                     command.Parameters.AddWithValue("@id_forma_pagamento", Entrada.IdPagamento);
-                    rpta = command.ExecuteNonQuery() == 2 ? "OK" : "Erro ao cadastrar";
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao cadastrar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
+        public string CadastroPc(DataEntrada Entrada)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "CadastroPc";
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@data_entrada", Entrada.Data);
+                    command.Parameters.AddWithValue("@valor", Entrada.Valor);
+                    command.Parameters.AddWithValue("@observacao", Entrada.Observacao);
+                    command.Parameters.AddWithValue("@id_tipo_entrada", Entrada.IdEntrada);
+                    command.Parameters.AddWithValue("@id_forma_pagamento", Entrada.IdPagamento);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao cadastrar";
                 }
                 catch (Exception ex)
                 {

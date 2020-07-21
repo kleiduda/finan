@@ -21,6 +21,16 @@ namespace Domain
             obj.IdPagamento = idPagamento;
             return obj.CadastroEntrada(obj);
         }
+        public static string CadastroPc(DateTime data, decimal valor, string observacao, int idEntrada, int idPagamento)
+        {
+            DataEntrada obj = new DataEntrada();
+            obj.Data = data;
+            obj.Valor = valor;
+            obj.Observacao = observacao;
+            obj.IdEntrada = idEntrada;
+            obj.IdPagamento = idPagamento;
+            return obj.CadastroPc(obj);
+        }
         public static DataTable ListEntradas()
         {
             return new DataEntrada().ListEntradas();

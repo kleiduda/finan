@@ -245,20 +245,17 @@ namespace views
                         Convert.ToInt32(cbTipoEntrada.SelectedValue),
                         Convert.ToInt32(cbPagamento.SelectedValue)
                         );
-                    //if (chkRecorrencia.Checked == true)
-                    //{
-                    //    rpta = DoCadastros.Recorrencia_Cadastro
-                    //    (
-                    //        dateEntrada.Value,
-                    //        Convert.ToInt32(cbTipoEntrada.SelectedValue),
-                    //        Convert.ToDecimal(txtValor.Text),
-                    //        Convert.ToInt32(cbRecorrencia.SelectedValue),
-                    //        Convert.ToInt32(cbPagamento.SelectedValue)
-                    //    );
-                    //}
+                    
                 }
-                if (rpta.Equals("OK") && lblSaldoFinal.Text != "0")
+                if (rpta.Equals("OK") && lblSaldoFinal.Text != "0" && Convert.ToInt32(cbPagamento.SelectedValue) == 9)
                 {
+                    rpta = DoEntrada.CadastroPc(
+                        dateEntrada.Value,
+                        decimal.Parse(txtValor.Text),
+                        txtObservacao.Text,
+                        Convert.ToInt32(cbTipoEntrada.SelectedValue),
+                        Convert.ToInt32(cbPagamento.SelectedValue)
+                        );
                     msgSuccess("Cadastro realizado com sucesso!");
                     UpdateSaldo();
                 }
