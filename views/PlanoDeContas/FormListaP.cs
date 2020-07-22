@@ -57,6 +57,8 @@ namespace views
             dgvLancamentos.Columns["SubCategoria"].HeaderText = "SUBCATEGORIA";
             dgvLancamentos.Columns["Empresa"].HeaderText = "EMPRESA";
             dgvLancamentos.Columns["CentroCusto"].HeaderText = "C.CUSTO";
+            dgvLancamentos.Columns["delete"].DisplayIndex = 13;
+
 
         }
 
@@ -65,7 +67,37 @@ namespace views
             dgvLancamentos.DataSource = DoCadastros.PlanoContas_Pesquisa(txtSearch.Text);
             CalculoTotais();
         }
-
+        private void dgvLancamentos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                string rpta = "";
+                try
+                {
+                    if (MessageBox.Show("Excluir Entrada?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        rpta = DoCadastros.PlanoContas_Delete(int.Parse(dgvLancamentos.CurrentRow.Cells["id"].Value.ToString()));
+                    }
+                    else
+                    {
+                        // user clicked no
+                    }
+                    if (rpta.Equals("OK"))
+                    {
+                        MessageBox.Show("Entrada excluida com sucesso!");
+                    }
+                    else
+                    {
+                        MessageBox.Show(rpta);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message + ex.StackTrace;
+                }
+                PlanoContas_Lista();
+            }
+        }
         private void btnFiltro_Click(object sender, EventArgs e)
         {
             var inicio = DateTime.Parse(dtInicio.Value.ToString()).ToShortDateString();

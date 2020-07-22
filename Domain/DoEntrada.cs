@@ -48,5 +48,6 @@ namespace Domain
             obj.IdEntrada = idEntrada;
             return obj.Entrada_Delete(obj);
         }
+       
     }
 }

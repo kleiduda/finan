@@ -333,7 +333,7 @@ namespace Domain
            
             return obj.Extrato_Importar(obj);
         }
-
+        
         public static string PlanoContas_Delete(int id)
         {
             DataCadastros obj = new DataCadastros();

@@ -1182,6 +1182,27 @@ namespace DataAccess
                 return rpta;
             }
         }
+        public string Plano_Delete(DataCadastros ENTRADA)
+        {
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                string rpta = "";
+                try
+                {
+                    command.Connection = connection;
+                    command.CommandText = "delete from tb_plano_de_contas Where id=@id_plano";
+                    command.CommandType = CommandType.Text;
+                    command.Parameters.AddWithValue("@id_plano", ENTRADA.IDPlanoContas);
+                    rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Erro ao deletar";
+                }
+                catch (Exception ex)
+                {
+                    rpta = ex.Message;
+                }
+                return rpta;
+            }
+        }
         public string Extrato_Importar(DataCadastros IMPORT)
         {
             using (var connection = GetConnection())
