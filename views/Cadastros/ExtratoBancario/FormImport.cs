@@ -17,7 +17,7 @@ namespace views.Cadastros.ExtratoBancario
     public partial class FormImport : Form
     {
         private bool IsNew = true;
-        string arquivoExcel = "@vendedores.xlsx";
+        string arquivoExcel = "extrato.xlsx";
         public FormImport()
         {
             InitializeComponent();
@@ -197,7 +197,6 @@ namespace views.Cadastros.ExtratoBancario
                 }
                 else
                 {
-
                     if (this.IsNew)
                     {
                         backGroundWork.RunWorkerAsync();
@@ -213,7 +212,9 @@ namespace views.Cadastros.ExtratoBancario
                                 Convert.ToString(dgvDados.Rows[i].Cells["descricao"].Value.ToString().TrimEnd()),
                                 Convert.ToDecimal(dgvDados.Rows[i].Cells["valor"].Value.ToString()),
                                 Convert.ToDateTime(dgvDados.Rows[i].Cells["data_pagamento"].Value.ToString().TrimEnd()),
-                                idStatus
+                                Convert.ToInt32(dgvDados.Rows[i].Cells["id_empresa"].Value.ToString()),
+                                idStatus,
+                                Convert.ToInt32(dgvDados.Rows[i].Cells["id_pagamento"].Value.ToString())
                                 );
 
                           //  ProgressBar.Value = i * ProgressBar.MaximumValue / dgvDados.Rows.Count + 1;

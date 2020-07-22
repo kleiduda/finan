@@ -33,6 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pDataGrid = new System.Windows.Forms.Panel();
+            this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pButtons = new System.Windows.Forms.Panel();
             this.lblProvisionado = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -48,23 +50,101 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvLancamentos = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.pDataGrid.SuspendLayout();
-            this.pButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).BeginInit();
+            this.pButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pDataGrid
             // 
+            this.pDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pDataGrid.Controls.Add(this.dgvLancamentos);
             this.pDataGrid.Location = new System.Drawing.Point(32, 57);
             this.pDataGrid.Name = "pDataGrid";
             this.pDataGrid.Size = new System.Drawing.Size(1363, 667);
             this.pDataGrid.TabIndex = 175;
             // 
+            // dgvLancamentos
+            // 
+            this.dgvLancamentos.AllowUserToAddRows = false;
+            this.dgvLancamentos.AllowUserToDeleteRows = false;
+            this.dgvLancamentos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvLancamentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLancamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLancamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLancamentos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvLancamentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLancamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLancamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLancamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.delete});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLancamentos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvLancamentos.DoubleBuffered = true;
+            this.dgvLancamentos.EnableHeadersVisualStyles = false;
+            this.dgvLancamentos.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvLancamentos.HeaderBgColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvLancamentos.HeaderForeColor = System.Drawing.Color.Black;
+            this.dgvLancamentos.Location = new System.Drawing.Point(7, 12);
+            this.dgvLancamentos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLancamentos.MultiSelect = false;
+            this.dgvLancamentos.Name = "dgvLancamentos";
+            this.dgvLancamentos.ReadOnly = true;
+            this.dgvLancamentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(186)))), ((int)(((byte)(167)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLancamentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvLancamentos.RowHeadersVisible = false;
+            this.dgvLancamentos.RowHeadersWidth = 62;
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
+            this.dgvLancamentos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvLancamentos.RowTemplate.Height = 40;
+            this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLancamentos.Size = new System.Drawing.Size(1349, 642);
+            this.dgvLancamentos.TabIndex = 169;
+            this.dgvLancamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLancamentos_CellClick);
+            this.dgvLancamentos.DoubleClick += new System.EventHandler(this.dgvLancamentos_DoubleClick);
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "";
+            this.delete.Image = global::views.Properties.Resources.cancel1;
+            this.delete.MinimumWidth = 6;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            // 
             // pButtons
             // 
+            this.pButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pButtons.Controls.Add(this.lblProvisionado);
             this.pButtons.Controls.Add(this.lblTotal);
             this.pButtons.Controls.Add(this.lblTSaidas);
@@ -215,7 +295,6 @@
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,78 +315,6 @@
             this.dataGridViewImageColumn1.ToolTipText = "Excluir";
             this.dataGridViewImageColumn1.Width = 623;
             // 
-            // dgvLancamentos
-            // 
-            this.dgvLancamentos.AllowUserToAddRows = false;
-            this.dgvLancamentos.AllowUserToDeleteRows = false;
-            this.dgvLancamentos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvLancamentos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLancamentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLancamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLancamentos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvLancamentos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLancamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLancamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLancamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLancamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.delete});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLancamentos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvLancamentos.DoubleBuffered = true;
-            this.dgvLancamentos.EnableHeadersVisualStyles = false;
-            this.dgvLancamentos.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvLancamentos.HeaderBgColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvLancamentos.HeaderForeColor = System.Drawing.Color.Black;
-            this.dgvLancamentos.Location = new System.Drawing.Point(7, 12);
-            this.dgvLancamentos.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvLancamentos.MultiSelect = false;
-            this.dgvLancamentos.Name = "dgvLancamentos";
-            this.dgvLancamentos.ReadOnly = true;
-            this.dgvLancamentos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(186)))), ((int)(((byte)(167)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLancamentos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvLancamentos.RowHeadersVisible = false;
-            this.dgvLancamentos.RowHeadersWidth = 62;
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.White;
-            this.dgvLancamentos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvLancamentos.RowTemplate.Height = 40;
-            this.dgvLancamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLancamentos.Size = new System.Drawing.Size(1349, 642);
-            this.dgvLancamentos.TabIndex = 169;
-            this.dgvLancamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLancamentos_CellClick);
-            // 
-            // delete
-            // 
-            this.delete.HeaderText = "";
-            this.delete.Image = global::views.Properties.Resources.cancel1;
-            this.delete.MinimumWidth = 6;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            // 
             // FormListaP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,9 +330,9 @@
             this.Text = "FormTipoEntrada";
             this.Load += new System.EventHandler(this.FormListaP_Load);
             this.pDataGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).EndInit();
             this.pButtons.ResumeLayout(false);
             this.pButtons.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLancamentos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

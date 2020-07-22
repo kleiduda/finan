@@ -51,6 +51,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
             this.pProduct.SuspendLayout();
             this.pButtons.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,7 @@
             // 
             this.pProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.pProduct.Controls.Add(this.lblID);
             this.pProduct.Controls.Add(this.lblSaldoAnterior);
             this.pProduct.Controls.Add(this.bunifuCheckbox1);
             this.pProduct.Controls.Add(this.lblSaldoFinal);
@@ -372,6 +374,15 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(291, 20);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(19, 17);
+            this.lblID.TabIndex = 190;
+            this.lblID.Text = "id";
+            // 
             // FormSaidaDC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -416,5 +427,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.Label lblID;
     }
 }

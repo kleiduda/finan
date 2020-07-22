@@ -65,6 +65,12 @@ namespace views
                 ListSaidas();
             }
         }
+        private void dgvSaidas_DoubleClick(object sender, EventArgs e)
+        {
+            FormSaidaDC _frm = new FormSaidaDC(dgvSaidas.CurrentRow.Cells["id"].Value.ToString());
+            _frm.ShowDialog();
+            ListSaidas();
+        }
         private void btnNovoCadastro_Click(object sender, EventArgs e)
         {
             FormSaidaDC frm = new FormSaidaDC();

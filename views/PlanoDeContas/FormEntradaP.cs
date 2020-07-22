@@ -95,6 +95,7 @@ namespace views
             cbEmpresa.Text = dt.Rows[0]["Empresa"].ToString();
             cbPagamento.Text = dt.Rows[0]["Pagamento"].ToString();
             cbStatus.Text = dt.Rows[0]["status"].ToString();
+            dateEntrada.Value = Convert.ToDateTime(dt.Rows[0]["data_pagamento"].ToString());
         }
 
         public void TabIndex()

@@ -1217,8 +1217,9 @@ namespace DataAccess
                     command.Parameters.AddWithValue("@descricao", IMPORT.DescricaoPlano);
                     command.Parameters.AddWithValue("@valor", IMPORT.ValorPlano);
                     command.Parameters.AddWithValue("@data_pagamento", IMPORT.DataPlano);
+                    command.Parameters.AddWithValue("@id_empresa", IMPORT.IdEmpresa);
                     command.Parameters.AddWithValue("@id_status", IMPORT.IDStatus);
-
+                    command.Parameters.AddWithValue("@id_pagamento", IMPORT.IdPagamento);
 
                     rpta = command.ExecuteNonQuery() == 1 ? "OK" : "Error";
                 }
@@ -1302,7 +1303,7 @@ namespace DataAccess
                         "INNER JOIN tb_empresa e ON pc.id_empresa = e.id " +
                         "INNER JOIN tb_sub_categoria sc ON pc.id_sub_categoria = sc.id " +
                         "INNER JOIN tb_categoria c ON sc.id_categoria = c.id " +
-                        "INNER JOIN tb_centro_custo cc ON c.id_centro_custo = cc.id";
+                        "INNER JOIN tb_centro_custo cc ON c.id_centro_custo = cc.id ORDER BY data_pagamento DESC";
                     command.CommandType = CommandType.Text;
                     SqlDataAdapter SqlDat = new SqlDataAdapter(command);
                     SqlDat.Fill(dt);

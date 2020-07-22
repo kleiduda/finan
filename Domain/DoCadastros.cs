@@ -323,13 +323,15 @@ namespace Domain
             obj.ObsPlano = observacao;
             return obj.PlanoContas_Cadastro(obj);
         }
-        public static string Extrato_Importar(string descricao, decimal valor, DateTime data, int status)
+        public static string Extrato_Importar(string descricao, decimal valor, DateTime data, int idEmpresa, int status, int id_pagamento)
         {
             DataCadastros obj = new DataCadastros();
             obj.DescricaoPlano = descricao;
             obj.ValorPlano = valor;
             obj.DataPlano = data;
+            obj.IdEmpresa = idEmpresa;
             obj.IDStatus = status;
+            obj.IdPagamento = id_pagamento;
            
             return obj.Extrato_Importar(obj);
         }

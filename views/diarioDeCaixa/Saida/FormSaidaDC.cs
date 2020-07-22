@@ -19,6 +19,12 @@ namespace views
         {
             InitializeComponent();
         }
+        public FormSaidaDC(string value)
+        {
+            InitializeComponent();
+            lblID.Text = value;
+
+        }
         private void FormSaidaDC_Load(object sender, EventArgs e)
         {
            
